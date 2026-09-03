@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://hplj1vo1ekeb"]
+
+[ext_resource type="PackedScene" uid="uid://c0oq4upgy56xp" path="res://SquarKames/KamesScenes/SquarKame.tscn" id="1_3tbxw"]
+[ext_resource type="PackedScene" uid="uid://cwfs2ns82em0t" path="res://Backgrounds/Level1.tscn" id="1_e3m3f"]
+
+[node name="MainGame" type="Node2D" unique_id=899722064]
+
+[node name="Levels" type="Node2D" parent="." unique_id=801411998]
+
+[node name="Level1" parent="Levels" unique_id=1014654684 instance=ExtResource("1_e3m3f")]
+
+[node name="Node2D" parent="." unique_id=2092719868 instance=ExtResource("1_3tbxw")]
+position = Vector2(178, 239)
