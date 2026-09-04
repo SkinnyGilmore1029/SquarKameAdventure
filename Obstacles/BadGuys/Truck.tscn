@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mefm3f4b8a3m"]
+
+[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/EnemyLogic.gd" id="1_gcn3x"]
+[ext_resource type="Resource" uid="uid://b3bkb2r3j6itk" path="res://Obstacles/BadGuysResources/Truck.tres" id="2_corrj"]
+
+[node name="Truck" type="CharacterBody2D" unique_id=1713679575]
+script = ExtResource("1_gcn3x")
+enemy_data = ExtResource("2_corrj")

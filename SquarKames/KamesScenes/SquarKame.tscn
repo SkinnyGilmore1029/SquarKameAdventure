@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cedcubfbt5c25" path="res://Assets/Pictures/MainTurtle.png" id="2_g4hkm"]
 [ext_resource type="Script" uid="uid://cesu540wkrboy" path="res://Managers/State Machine Scripts/node_state_machine.gd" id="3_5wes8"]
 [ext_resource type="Script" uid="uid://vttho7q8vnla" path="res://SquarKames/KamesScripts/player_idle.gd" id="4_b5psh"]
-[ext_resource type="Script" uid="uid://d25nmhrsu5sfc" path="res://SquarKames/KamesScenes/Player_walk.gd" id="5_tg3ie"]
+[ext_resource type="Script" uid="uid://d25nmhrsu5sfc" path="res://SquarKames/KamesScripts/Player_walk.gd" id="5_tg3ie"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djs47"]
 atlas = ExtResource("2_g4hkm")
@@ -198,20 +198,21 @@ radius = 4.0
 height = 12.0
 
 [node name="MainTurtle" type="CharacterBody2D" unique_id=1720866036]
+y_sort_enabled = true
+scale = Vector2(2.5, 2.5)
 collision_mask = 18
 script = ExtResource("1_jgff5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=277971224]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2otri")
 animation = &"MovingUp"
 autoplay = "IdleUp"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=121924744]
-limit_left = -2400
-limit_top = -1600
-limit_right = 2400
-limit_bottom = 1600
+limit_left = 0
+limit_top = -800
+limit_right = 1200
+limit_bottom = 800
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=486261840]
 shape = SubResource("CapsuleShape2D_830d4")

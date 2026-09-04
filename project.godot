@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.8", "Forward Plus")
 [autoload]
 
 GameInput="*uid://yujxax8klej0"
+PlayerGlobals="*uid://d2kew3tosx5lt"
+EnemySpawner="*uid://c1lj7fe1txxka"
 
 [debug]
 
@@ -36,11 +38,11 @@ window/stretch/scale_mode="integer"
 
 folder_colors={
 "res://Assets/": "yellow",
-"res://Backgrounds/": "purple",
 "res://Components/": "orange",
 "res://Managers/": "red",
 "res://Obstacles/": "teal",
-"res://SquarKames/": "pink"
+"res://SquarKames/": "pink",
+"res://TheLevels/": "purple"
 }
 
 [input]

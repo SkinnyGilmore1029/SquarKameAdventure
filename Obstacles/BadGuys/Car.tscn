@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c3e4vtiri4ka1"]
+
+[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/EnemyLogic.gd" id="1_57mkf"]
+[ext_resource type="Resource" uid="uid://cpenwrr7gqn1x" path="res://Obstacles/BadGuysResources/Car.tres" id="2_43act"]
+[ext_resource type="Texture2D" uid="uid://d04fgxddcmhyk" path="res://Assets/Pictures/Bad Guys/car sheet.png" id="2_57mkf"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="3_43act"]
+[ext_resource type="Script" uid="uid://bjkg54xigqsh4" path="res://Components/ComponentScripts/death_collsion.gd" id="4_pr6an"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eema0"]
+atlas = ExtResource("2_57mkf")
+region = Rect2(0, 0, 128, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m74u"]
+atlas = ExtResource("2_57mkf")
+region = Rect2(128, 0, 128, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onu3a"]
+atlas = ExtResource("2_57mkf")
+region = Rect2(256, 0, 128, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_830d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eema0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m74u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onu3a")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Car" type="CharacterBody2D" unique_id=1501078447]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_57mkf")
+enemy_data = ExtResource("2_43act")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=224536456]
+sprite_frames = SubResource("SpriteFrames_830d4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1769575557]
+scale = Vector2(0.9, 0.9)
+polygon = PackedVector2Array(-58, 1, -14, -60, 45, -60, 63, -10, 64, 35, 50, 35, 50, 60, 39, 62, 39, 35, -32, 36, -30, 58, -41, 59, -40, 36, -59, 34)
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("3_43act")]
+script = ExtResource("4_pr6an")
+
+[node name="DeathCollsionCar" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=184251972]
+polygon = PackedVector2Array(-58, 1, -14, -60, 45, -60, 63, -10, 64, 35, 50, 35, 50, 60, 39, 62, 39, 35, -32, 36, -30, 58, -41, 59, -40, 36, -59, 34)
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]
