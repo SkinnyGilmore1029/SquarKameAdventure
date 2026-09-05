@@ -2,7 +2,54 @@
 
 [ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/EnemyLogic.gd" id="1_gcn3x"]
 [ext_resource type="Resource" uid="uid://b3bkb2r3j6itk" path="res://Obstacles/BadGuysResources/Truck.tres" id="2_corrj"]
+[ext_resource type="Texture2D" uid="uid://0pbqflqr4pbn" path="res://Assets/Pictures/Bad Guys/Truck_sheet.png" id="3_corrj"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="4_d28mh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d28mh"]
+atlas = ExtResource("3_corrj")
+region = Rect2(0, 0, 256, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdsqy"]
+atlas = ExtResource("3_corrj")
+region = Rect2(256, 0, 256, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqy2g"]
+atlas = ExtResource("3_corrj")
+region = Rect2(512, 0, 256, 199)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_830d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d28mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdsqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqy2g")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Truck" type="CharacterBody2D" unique_id=1713679575]
+scale = Vector2(0.75, 0.75)
+collision_layer = 16
+collision_mask = 35
 script = ExtResource("1_gcn3x")
 enemy_data = ExtResource("2_corrj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1143417694]
+sprite_frames = SubResource("SpriteFrames_830d4")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1709387944]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(-64, -94.66667, -88, -80, -90.66667, -46.666668, -122.66667, -42.666668, -122.66667, 38.666668, -92, 42.666668, -89.333336, 86.66667, -34.666668, 86.66667, -42.666668, 42.666668, 65.333336, 44, 65.333336, 88, 122.66667, 88, 121.333336, -94.66667)
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("4_d28mh")]
+
+[node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=488397816]
+polygon = PackedVector2Array(-64, -94.66667, -88, -80, -90.66667, -46.666668, -122.66667, -42.666668, -122.66667, 38.666668, -92, 42.666668, -89.333336, 86.66667, -34.666668, 86.66667, -42.666668, 42.666668, 65.333336, 44, 65.333336, 88, 122.66667, 88, 121.333336, -94.66667)

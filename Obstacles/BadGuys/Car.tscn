@@ -37,12 +37,13 @@ animations = [{
 
 [node name="Car" type="CharacterBody2D" unique_id=1501078447]
 collision_layer = 16
-collision_mask = 3
+collision_mask = 35
 script = ExtResource("1_57mkf")
 enemy_data = ExtResource("2_43act")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=224536456]
 sprite_frames = SubResource("SpriteFrames_830d4")
+autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1769575557]
 scale = Vector2(0.9, 0.9)

@@ -2,7 +2,53 @@
 
 [ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/EnemyLogic.gd" id="1_hnrs0"]
 [ext_resource type="Resource" uid="uid://5ytsrfdhi576" path="res://Obstacles/BadGuysResources/Bus.tres" id="2_gsw4g"]
+[ext_resource type="Texture2D" uid="uid://b6xm8aw5srwp6" path="res://Assets/Pictures/Bad Guys/Bus_sheet.png" id="3_gsw4g"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="4_nfbn6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfbn6"]
+atlas = ExtResource("3_gsw4g")
+region = Rect2(0, 0, 426, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr3wg"]
+atlas = ExtResource("3_gsw4g")
+region = Rect2(426, 0, 426, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6283r"]
+atlas = ExtResource("3_gsw4g")
+region = Rect2(852, 0, 426, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_830d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfbn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr3wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6283r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bus" type="CharacterBody2D" unique_id=1146870719]
+collision_layer = 16
+collision_mask = 35
 script = ExtResource("1_hnrs0")
 enemy_data = ExtResource("2_gsw4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1164645985]
+sprite_frames = SubResource("SpriteFrames_830d4")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=362402050]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(-198, -65, 132, -64, 137, -27, 212, -26, 212, 22, 180, 29, 193, 62, 162, 71, 160, 25, 96, 28, 110, 65, 76, 69, 73, 32, -110, 29, -93, 60, -119, 72, -180, 74, -170, 29, -201, 26)
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("4_nfbn6")]
+
+[node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=1013981072]
+polygon = PackedVector2Array(-198, -65, 132, -64, 137, -27, 212, -26, 212, 22, 180, 29, 193, 62, 162, 71, 160, 25, 96, 28, 110, 65, 76, 69, 73, 32, -110, 29, -93, 60, -119, 72, -180, 74, -170, 29, -201, 26)

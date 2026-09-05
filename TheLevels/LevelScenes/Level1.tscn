@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dw5vwgacpu6sb" path="res://Managers/LevelManagers/level_1.gd" id="1_tylve"]
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="2_1bvhh"]
 [ext_resource type="Resource" uid="uid://46n768njw4yp" path="res://TheLevels/LevelResources/Level1.tres" id="2_3e3qq"]
-[ext_resource type="TileSet" path="res://Resources/TileSets/GrassTiles.tres" id="2_dtnyl"]
+[ext_resource type="TileSet" uid="uid://baf6c786nrfvt" path="res://Resources/TileSets/GrassTiles.tres" id="2_dtnyl"]
 [ext_resource type="Texture2D" uid="uid://do8roowosl8f5" path="res://Assets/Pictures/Backgrounds/punyworld-overworld-tileset.png" id="2_tlmp4"]
 [ext_resource type="Texture2D" uid="uid://s77k1dxav3s7" path="res://Assets/Pictures/Backgrounds/StreetTileYellow.png" id="3_56mba"]
 [ext_resource type="Texture2D" uid="uid://bnhdd6knfyds5" path="res://Assets/Pictures/Backgrounds/StreetTileGrey.png" id="4_6x1dr"]
 [ext_resource type="Texture2D" uid="uid://bgpjojsmrcrd4" path="res://Assets/Pictures/Backgrounds/fences.png" id="6_5bruo"]
-[ext_resource type="PackedScene" uid="uid://c3e4vtiri4ka1" path="res://Obstacles/BadGuys/Car.tscn" id="7_5bruo"]
 [ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyHandler.tscn" id="9_hk3jt"]
+[ext_resource type="Script" uid="uid://cqbby0mjostp8" path="res://TheLevels/LevelScripts/despawnScript.gd" id="13_j5pau"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tylve"]
 resource_name = "Dirt"
@@ -133,6 +133,9 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_v480x")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guak4"]
+size = Vector2(41, 1521)
+
 [node name="Level1" type="Node2D" unique_id=1014654684]
 script = ExtResource("1_tylve")
 level_data = ExtResource("2_3e3qq")
@@ -168,8 +171,26 @@ tile_set = SubResource("TileSet_2otri")
 [node name="Level1_BadGuys" type="Node2D" parent="." unique_id=610942219]
 unique_name_in_owner = true
 
-[node name="Car" parent="Level1_BadGuys" unique_id=1501078447 instance=ExtResource("7_5bruo")]
-position = Vector2(721, 529)
-
-[node name="EnemyTimer" parent="." unique_id=570641630 node_paths=PackedStringArray("bad_guys_node") instance=ExtResource("9_hk3jt")]
+[node name="EnemyTimer" parent="." unique_id=570641630 node_paths=PackedStringArray("bad_guys_node", "level_node") instance=ExtResource("9_hk3jt")]
+wait_time = 3.0
+autostart = true
 bad_guys_node = NodePath("../Level1_BadGuys")
+level_node = NodePath("..")
+
+[node name="CarDespawns" type="Node2D" parent="." unique_id=675678739]
+
+[node name="Despawn 1" type="Area2D" parent="CarDespawns" unique_id=491086875]
+position = Vector2(-40, -1)
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("13_j5pau")
+
+[node name="Despawn1Collision" type="CollisionShape2D" parent="CarDespawns/Despawn 1" unique_id=798672945]
+position = Vector2(-438, 90)
+shape = SubResource("RectangleShape2D_guak4")
+
+[node name="Despawn2Collision" type="CollisionShape2D" parent="CarDespawns/Despawn 1" unique_id=726653403]
+position = Vector2(1497, 18)
+shape = SubResource("RectangleShape2D_guak4")
+
+[connection signal="body_entered" from="CarDespawns/Despawn 1" to="CarDespawns/Despawn 1" method="_on_body_entered"]
