@@ -3,8 +3,13 @@ extends Node
 
 #Need to save to use in Timers
 var level_enemies_strings: Array[String]
+
+#Loads with ready function
 var enemy_scenes: Dictionary[String, String]
 var bad_guy_folder := DirAccess.open("res://Obstacles/BadGuys")
+
+
+
 
 ##gets all the children nodes paths so i don't have to always update the dictionary
 func _ready() -> void:
@@ -12,13 +17,15 @@ func _ready() -> void:
 		if file.ends_with(".tscn"):
 			enemy_scenes[file.get_basename()] = "res://Obstacles/BadGuys/" + file
 
-
+#-----------------Jumbled up mess lol-------------------------------------
 
 ##Sets the enemy types for the level by storing them in the level_enemies_strings array. This function is called from the level script to specify which enemies should be spawned in the level.
+##don't know if i need this now?
 func which_enemy_types(enemy_list: Array[String]) -> void:
 	level_enemies_strings = enemy_list
 
 ##Creates an array of PackedScenes for the specified enemy types in the level_enemies_strings array.
+##don't know if i need this now ?
 func make_node_types() -> Array[PackedScene]:
 	if !level_enemies_strings:
 		push_warning("No enemy types specified for this level.")
@@ -44,15 +51,6 @@ func get_random_spawn(enemy_type: String, spawn_dict: Dictionary) ->Vector2:
 	var chosen_spawn = spawn_dict[enemy_type][randi() % len(spawn_dict[enemy_type])]
 	return chosen_spawn
 
-func get_random_spawn2(enemy_type: String, choices: Array[Vector2]) -> Vector2:
-	if len(choices) == 0:
-		push_warning("Can not use empty Array. Check %s: Type, %s choices." % [enemy_type, choices])
-		return Vector2.ZERO
-	if len(choices) == 1:
-		return choices[0]
-	var chosen_spawn = choices[randi() %len(choices)]
-	return chosen_spawn
-
 func get_random_speed(enemy_type: String, speed_dict: Dictionary) -> int:
 	if !speed_dict.has(enemy_type):
 		push_warning("No speed choices defined for enemy type: %s" % enemy_type)
@@ -68,7 +66,7 @@ func get_random_speed(enemy_type: String, speed_dict: Dictionary) -> int:
 
 func get_random_time(enemy_type: String, time_dict: Dictionary) -> float:
 	if !time_dict.has(enemy_type):
-		push_warning("No time choices defined for enemy type: %s % enemy_type")
+		push_warning("No time choices defined for enemy type: %s" % enemy_type)
 		return 3.0
 
 	if len(time_dict[enemy_type]) == 0:
@@ -79,7 +77,6 @@ func get_random_time(enemy_type: String, time_dict: Dictionary) -> float:
 
 	var chosen_time = time_dict[enemy_type][randi() % len(time_dict[enemy_type])]
 	return chosen_time
-
 
 func spawn_enemy(spawn_dict: Dictionary, speed_dict: Dictionary, time_dict: Dictionary, bad_guys: Node) -> void:
 	var level_enemy_scenes = make_node_types()
@@ -106,7 +103,39 @@ func spawn_enemy(spawn_dict: Dictionary, speed_dict: Dictionary, time_dict: Dict
 
 		bad_guys.add_child(enemy_instance)
 
-func new_spawn(enemy_type: String, the_level_data: LevelDataManager) -> void:
+
+#-----------------Single Spawn less arguments-------------------------------------
+
+func get_random_spawn2(enemy_type: String, choices: Array[Vector2]) -> Vector2:
+	if len(choices) == 0:
+		push_warning("Can not use empty Array. Check %s: Type, %s choices." % [enemy_type, choices])
+		return Vector2.ZERO
+	if len(choices) == 1:
+		return choices[0]
+	var chosen_spawn = choices[randi() %len(choices)]
+	return chosen_spawn
+
+func get_random_speed2(enemy_type: String, speed_array: Array[int]) -> int:
+	if len(speed_array) == 0:
+		push_warning("No speed choices available for enemy type: %s" % enemy_type)
+		return 0
+	if len(speed_array) == 1:
+		return speed_array[0]
+	var chosen_speed = speed_array[randi() % len(speed_array)]
+	return chosen_speed
+
+func get_random_time2(enemy_type: String, time_array: Array[float]) -> float:
+	if len(time_array) == 0:
+		push_warning("No times were added to %s time choices array check leveldata.gd" % enemy_type)
+		return 3.0
+
+	if len(time_array) == 1:
+		return time_array[0]
+
+	var chosen_time = time_array[randi() % len(time_array)]
+	return chosen_time
+
+func new_spawn(enemy_type: String, the_level_data: LevelDataManager, bad_guy_node: Node) -> void:
 	if !enemy_scenes.has(enemy_type):
 		push_warning("Enemy_type %s not a scene." % enemy_type)
 		return
@@ -114,6 +143,26 @@ func new_spawn(enemy_type: String, the_level_data: LevelDataManager) -> void:
 	var the_enemy_instance = the_enemy_node.instantiate()
 	var spawn_position = get_random_spawn2(
 		the_enemy_instance.name,
-		the_level_data.spawn_positions[enemy_type])
+		the_level_data.spawn_positions[enemy_type]
+		)
+
+	if spawn_position == Vector2.ZERO:
+		push_warning("Failed to spawn enemy of type: %s due to invalid spawn position." % the_enemy_instance.name)
+		the_enemy_instance.queue_free()
+		return
+
+	var speed = get_random_speed2(
+	enemy_type,
+	the_level_data.speed_choices[enemy_type]
+	)
+
+	var time = get_random_time2(
+		enemy_type,
+		the_level_data.time_choices[enemy_type]
+		)
 
 	the_enemy_instance.global_position = spawn_position
+	the_enemy_instance.enemy_data.speed = speed
+	the_enemy_instance.enemy_data.spawn_time = time
+
+	bad_guy_node.add_child(the_enemy_instance)
