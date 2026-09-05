@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PlayerGlobalsManager" format=3 uid="uid://cvkxwt1cvgnoj"]
+
+[ext_resource type="Script" uid="uid://d2kew3tosx5lt" path="res://Managers/PlayerMangers/PlayerGlobals.gd" id="1_hebxp"]
+
+[resource]
+script = ExtResource("1_hebxp")
+metadata/_custom_type_script = "uid://d2kew3tosx5lt"

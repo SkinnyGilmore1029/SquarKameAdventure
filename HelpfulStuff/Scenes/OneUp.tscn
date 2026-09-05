@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://beamfpstveanw"]
+
+[ext_resource type="Texture2D" uid="uid://c44kwwsu8klcp" path="res://Assets/Pictures/HelpfulThings/1up.png" id="1_bonaj"]
+[ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_nbgci"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
+radius = 26.0
+height = 72.0
+
+[node name="OneUp" type="Node2D" unique_id=856018606]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1764925032]
+texture = ExtResource("1_bonaj")
+
+[node name="Collectable" parent="." unique_id=751867652 instance=ExtResource("2_nbgci")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable" unique_id=1593546318]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_830d4")
+debug_color = Color(0.8352941, 0.2901961, 0.654902, 0.6627451)

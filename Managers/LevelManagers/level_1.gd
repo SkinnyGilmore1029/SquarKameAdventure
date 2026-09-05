@@ -10,7 +10,7 @@ func _ready() -> void:
 	set_level_data()
 
 	EnemySpawner.which_enemy_types(level_data.enemy_types)
-	EnemySpawner.spawn_enemy(level_data.spawn_positions, level_data.speed_choices, level_data.time_choices, bad_guys_node)
+	EnemySpawner.spawn_enemy(level_data.spawn_positions, level_data.speed_choices, bad_guys_node)
 
 
 func set_level_data() -> void:
@@ -22,12 +22,6 @@ func set_level_data() -> void:
 	}
 	level_data.speed_choices = {
 	"Car": [200, 250, 300],
-	"Truck": [150, 200],
-	"Bus": [100, 150]
+	"Truck": [150, 200, 220],
+	"Bus": [75, 100, 150]
 	}
-	level_data.time_choices = {
-	"Car" : [1.0, 3.0, 5.0],
-	"Truck" : [3.0, 5.0, 7.0],
-	"Bus" : [8.0, 10.0, 12.0]
-	}
-

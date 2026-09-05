@@ -8,8 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://s77k1dxav3s7" path="res://Assets/Pictures/Backgrounds/StreetTileYellow.png" id="3_56mba"]
 [ext_resource type="Texture2D" uid="uid://bnhdd6knfyds5" path="res://Assets/Pictures/Backgrounds/StreetTileGrey.png" id="4_6x1dr"]
 [ext_resource type="Texture2D" uid="uid://bgpjojsmrcrd4" path="res://Assets/Pictures/Backgrounds/fences.png" id="6_5bruo"]
-[ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyHandler.tscn" id="9_hk3jt"]
+[ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyTimer.tscn" id="9_hk3jt"]
+[ext_resource type="Script" uid="uid://kjq6ga4s6bbm" path="res://Components/ComponentScripts/Car_timer.gd" id="10_j5pau"]
+[ext_resource type="Script" uid="uid://c4r2k28aeccf1" path="res://TheLevels/LevelScripts/bus_timer.gd" id="10_tw48r"]
+[ext_resource type="Script" uid="uid://cht1lfihi3wol" path="res://TheLevels/LevelScripts/truck_timer.gd" id="11_j5pau"]
 [ext_resource type="Script" uid="uid://cqbby0mjostp8" path="res://TheLevels/LevelScripts/despawnScript.gd" id="13_j5pau"]
+[ext_resource type="PackedScene" uid="uid://beamfpstveanw" path="res://HelpfulStuff/Scenes/OneUp.tscn" id="14_0d3qx"]
+[ext_resource type="PackedScene" uid="uid://23hif2xyochc" path="res://HelpfulStuff/Scenes/Key.tscn" id="15_ihg3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tylve"]
 resource_name = "Dirt"
@@ -171,11 +176,28 @@ tile_set = SubResource("TileSet_2otri")
 [node name="Level1_BadGuys" type="Node2D" parent="." unique_id=610942219]
 unique_name_in_owner = true
 
-[node name="EnemyTimer" parent="." unique_id=570641630 node_paths=PackedStringArray("bad_guys_node", "level_node") instance=ExtResource("9_hk3jt")]
+[node name="VehicleTimers" type="Node2D" parent="." unique_id=463620478]
+
+[node name="CarTimer" parent="VehicleTimers" unique_id=570641630 node_paths=PackedStringArray("bad_guys_node", "level_node") instance=ExtResource("9_hk3jt")]
 wait_time = 3.0
 autostart = true
-bad_guys_node = NodePath("../Level1_BadGuys")
-level_node = NodePath("..")
+script = ExtResource("10_j5pau")
+bad_guys_node = NodePath("../../Level1_BadGuys")
+level_node = NodePath("../..")
+
+[node name="BusTimer" parent="VehicleTimers" unique_id=318841700 node_paths=PackedStringArray("bad_guys_node", "level_node") instance=ExtResource("9_hk3jt")]
+wait_time = 8.0
+autostart = true
+script = ExtResource("10_tw48r")
+bad_guys_node = NodePath("../../Level1_BadGuys")
+level_node = NodePath("../..")
+
+[node name="TruckTimer" parent="VehicleTimers" unique_id=1746407699 node_paths=PackedStringArray("bad_guys_node", "level_node") instance=ExtResource("9_hk3jt")]
+wait_time = 5.0
+autostart = true
+script = ExtResource("11_j5pau")
+bad_guys_node = NodePath("../../Level1_BadGuys")
+level_node = NodePath("../..")
 
 [node name="CarDespawns" type="Node2D" parent="." unique_id=675678739]
 
@@ -186,11 +208,22 @@ collision_mask = 16
 script = ExtResource("13_j5pau")
 
 [node name="Despawn1Collision" type="CollisionShape2D" parent="CarDespawns/Despawn 1" unique_id=798672945]
-position = Vector2(-438, 90)
+position = Vector2(-451, 15)
 shape = SubResource("RectangleShape2D_guak4")
 
 [node name="Despawn2Collision" type="CollisionShape2D" parent="CarDespawns/Despawn 1" unique_id=726653403]
-position = Vector2(1497, 18)
+position = Vector2(1641, 12)
 shape = SubResource("RectangleShape2D_guak4")
 
+[node name="Helpful" type="Node2D" parent="." unique_id=1240140054]
+
+[node name="OneUp" parent="Helpful" unique_id=856018606 instance=ExtResource("14_0d3qx")]
+position = Vector2(117, 128)
+
+[node name="Key" parent="Helpful" unique_id=390543750 instance=ExtResource("15_ihg3y")]
+position = Vector2(952.99994, 170.99998)
+
+[connection signal="timeout" from="VehicleTimers/CarTimer" to="VehicleTimers/CarTimer" method="_on_timeout"]
+[connection signal="timeout" from="VehicleTimers/BusTimer" to="VehicleTimers/BusTimer" method="_on_timeout"]
+[connection signal="timeout" from="VehicleTimers/TruckTimer" to="VehicleTimers/TruckTimer" method="_on_timeout"]
 [connection signal="body_entered" from="CarDespawns/Despawn 1" to="CarDespawns/Despawn 1" method="_on_body_entered"]

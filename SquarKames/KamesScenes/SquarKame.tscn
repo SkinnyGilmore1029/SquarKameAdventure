@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cikc6nsg77fkk" path="res://SquarKames/KamesScripts/MainKame.gd" id="1_jgff5"]
 [ext_resource type="Texture2D" uid="uid://cedcubfbt5c25" path="res://Assets/Pictures/MainTurtle.png" id="2_g4hkm"]
+[ext_resource type="Resource" uid="uid://cvkxwt1cvgnoj" path="res://SquarKames/KameResource/MainKame.tres" id="2_tg3ie"]
 [ext_resource type="Script" uid="uid://cesu540wkrboy" path="res://Managers/State Machine Scripts/node_state_machine.gd" id="3_5wes8"]
 [ext_resource type="Script" uid="uid://vttho7q8vnla" path="res://SquarKames/KamesScripts/player_idle.gd" id="4_b5psh"]
 [ext_resource type="Script" uid="uid://d25nmhrsu5sfc" path="res://SquarKames/KamesScripts/Player_walk.gd" id="5_tg3ie"]
@@ -202,6 +203,7 @@ y_sort_enabled = true
 scale = Vector2(2.5, 2.5)
 collision_mask = 18
 script = ExtResource("1_jgff5")
+player_data = ExtResource("2_tg3ie")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=277971224]
 sprite_frames = SubResource("SpriteFrames_2otri")

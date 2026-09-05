@@ -8,13 +8,13 @@ func _on_process(_delta : float) -> void:
 
 
 func _on_physics_process(_delta : float) -> void:
-	if kame.player_direction == "up":
+	if kame.player_data.player_direction == "up":
 		animated_sprite.play('IdleUp')
-	if kame.player_direction == "down":
+	if kame.player_data.player_direction == "down":
 		animated_sprite.play('IdleDown')
-	if kame.player_direction == "left":
+	if kame.player_data.player_direction == "left":
 		animated_sprite.play('IdleLeft')
-	if kame.player_direction == "right":
+	if kame.player_data.player_direction == "right":
 		animated_sprite.play('IdleRight')
 
 func _on_next_transitions() -> void:

@@ -24,7 +24,7 @@ func _on_physics_process(_delta : float) -> void:
 
 
 
-	kame.velocity = moving * kame.speed
+	kame.velocity = moving * kame.player_data.speed
 	kame.move_and_slide()
 
 func _on_next_transitions() -> void:
@@ -40,12 +40,12 @@ func _on_exit() -> void:
 	animated_sprite.stop()
 
 func handle_kame_direction() -> String:
-	if kame.moving_direction == Vector2(1,0):
-		kame.player_direction = "right"
-	elif kame.moving_direction == Vector2(-1,0):
-		kame.player_direction = "left"
-	elif kame.moving_direction == Vector2(0,-1):
-		kame.player_direction = "up"
-	elif kame.moving_direction == Vector2(0,1):
-		kame.player_direction = "down"
-	return kame.player_direction
+	if kame.player_data.moving_direction == Vector2(1,0):
+		kame.player_data.player_direction = "right"
+	elif kame.player_data.moving_direction == Vector2(-1,0):
+		kame.player_data.player_direction = "left"
+	elif kame.player_data.moving_direction == Vector2(0,-1):
+		kame.player_data.player_direction = "up"
+	elif kame.player_data.moving_direction == Vector2(0,1):
+		kame.player_data.player_direction = "down"
+	return kame.player_data.player_direction

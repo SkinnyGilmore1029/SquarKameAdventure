@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://23hif2xyochc"]
+
+[ext_resource type="Texture2D" uid="uid://m5mdk3vckwus" path="res://Assets/Pictures/HelpfulThings/key.png" id="1_lxa0d"]
+[ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_yod21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_830d4"]
+size = Vector2(400, 150.00003)
+
+[node name="Key" type="Node2D" unique_id=390543750]
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915683669]
+texture = ExtResource("1_lxa0d")
+
+[node name="Collectable" parent="." unique_id=751867652 instance=ExtResource("2_yod21")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable" unique_id=581383500]
+position = Vector2(0, -4.9999948)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_830d4")
