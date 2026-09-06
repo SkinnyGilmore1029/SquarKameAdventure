@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.8", "Forward Plus")
 GameInput="*uid://yujxax8klej0"
 EnemySpawner="*uid://c1lj7fe1txxka"
 SignalHub="*uid://bclwcpkspmdp8"
+PlayerGlobals="*uid://d2kew3tosx5lt"
 
 [debug]
 

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bo2ya40ywl6ox"]
+
+[ext_resource type="Script" uid="uid://bt6v2khj73baf" path="res://UI_Screens/PlayerUI/Scripts/player_hud.gd" id="1_i15sm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_830d4"]
+bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb4qt"]
+bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
+
+[node name="PlayerHud" type="Control" unique_id=873887529]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i15sm")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1847948021]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_830d4")
+
+[node name="LivesHBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=862735383]
+layout_mode = 2
+
+[node name="LivesLabel" type="Label" parent="PanelContainer/LivesHBoxContainer" unique_id=1736070467]
+layout_mode = 2
+text = "Lives: "
+
+[node name="LifeCount" type="Label" parent="PanelContainer/LivesHBoxContainer" unique_id=366859308]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10"
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1835393744]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wb4qt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2" unique_id=569271331]
+layout_mode = 2
+alignment = 2
+
+[node name="LevelLabel" type="Label" parent="PanelContainer2/HBoxContainer" unique_id=294815580]
+layout_mode = 2
+text = "Level: "
+
+[node name="LevelNumberLabel" type="Label" parent="PanelContainer2/HBoxContainer" unique_id=1208431976]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"

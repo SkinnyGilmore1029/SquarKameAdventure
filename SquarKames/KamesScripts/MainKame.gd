@@ -2,7 +2,7 @@ class_name MainKame
 extends CharacterBody2D
 
 
-@export var player_data: PlayerGlobalsManager
+var player_data := PlayerGlobals
 
 
 func _ready() -> void:

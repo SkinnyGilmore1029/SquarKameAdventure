@@ -1,5 +1,5 @@
 class_name PlayerGlobalsManager
-extends Resource
+extends Node
 
 @export var players_lives: int = 10
 @export var players_current_level: int = 1
