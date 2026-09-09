@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://beamfpstveanw"]
 
 [ext_resource type="Texture2D" uid="uid://c44kwwsu8klcp" path="res://Assets/Pictures/HelpfulThings/1up.png" id="1_bonaj"]
+[ext_resource type="Script" uid="uid://ctjrsedy4uiho" path="res://HelpfulStuff/Scripts/one_up.gd" id="1_s5w63"]
 [ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_nbgci"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
@@ -9,6 +10,7 @@ height = 72.0
 
 [node name="OneUp" type="Node2D" unique_id=856018606]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_s5w63")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1764925032]
 texture = ExtResource("1_bonaj")

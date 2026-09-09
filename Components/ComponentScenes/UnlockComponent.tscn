@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cakrxc56i2ayx"]
+
+[node name="UnlockComponent" type="Area2D" unique_id=2014036868]
+collision_layer = 2

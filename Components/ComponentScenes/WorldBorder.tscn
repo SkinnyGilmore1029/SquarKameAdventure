@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bxruixlmj26yb"]
+
+[node name="WorldBorder" type="StaticBody2D" unique_id=1006647801]
+collision_layer = 64

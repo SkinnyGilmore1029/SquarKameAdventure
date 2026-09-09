@@ -44,6 +44,7 @@ enemy_data = ExtResource("2_corrj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1143417694]
 sprite_frames = SubResource("SpriteFrames_830d4")
 autoplay = "default"
+flip_h = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1709387944]
 scale = Vector2(0.8, 0.8)
