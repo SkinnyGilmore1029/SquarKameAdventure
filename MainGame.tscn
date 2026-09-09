@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0oq4upgy56xp" path="res://SquarKames/KamesScenes/SquarKame.tscn" id="1_3tbxw"]
 [ext_resource type="PackedScene" uid="uid://cwfs2ns82em0t" path="res://TheLevels/LevelScenes/Level1.tscn" id="1_e3m3f"]
+[ext_resource type="PackedScene" uid="uid://bo2ya40ywl6ox" path="res://UI_Screens/PlayerUI/Scenes/PlayerHud.tscn" id="3_ws5ob"]
 
 [node name="MainGame" type="Node2D" unique_id=899722064]
 
@@ -11,3 +12,11 @@
 
 [node name="MainKame" parent="." unique_id=2092719868 instance=ExtResource("1_3tbxw")]
 position = Vector2(178, 239)
+
+[node name="PlayerUI" type="Node" parent="." unique_id=357021717]
+
+[node name="PlayerHud" parent="PlayerUI" unique_id=873887529 instance=ExtResource("3_ws5ob")]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0

@@ -8,3 +8,4 @@ extends Node
 var player_direction: String
 var moving_direction: Vector2
 var speed: float = 200.0
+var spawn_position: Vector2

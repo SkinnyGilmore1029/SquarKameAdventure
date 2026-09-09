@@ -12,3 +12,4 @@ var lock_positions: Array[Vector2]
 var key_positions: Array[Vector2]
 var oneup_positions: Array[Vector2]
 var hint_positions: Array[Vector2]
+

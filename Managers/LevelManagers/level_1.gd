@@ -5,7 +5,6 @@ extends Node2D
 @onready var bad_guys_node = %Level1_BadGuys
 @export var level_data: LevelDataManager
 
-
 func _ready() -> void:
 	set_level_data()
 
@@ -21,7 +20,7 @@ func set_level_data() -> void:
 	"Bus": [Vector2(-233, -510)]
 	}
 	level_data.speed_choices = {
-	"Car": [200, 250, 300],
+	"Car": [250, 300, 350],
 	"Truck": [150, 200, 220],
 	"Bus": [75, 100, 150]
 	}

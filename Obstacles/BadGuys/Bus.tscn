@@ -52,3 +52,5 @@ polygon = PackedVector2Array(-198, -65, 132, -64, 137, -27, 212, -26, 212, 22, 1
 
 [node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=1013981072]
 polygon = PackedVector2Array(-198, -65, 132, -64, 137, -27, 212, -26, 212, 22, 180, 29, 193, 62, 162, 71, 160, 25, 96, 28, 110, 65, 76, 69, 73, 32, -110, 29, -93, 60, -119, 72, -180, 74, -170, 29, -201, 26)
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

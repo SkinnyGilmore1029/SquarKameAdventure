@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://bo0jek6xsl8en"]
 
+[ext_resource type="Script" uid="uid://bjkg54xigqsh4" path="res://Components/ComponentScripts/death_collsion.gd" id="1_ch0v6"]
+
 [node name="DeathCollsion" type="Area2D" unique_id=341762157]
+script = ExtResource("1_ch0v6")

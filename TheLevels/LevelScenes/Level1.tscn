@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cqbby0mjostp8" path="res://TheLevels/LevelScripts/despawnScript.gd" id="13_j5pau"]
 [ext_resource type="PackedScene" uid="uid://beamfpstveanw" path="res://HelpfulStuff/Scenes/OneUp.tscn" id="14_0d3qx"]
 [ext_resource type="PackedScene" uid="uid://23hif2xyochc" path="res://HelpfulStuff/Scenes/Key.tscn" id="15_ihg3y"]
+[ext_resource type="PackedScene" uid="uid://next43i6md1i" path="res://Components/ComponentScenes/Teleporter.tscn" id="16_bnivh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tylve"]
 resource_name = "Dirt"
@@ -169,10 +170,6 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAdAAAAAAACAAAAAAAeAAAAAAACAAAAAAAfAAAAAAACAAAAAAAgAAAAAAACAAAAAAAhAAAAAAACAAAAAAAiAAAAAAACAAAAAAAjAAAAAAACAAAAAAAkAAAAAAACAAAAAAAAAAAAAAACAAAAAAAlAAAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_2otri")
 
-[node name="Lock_Key" type="Node2D" parent="." unique_id=1946125127]
-
-[node name="Teleporter" type="Node2D" parent="." unique_id=1434830245]
-
 [node name="Level1_BadGuys" type="Node2D" parent="." unique_id=610942219]
 unique_name_in_owner = true
 
@@ -222,6 +219,9 @@ position = Vector2(117, 128)
 
 [node name="Key" parent="Helpful" unique_id=390543750 instance=ExtResource("15_ihg3y")]
 position = Vector2(952.99994, 170.99998)
+
+[node name="Teleporter" parent="Helpful" unique_id=1099793809 instance=ExtResource("16_bnivh")]
+position = Vector2(114, -722)
 
 [connection signal="timeout" from="VehicleTimers/CarTimer" to="VehicleTimers/CarTimer" method="_on_timeout"]
 [connection signal="timeout" from="VehicleTimers/BusTimer" to="VehicleTimers/BusTimer" method="_on_timeout"]

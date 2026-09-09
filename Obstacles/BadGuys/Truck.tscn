@@ -53,3 +53,5 @@ polygon = PackedVector2Array(-64, -94.66667, -88, -80, -90.66667, -46.666668, -1
 
 [node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=488397816]
 polygon = PackedVector2Array(-64, -94.66667, -88, -80, -90.66667, -46.666668, -122.66667, -42.666668, -122.66667, 38.666668, -92, 42.666668, -89.333336, 86.66667, -34.666668, 86.66667, -42.666668, 42.666668, 65.333336, 44, 65.333336, 88, 122.66667, 88, 121.333336, -94.66667)
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]
