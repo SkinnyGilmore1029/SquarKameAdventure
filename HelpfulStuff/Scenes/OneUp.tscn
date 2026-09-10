@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_nbgci"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
-radius = 26.0
-height = 72.0
+radius = 22.0
+height = 52.0
 
 [node name="OneUp" type="Node2D" unique_id=856018606]
+y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_s5w63")
 

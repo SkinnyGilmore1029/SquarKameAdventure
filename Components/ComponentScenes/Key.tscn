@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="3_xery3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_830d4"]
-size = Vector2(400, 150.00003)
+size = Vector2(320.00012, 70.00003)
 
 [node name="Key" type="Node2D" unique_id=390543750]
+y_sort_enabled = true
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_rujnx")
 
@@ -18,6 +19,6 @@ texture = ExtResource("2_ylx75")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable" unique_id=581383500]
-position = Vector2(0, -4.9999948)
-scale = Vector2(0.99999964, 0.99999964)
+position = Vector2(29.999973, 14.999992)
+scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_830d4")

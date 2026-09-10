@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bo2ya40ywl6ox" path="res://UI_Screens/PlayerUI/Scenes/PlayerHud.tscn" id="3_ws5ob"]
 
 [node name="MainGame" type="Node2D" unique_id=899722064]
+y_sort_enabled = true
 
 [node name="Levels" type="Node2D" parent="." unique_id=801411998]
+y_sort_enabled = true
 
 [node name="Level1" parent="Levels" unique_id=1014654684 instance=ExtResource("1_e3m3f")]
 

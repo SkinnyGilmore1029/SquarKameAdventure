@@ -40,7 +40,7 @@ func check_parent() -> void:
 				return
 
 			# Add the One Up to the players live count.
-			PlayerGlobals.players_lives +=1
+			SignalHub.one_up_global.emit()
 
 			#Use the new life count to emit to the hud.
 			signal_to_emit.emit(PlayerGlobals.players_lives)
