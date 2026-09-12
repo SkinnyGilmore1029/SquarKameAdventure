@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://beamfpstveanw" path="res://HelpfulStuff/Scenes/OneUp.tscn" id="14_0d3qx"]
 [ext_resource type="PackedScene" uid="uid://23hif2xyochc" path="res://Components/ComponentScenes/Key.tscn" id="15_ihg3y"]
 [ext_resource type="PackedScene" uid="uid://next43i6md1i" path="res://Components/ComponentScenes/Teleporter.tscn" id="16_bnivh"]
+[ext_resource type="PackedScene" uid="uid://d0pnjnqq2vpiv" path="res://HelpfulStuff/Scenes/HintFrog.tscn" id="16_pswb0"]
 [ext_resource type="PackedScene" uid="uid://bqfylpyadho8d" path="res://Components/ComponentScenes/Lock.tscn" id="17_0s6ns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tylve"]
@@ -600,6 +601,10 @@ shape = SubResource("RectangleShape2D_guak4")
 
 [node name="OneUp" parent="Helpful" unique_id=856018606 instance=ExtResource("14_0d3qx")]
 position = Vector2(419, 66)
+
+[node name="HintFrog" parent="Helpful" unique_id=1870643998 instance=ExtResource("16_pswb0")]
+position = Vector2(227, 721)
+scale = Vector2(0.5, 0.5)
 
 [node name="Locks" type="Node2D" parent="." unique_id=1063704526]
 

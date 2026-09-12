@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://d0pnjnqq2vpiv"]
+
+[ext_resource type="Texture2D" uid="uid://dny8yee5kdgl8" path="res://Assets/Pictures/Npc/Hint.png" id="1_30av4"]
+[ext_resource type="Script" uid="uid://d2et8nbqmjlw3" path="res://HelpfulStuff/Scripts/Hint.gd" id="2_xepa7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xepa7"]
+bg_color = Color(0.6668774, 0.47337306, 0.9917038, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.790511, 0.67296195, 0.9920277, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_830d4"]
+radius = 24.186773
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
+radius = 42.0
+height = 124.0
+
+[node name="HintFrog" type="Node2D" unique_id=1870643998]
+y_sort_enabled = true
+
+[node name="HintPanel" type="PanelContainer" parent="." unique_id=2030333351]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+offset_left = -73.0
+offset_top = -109.0
+offset_right = 67.0
+offset_bottom = -14.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xepa7")
+
+[node name="Label" type="Label" parent="HintPanel" unique_id=2096330841]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35193086, 0.8404114, 0.76672995, 1)
+text = "Find the Key to 
+advance to the 
+next area."
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=794670284]
+texture = ExtResource("1_30av4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1595832676]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1913672582]
+position = Vector2(-5, 35)
+shape = SubResource("CircleShape2D_830d4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1034430276]
+collision_layer = 4
+script = ExtResource("2_xepa7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=499702192]
+position = Vector2(-6, 28)
+shape = SubResource("CapsuleShape2D_830d4")
+debug_color = Color(0.74753356, 0.29021192, 0.6677109, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

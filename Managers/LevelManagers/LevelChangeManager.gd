@@ -1,21 +1,32 @@
 class_name LevelChangeManager
 extends Node
 
+#Maybe and enum might be better or switch keys to int so i can add 1 to the current level
+var level_scenes: Dictionary ={
+	"Level1" : "res://TheLevels/LevelScenes/Level1.tscn",
+	"Level2" : "res://TheLevels/LevelScenes/Level2.tscn"
+}
 
-func change_level(new_level: PackedScene, spawn_location: Vector2) -> void:
-    #Get the Level Parent Node
-    var levelsnode = get_node("/root/MainGame/Levels")
 
-    #Delete current level node
-    if levelsnode.get_child_count() > 0:
-        levelsnode.get_child(0).queue_free()
+#Todo
+#change new_level to int
+#get current level and add one to it for new level?
+func change_level(new_level: String, spawn_location: Vector2) -> void:
+	#Get the Level Parent Node
+	var levelsnode = get_node("/root/MainGame/Levels")
 
-    #Instantiate the New Level.
-    var level_going_to := new_level.instantiate()
+	#Delete current level node
+	if levelsnode.get_child_count() > 0:
+		levelsnode.get_child(0).queue_free()
 
-    #Put the new level in the Levels Node in MainGame.
-    levelsnode.add_child(level_going_to)
-    PlayerGlobals.spawn_position = spawn_location
+	#Instantiate the New Level.
+	var next_level := load(level_scenes[new_level])
+	var level_going_to = next_level.instantiate()
+
+	#Put the new level in the Levels Node in MainGame.
+	levelsnode.add_child(level_going_to)
+	PlayerGlobals.spawn_position = spawn_location
+	SignalHub.changed_levels.emit(level_going_to.name)
 """
 
 func change_area(new_area :PackedScene, spawn_location :Vector2) -> void:
