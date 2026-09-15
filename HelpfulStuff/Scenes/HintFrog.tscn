@@ -15,6 +15,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xepa7"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_830d4"]
 radius = 24.186773
 
@@ -44,6 +46,7 @@ next area."
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794670284]
+material = SubResource("ShaderMaterial_xepa7")
 texture = ExtResource("1_30av4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1595832676]
