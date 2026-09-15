@@ -1,6 +1,9 @@
 class_name LevelDataManager
 extends Resource
 
+@export var send_to_level: int
+@export var spawn_in_level_at: Vector2
+
 
 var enemy_types: Array[String]
 var spawn_positions: Dictionary[String, Array]
