@@ -13,7 +13,7 @@ var camera_limits: Dictionary = {
 	},
 	"Level2" : {
 		"Top" : 0,
-		"Bottom" : 800,
+		"Bottom" : 815,
 		"Left" : 0,
 		"Right" : 2400
 	}

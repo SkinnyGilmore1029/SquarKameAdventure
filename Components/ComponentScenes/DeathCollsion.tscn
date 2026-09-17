@@ -3,4 +3,6 @@
 [ext_resource type="Script" uid="uid://bjkg54xigqsh4" path="res://Components/ComponentScripts/death_collsion.gd" id="1_ch0v6"]
 
 [node name="DeathCollsion" type="Area2D" unique_id=341762157]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_ch0v6")

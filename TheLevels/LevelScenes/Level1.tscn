@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cwfs2ns82em0t"]
 
-[ext_resource type="Script" uid="uid://dw5vwgacpu6sb" path="res://Managers/LevelManagers/level_1.gd" id="1_tylve"]
+[ext_resource type="Script" uid="uid://dw5vwgacpu6sb" path="res://TheLevels/LevelScripts/level_1.gd" id="1_tylve"]
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="2_1bvhh"]
 [ext_resource type="Resource" uid="uid://46n768njw4yp" path="res://TheLevels/LevelResources/Level1.tres" id="2_3e3qq"]
 [ext_resource type="TileSet" uid="uid://baf6c786nrfvt" path="res://Resources/TileSets/GrassTiles.tres" id="2_dtnyl"]

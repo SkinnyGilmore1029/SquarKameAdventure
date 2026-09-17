@@ -20,4 +20,4 @@ signal player_died
 signal check_point(parent_pos)
 
 signal changed_levels(new_level)
-
+signal change_level_number(new_level)

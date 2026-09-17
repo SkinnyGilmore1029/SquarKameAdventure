@@ -1,4 +1,4 @@
-class_name EnemyLogic
+class_name RespawningEnemyLogic
 extends CharacterBody2D
 
 
@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 
 
-
+#Probably need to but the directions in the data to use different enemies might spawn going up and down.
 @onready var vehicle_speed = enemy_data.speed
 
 var direction: Vector2 = Vector2.ZERO
