@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://fmn5jj0te8hq"]
+
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_xlpda"]
+[ext_resource type="Script" uid="uid://baaejwjfn4108" path="res://UI_Screens/ScreenScripts/TitleScreenControl.gd" id="2_pcufe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev8nc"]
+bg_color = Color(0.05490196, 0.72156864, 0.5058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlpda"]
+bg_color = Color(0.9607843, 0.96862745, 0.9647059, 1)
+
+[node name="TitleScreen" type="Control" unique_id=929340160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBackground" type="PanelContainer" parent="." unique_id=867765856]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 358.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ev8nc")
+
+[node name="GameTitleVBox" type="VBoxContainer" parent="." unique_id=2022837477]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 358.0
+
+[node name="GameTitleMargins" type="MarginContainer" parent="GameTitleVBox" unique_id=1468205687]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="GameTitle" type="Label" parent="GameTitleVBox/GameTitleMargins" unique_id=1916224179]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0627451, 0.16470589, 0.2627451, 1)
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_xlpda")
+text = "SquareKame Adventure"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TheButtons" type="Control" parent="." unique_id=1071197118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -32.0
+offset_right = 320.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xlpda")
+script = ExtResource("2_pcufe")
+
+[node name="ButtonsVbox" type="VBoxContainer" parent="TheButtons" unique_id=317295453]
+layout_mode = 0
+offset_left = 230.5
+offset_right = 409.5
+offset_bottom = 180.0
+theme_override_constants/separation = 8
+
+[node name="NewGameButton" type="Button" parent="TheButtons/ButtonsVbox" unique_id=9691766]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game
+"
+
+[node name="LevelSelectButton" type="Button" parent="TheButtons/ButtonsVbox" unique_id=1177780890]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level Select
+"
+
+[node name="OptionsButton" type="Button" parent="TheButtons/ButtonsVbox" unique_id=1702552003]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options
+"
+
+[node name="ExitGameButton" type="Button" parent="TheButtons/ButtonsVbox" unique_id=1120815161]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit Game
+
+"
+
+[connection signal="pressed" from="TheButtons/ButtonsVbox/NewGameButton" to="TheButtons" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="TheButtons/ButtonsVbox/LevelSelectButton" to="TheButtons" method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="TheButtons/ButtonsVbox/OptionsButton" to="TheButtons" method="_on_options_button_pressed"]
+[connection signal="pressed" from="TheButtons/ButtonsVbox/ExitGameButton" to="TheButtons" method="_on_exit_game_button_pressed"]

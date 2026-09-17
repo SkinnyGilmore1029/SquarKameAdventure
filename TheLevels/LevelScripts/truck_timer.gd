@@ -8,5 +8,5 @@ var spawn_vehicle: String = "Truck"
 
 func _on_timeout() -> void:
 	EnemySpawner.new_spawn(spawn_vehicle, level_node.level_data, bad_guys_node)
-	wait_time = randi_range(5,8)
+	wait_time = randi_range(2,4)
 	start()
