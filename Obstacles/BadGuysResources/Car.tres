@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cpenwrr7gqn1x"]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b3gafkonp7w4"]
 
-[ext_resource type="Script" uid="uid://cx5dmbigmkjqc" path="res://Managers/EnemyManager/EnemyData.gd" id="1_sme4d"]
+[ext_resource type="Script" uid="uid://bcmycs6es7mw0" path="res://Managers/EnemyManager/EnemyData.gd" id="1_sme4d"]
 
 [resource]
 script = ExtResource("1_sme4d")
 enemy_type = "Car"
-metadata/_custom_type_script = "uid://cx5dmbigmkjqc"
+metadata/_custom_type_script = "uid://bcmycs6es7mw0"

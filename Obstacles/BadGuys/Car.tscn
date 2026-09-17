@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3e4vtiri4ka1"]
 
 [ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/RespawningEnemyLogic.gd" id="1_57mkf"]
-[ext_resource type="Resource" uid="uid://cpenwrr7gqn1x" path="res://Obstacles/BadGuysResources/Car.tres" id="2_43act"]
+[ext_resource type="Resource" uid="uid://b3gafkonp7w4" path="res://Obstacles/BadGuysResources/Car.tres" id="2_43act"]
 [ext_resource type="Texture2D" uid="uid://d04fgxddcmhyk" path="res://Assets/Pictures/Bad Guys/car sheet.png" id="2_57mkf"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="3_43act"]
 
