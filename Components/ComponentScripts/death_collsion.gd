@@ -6,7 +6,6 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is MainKame:
-		print("hi")
 		#This signal is connected in MainKame.gd
 		#This has to be called first to keep the PlayersGlobals synced with the player hub.
 		SignalHub.player_died.emit()
