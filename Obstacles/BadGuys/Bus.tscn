@@ -44,10 +44,6 @@ enemy_data = ExtResource("2_nfbn6")
 sprite_frames = SubResource("SpriteFrames_830d4")
 autoplay = "default"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=362402050]
-scale = Vector2(0.8, 0.8)
-polygon = PackedVector2Array(-198, -65, 132, -64, 137, -27, 212, -26, 212, 22, 180, 29, 193, 62, 162, 71, 160, 25, 96, 28, 110, 65, 76, 69, 73, 32, -110, 29, -93, 60, -119, 72, -180, 74, -170, 29, -201, 26)
-
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("4_nfbn6")]
 
 [node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=1013981072]

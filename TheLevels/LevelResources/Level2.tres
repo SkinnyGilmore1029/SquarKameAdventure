@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelDataManager" format=3 uid="uid://coong547jomil"]
+
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="1_reakf"]
+
+[resource]
+script = ExtResource("1_reakf")
+send_to_level = 3
+spawn_in_level_at = Vector2(200, 200)
+metadata/_custom_type_script = "uid://cxmdrreflhaok"

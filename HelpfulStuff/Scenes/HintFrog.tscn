@@ -38,9 +38,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xepa7")
 [node name="Label" type="Label" parent="HintPanel" unique_id=2096330841]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.35193086, 0.8404114, 0.76672995, 1)
-text = "Find the Key to 
-advance to the 
-next area."
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794670284]

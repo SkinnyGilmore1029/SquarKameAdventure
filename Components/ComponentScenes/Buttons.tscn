@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dqy7fgxcq3p71"]
+
+[ext_resource type="Script" uid="uid://bd0wkqlm4pkv1" path="res://Components/ComponentScripts/buttons.gd" id="1_5syn3"]
+[ext_resource type="Texture2D" uid="uid://psqdl0k2tkii" path="res://Assets/Pictures/HelpfulThings/Star.png" id="1_xekbu"]
+[ext_resource type="Texture2D" uid="uid://dhxwpsh5upxs0" path="res://Assets/Pictures/HelpfulThings/Star2.png" id="2_5syn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbf0j"]
+atlas = ExtResource("1_xekbu")
+region = Rect2(0, 0, 418, 283)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvash"]
+atlas = ExtResource("2_5syn3")
+region = Rect2(0, 0, 418, 283)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cm76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbf0j")
+}],
+"loop": 1,
+"name": &"NotPushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvash")
+}],
+"loop": 1,
+"name": &"Pushed",
+"speed": 5.0
+}]
+
+[node name="Buttons" type="Node2D" unique_id=1755244002]
+script = ExtResource("1_5syn3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=997535591]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_1cm76")
+animation = &"NotPushed"
+autoplay = "NotPushed"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1007710430]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=606026509]
+polygon = PackedVector2Array(-40, -15, -14, -15, 1, -28, 15, -15, 40, -15, 29, -1, 41, 12, 15, 12, 1, 26, -14, 13, -40, 13, -27, -1, -40, -15)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

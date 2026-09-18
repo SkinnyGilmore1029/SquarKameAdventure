@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://cwbpmvu0yhhaf"]
 
+[ext_resource type="Script" uid="uid://cdblqtldayeok" path="res://Managers/EnemyManager/StaticEnemyLogic.gd" id="1_uk60s"]
 [ext_resource type="Texture2D" uid="uid://b1uqgi6emo4ne" path="res://Assets/Pictures/Bad Guys/Gator_sheet.png" id="1_w4whe"]
+[ext_resource type="Script" uid="uid://bcmycs6es7mw0" path="res://Managers/EnemyManager/EnemyData.gd" id="2_a31ob"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_uk60s"]
+[ext_resource type="Script" uid="uid://bwnpbw107gle6" path="res://Obstacles/BadGuys/GatorTimer.gd" id="5_ipgp4"]
+
+[sub_resource type="Resource" id="Resource_ipgp4"]
+script = ExtResource("2_a31ob")
+enemy_type = "Gator"
+speed = 150
+speed_offset = 50
+metadata/_custom_type_script = "uid://bcmycs6es7mw0"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a31ob"]
 atlas = ExtResource("1_w4whe")
@@ -25,23 +35,39 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3cfby"]
+radius = 43.011627
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1tvh"]
 radius = 46.0
 height = 98.0
 
 [node name="Gator" type="CharacterBody2D" unique_id=435176561]
 collision_layer = 16
-collision_mask = 3
+collision_mask = 131
+script = ExtResource("1_uk60s")
+enemy_data = SubResource("Resource_ipgp4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=190425903]
 sprite_frames = SubResource("SpriteFrames_6qb42")
 autoplay = "default"
 frame_progress = 0.79881734
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=457668997]
+position = Vector2(7, -6)
+shape = SubResource("CircleShape2D_3cfby")
+debug_color = Color(0, 0.2, 0.69803923, 0.6117647)
+
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_uk60s")]
 
 [node name="DeathCollision" type="CollisionShape2D" parent="DeathCollsion" unique_id=656633138]
-position = Vector2(6, -6)
+position = Vector2(8, -5)
 shape = SubResource("CapsuleShape2D_q1tvh")
 
+[node name="Timer" type="Timer" parent="." unique_id=63255188]
+wait_time = 4.0
+autostart = true
+script = ExtResource("5_ipgp4")
+
 [connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -13,6 +13,7 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	if self.global_position.x < 0:
+		enemy_data.direction = "Right"
 		direction = Vector2.RIGHT
 		self.scale.x = -1
 		if enemy_data.enemy_type == "Bus":
@@ -25,3 +26,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = direction * enemy_data.speed
 	move_and_slide()
+
+
+func get_directions(pos: Vector2) -> void:
+	if pos.x < 0:
+		enemy_data.direction = "Right"
+		self.scale.x =1
+	else:
+		if enemy_data.enemy_type == "Bus":
+			self.scale.x = 1
