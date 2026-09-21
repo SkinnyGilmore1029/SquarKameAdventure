@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cedcubfbt5c25"
-path="res://.godot/imported/MainTurtle.png-73b62f72cadaad115804e50e363a487e.ctex"
+uid="uid://bratfod7k2l68"
+path="res://.godot/imported/OrangeKame.png-c2d1341962bf5aa2772fc106c1ab62a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/MainTurtle.png"
-dest_files=["res://.godot/imported/MainTurtle.png-73b62f72cadaad115804e50e363a487e.ctex"]
+source_file="res://Assets/Pictures/Player/OrangeKame.png"
+dest_files=["res://.godot/imported/OrangeKame.png-c2d1341962bf5aa2772fc106c1ab62a7.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d08ovpxqdl210"]
+
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_6l24j"]
+[ext_resource type="Texture2D" uid="uid://6pnvljdmtnm5" path="res://Assets/Pictures/Player/PurpleKame.png" id="1_s4ky7"]
+[ext_resource type="Texture2D" uid="uid://cedcubfbt5c25" path="res://Assets/Pictures/Player/MainTurtle.png" id="2_1bt6t"]
+[ext_resource type="Texture2D" uid="uid://bratfod7k2l68" path="res://Assets/Pictures/Player/OrangeKame.png" id="2_uuq0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bt6t"]
+bg_color = Color(0.11695405, 0.66239965, 0.811724, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1bt6t"]
+color = Color(1, 1, 1, 1)
+grow_begin = -138.0
+grow_end = -138.0
+thickness = 9
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4ky7"]
+atlas = ExtResource("1_s4ky7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bt6t"]
+atlas = ExtResource("2_1bt6t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l24j"]
+atlas = ExtResource("2_uuq0h")
+region = Rect2(0, 0, 16, 16)
+
+[node name="KameSelect" type="Node2D" unique_id=355618671]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1314130651]
+offset_right = 641.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bt6t")
+
+[node name="TitleContainer" type="PanelContainer" parent="PanelContainer" unique_id=1092132221]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/TitleContainer" unique_id=2000084302]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/TitleContainer/VBoxContainer" unique_id=1563787839]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 37
+text = "Select Your Kame!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/TitleContainer/VBoxContainer" unique_id=107458219]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_1bt6t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1248749095]
+layout_mode = 2
+theme = ExtResource("1_6l24j")
+theme_override_constants/separation = 36
+
+[node name="PurpleKameContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=603245349]
+layout_mode = 2
+size_flags_vertical = 4
+offset_transform_position = Vector2(0, 58)
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/PurpleKameContainer" unique_id=902053223]
+custom_maximum_size = Vector2(181, 181)
+layout_mode = 2
+texture = SubResource("AtlasTexture_s4ky7")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/PurpleKameContainer" unique_id=838003347]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "PurpleKame"
+
+[node name="GreenKameContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=784260997]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/GreenKameContainer" unique_id=731005375]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1bt6t")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/GreenKameContainer" unique_id=1952855811]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "GreenKame"
+
+[node name="OrangeKameContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1839378544]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/OrangeKameContainer" unique_id=404817614]
+custom_maximum_size = Vector2(181, 181)
+layout_mode = 2
+texture = SubResource("AtlasTexture_6l24j")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/OrangeKameContainer" unique_id=2052199453]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "OrangeKame"

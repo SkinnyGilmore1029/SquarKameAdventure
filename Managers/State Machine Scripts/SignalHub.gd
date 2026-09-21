@@ -12,8 +12,9 @@ signal one_up_global
 
 
 signal key_collected(new_count)
+signal change_key_count(new_count)
 
-signal key_used(new_count)
+signal key_used
 
 signal player_died
 
@@ -23,3 +24,4 @@ signal changed_levels(new_level)
 signal change_level_number(new_level)
 
 signal button_pushed_level2(button_node,parent_node)
+

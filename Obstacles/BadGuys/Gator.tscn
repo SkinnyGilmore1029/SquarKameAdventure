@@ -65,7 +65,7 @@ position = Vector2(8, -5)
 shape = SubResource("CapsuleShape2D_q1tvh")
 
 [node name="Timer" type="Timer" parent="." unique_id=63255188]
-wait_time = 4.0
+wait_time = 3.5
 autostart = true
 script = ExtResource("5_ipgp4")
 

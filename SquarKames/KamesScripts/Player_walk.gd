@@ -6,6 +6,13 @@ extends NodeState
 
 var move_direction: Vector2
 
+var the_moving_states: Dictionary = {
+	"up" :"MovingUp",
+	"down" : "MovingDown",
+	"left" : "MovingLeft",
+	"right" : "MovingRight"
+}
+
 func _on_process(_delta : float) -> void:
 	pass
 
@@ -13,14 +20,10 @@ func _on_process(_delta : float) -> void:
 func _on_physics_process(_delta : float) -> void:
 	var moving: Vector2 = GameInputManager.movement_input(kame)
 	var facing_direction: String = handle_kame_direction()
-	if facing_direction == "up":
-		animated_sprite.play('MovingUp')
-	elif facing_direction == "down":
-		animated_sprite.play('MovingDown')
-	elif facing_direction == "left":
-		animated_sprite.play('MovingLeft')
-	elif facing_direction == "right":
-		animated_sprite.play('MovingRight')
+	if facing_direction not in the_moving_states:
+		push_warning("%s is not in the_moving_state check Play_walk.gd" % facing_direction)
+		animated_sprite.play(the_moving_states["up"])
+	animated_sprite.play(the_moving_states[facing_direction])
 
 
 
@@ -40,12 +43,13 @@ func _on_exit() -> void:
 	animated_sprite.stop()
 
 func handle_kame_direction() -> String:
-	if kame.player_data.moving_direction == Vector2(1,0):
-		kame.player_data.player_direction = "right"
-	elif kame.player_data.moving_direction == Vector2(-1,0):
-		kame.player_data.player_direction = "left"
-	elif kame.player_data.moving_direction == Vector2(0,-1):
-		kame.player_data.player_direction = "up"
-	elif kame.player_data.moving_direction == Vector2(0,1):
-		kame.player_data.player_direction = "down"
+	var input_direction := kame.player_data.moving_direction
+	if input_direction == Vector2.ZERO:
+		return kame.player_data.player_direction
+
+	if abs(input_direction.x) > abs(input_direction.y):
+		kame.player_data.player_direction = "right" if input_direction.x > 0 else "left"
+	else:
+		kame.player_data.player_direction = "down" if input_direction.y > 0 else "up"
+
 	return kame.player_data.player_direction

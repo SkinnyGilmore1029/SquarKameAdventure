@@ -13,7 +13,7 @@ func change_level(new_level: int, spawn_location: Vector2) -> void:
 	#check the dictionary first.
 	#don't waste time making variables if invalid entry.
 	if new_level not in level_scenes:
-		push_warning("new_level %d not in level_scenes dictionary in LevelChangeManger.gd." % new_level)
+		push_warning("Level %d not in level_scenes dictionary in LevelChangeManger.gd." % new_level)
 		return
 
 	#Get the Level Parent Node

@@ -25,5 +25,5 @@ func set_level_data() -> void:
 	level_data.speed_choices = {
 	"Car": [250, 300, 350],
 	"Truck": [150, 200, 220],
-	"Bus": [75, 100, 150]
+	"Bus": [100, 125, 175]
 	}
