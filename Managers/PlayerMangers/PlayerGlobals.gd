@@ -7,7 +7,7 @@ extends Node
 
 var player_direction: String = "up"
 var moving_direction: Vector2
-var speed: float = 200.0
+var speed: float = 230.0
 var spawn_position: Vector2
 
 var key_count: int = 0

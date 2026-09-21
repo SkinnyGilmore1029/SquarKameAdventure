@@ -21,6 +21,7 @@ EnemySpawner="*uid://c1lj7fe1txxka"
 SignalHub="*uid://bclwcpkspmdp8"
 PlayerGlobals="*uid://d2kew3tosx5lt"
 LevelChange="*uid://dhr757wnkrx2s"
+GameState="*uid://dqv0fkcoviuf4"
 
 [debug]
 

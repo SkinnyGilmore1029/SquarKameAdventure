@@ -17,7 +17,7 @@ func _ready() -> void:
 			%OptionsButton.grab_focus()
 
 func _on_new_game_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainGame.tscn")
+	get_tree().change_scene_to_file("res://UI_Screens/Screens/KameSelect.tscn")
 
 func _on_level_select_button_pressed() -> void:
 	last_screen = "Level Select"

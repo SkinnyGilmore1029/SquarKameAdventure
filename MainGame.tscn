@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://hplj1vo1ekeb"]
 
-[ext_resource type="PackedScene" uid="uid://c0oq4upgy56xp" path="res://SquarKames/KamesScenes/SquarKame.tscn" id="1_3tbxw"]
+[ext_resource type="Script" uid="uid://dqua7ocyy3v8b" path="res://Managers/State Machine Scripts/MainGame.gd" id="1_bqqt8"]
 [ext_resource type="PackedScene" uid="uid://cwfs2ns82em0t" path="res://TheLevels/LevelScenes/Level1.tscn" id="1_e3m3f"]
 [ext_resource type="PackedScene" uid="uid://bo2ya40ywl6ox" path="res://UI_Screens/PlayerUI/Scenes/PlayerHud.tscn" id="3_ws5ob"]
 
 [node name="MainGame" type="Node2D" unique_id=899722064]
 y_sort_enabled = true
+script = ExtResource("1_bqqt8")
 
 [node name="Levels" type="Node2D" parent="." unique_id=801411998]
 y_sort_enabled = true
 
 [node name="Level1" parent="Levels" unique_id=1014654684 instance=ExtResource("1_e3m3f")]
 
-[node name="MainKame" parent="." unique_id=2092719868 instance=ExtResource("1_3tbxw")]
-position = Vector2(178, 239)
+[node name="PlayerNode" type="Node2D" parent="." unique_id=285987951]
+y_sort_enabled = true
 
 [node name="PlayerUI" type="Node" parent="." unique_id=357021717]
 
