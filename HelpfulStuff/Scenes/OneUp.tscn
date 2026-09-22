@@ -27,3 +27,4 @@ debug_color = Color(0.8352941, 0.2901961, 0.654902, 0.6627451)
 
 [node name="PickUpSound" type="AudioStreamPlayer" parent="." unique_id=1364492086]
 stream = ExtResource("4_k8eku")
+volume_db = -15.0

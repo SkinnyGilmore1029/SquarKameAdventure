@@ -75,5 +75,9 @@ func check_parent() -> void:
 	#Emit the signal with the arguments.
 	collectable_signal.emit(make_argument)
 
+	#play the sound
+	#skip it if it does not exist
+	AudioBus.play_sound(collectable_name)
+
 	# Free the collectable.
 	get_parent().queue_free()
