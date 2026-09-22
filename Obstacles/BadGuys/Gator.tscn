@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1uqgi6emo4ne" path="res://Assets/Pictures/Bad Guys/Gator_sheet.png" id="1_w4whe"]
 [ext_resource type="Script" uid="uid://bcmycs6es7mw0" path="res://Managers/EnemyManagers/EnemyData.gd" id="2_a31ob"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_uk60s"]
-[ext_resource type="Script" uid="uid://bwnpbw107gle6" path="res://Obstacles/BadGuys/GatorTimer.gd" id="5_ipgp4"]
+[ext_resource type="Script" uid="uid://bwnpbw107gle6" path="res://TheLevels/LevelScripts/Level2/GatorTimer.gd" id="5_ipgp4"]
 
 [sub_resource type="Resource" id="Resource_ipgp4"]
 script = ExtResource("2_a31ob")
