@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mefm3f4b8a3m"]
 
-[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManager/RespawningEnemyLogic.gd" id="1_gcn3x"]
+[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManagers/RespawningEnemyLogic.gd" id="1_gcn3x"]
 [ext_resource type="Resource" uid="uid://b3bkb2r3j6itk" path="res://Obstacles/BadGuysResources/Truck.tres" id="2_corrj"]
 [ext_resource type="Texture2D" uid="uid://0pbqflqr4pbn" path="res://Assets/Pictures/Bad Guys/Truck_sheet.png" id="3_corrj"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="4_d28mh"]

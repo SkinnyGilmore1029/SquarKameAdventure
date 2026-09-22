@@ -3,7 +3,8 @@ extends Node
 
 var last_title_selection: String
 var current_level: int
-var continuing_from_game_over:bool = false
+var continuing_from_game_over: bool = false
+var picking_level: bool = false
 var level_going_to: int
 var level_selected: int
 

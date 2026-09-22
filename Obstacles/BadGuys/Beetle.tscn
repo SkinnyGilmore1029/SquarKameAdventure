@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://f0y4orut2fvf"]
 
-[ext_resource type="Script" uid="uid://cdblqtldayeok" path="res://Managers/EnemyManager/StaticEnemyLogic.gd" id="1_6iyog"]
+[ext_resource type="Script" uid="uid://cdblqtldayeok" path="res://Managers/EnemyManagers/StaticEnemyLogic.gd" id="1_6iyog"]
 [ext_resource type="Texture2D" uid="uid://bg7pbptq3wj1y" path="res://Assets/Pictures/Bad Guys/Beetle.png" id="1_gc4h4"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_6pdvy"]
 [ext_resource type="Resource" uid="uid://71y5eg42q3f1" path="res://Obstacles/BadGuysResources/Beetle.tres" id="2_sctke"]

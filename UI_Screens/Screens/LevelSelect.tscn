@@ -4,6 +4,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lh17"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gmwg"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="LevelSelect" type="Control" unique_id=1386466755]
 layout_mode = 3
 anchors_preset = 15
@@ -13,29 +16,49 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i71mx")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1472966889]
+[node name="ScreenBackground" type="PanelContainer" parent="." unique_id=1472966889]
 layout_mode = 0
-offset_right = 639.0
-offset_bottom = 356.0
+offset_right = 637.0
+offset_bottom = 358.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8lh17")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1347538240]
+[node name="TitleContainer" type="PanelContainer" parent="." unique_id=1311439051]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
+offset_left = -2.0
+offset_right = 238.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3gmwg")
+
+[node name="TitleLabel" type="Label" parent="TitleContainer" unique_id=470089909]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SELECT A LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TheButtons" type="VBoxContainer" parent="." unique_id=1347538240]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.439
 anchor_right = 0.5
-offset_left = -165.0
-offset_right = 165.0
-offset_bottom = 58.0
+anchor_bottom = 0.439
+offset_left = -166.0
+offset_top = -0.040008545
+offset_right = 164.0
+offset_bottom = 32.95999
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1677270688]
+[node name="Level2Button" type="Button" parent="TheButtons" unique_id=2142611508]
+unique_name_in_owner = true
 layout_mode = 2
-text = "COMING SOON STILL WORK IN PROGRESS!!"
+text = "Level2"
 
-[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=2004032486]
+[node name="BackButton" type="Button" parent="TheButtons" unique_id=2004032486]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back to TitleScreen"
 
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TheButtons/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="TheButtons/BackButton" to="." method="_on_back_button_pressed"]

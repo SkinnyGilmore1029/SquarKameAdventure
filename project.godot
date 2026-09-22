@@ -14,6 +14,10 @@ config/name="SquareKameAdventure"
 run/main_scene="uid://fmn5jj0te8hq"
 config/features=PackedStringArray("4.8", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 GameInput="*uid://yujxax8klej0"

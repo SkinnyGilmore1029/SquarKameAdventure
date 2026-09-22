@@ -8,16 +8,26 @@ var kame_selection: Dictionary[String, String] = {
 }
 
 @onready var player_node: Node2D = $PlayerNode
+@onready var music := $TheAudio/BackgroundMusic
 
 func _ready() -> void:
 	change_kame()
+	music.play()
 	if GameState.continuing_from_game_over:
 		GameState.continuing_from_game_over = false
 		LevelChange.call_deferred(
 			"change_level",
 			GameState.current_level,
-			PlayerGlobals.spawn_position
 		)
+		return
+	if GameState.picking_level:
+		GameState.picking_level = false
+		LevelChange.call_deferred(
+			"change_level",
+			GameState.current_level,
+		)
+		return
+	#Just in case you game over on level 1.
 	GameState.current_level = 1
 
 func change_kame()-> void:

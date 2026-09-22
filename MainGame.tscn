@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqua7ocyy3v8b" path="res://Managers/State Machine Scripts/MainGame.gd" id="1_bqqt8"]
 [ext_resource type="PackedScene" uid="uid://cwfs2ns82em0t" path="res://TheLevels/LevelScenes/Level1.tscn" id="1_e3m3f"]
 [ext_resource type="PackedScene" uid="uid://bo2ya40ywl6ox" path="res://UI_Screens/PlayerUI/Scenes/PlayerHud.tscn" id="3_ws5ob"]
+[ext_resource type="AudioStream" uid="uid://ba12pc8n585uy" path="res://Assets/Audio/BackgroundMusic/time_for_adventure.mp3" id="4_bqqt8"]
 
 [node name="MainGame" type="Node2D" unique_id=899722064]
 y_sort_enabled = true
@@ -19,3 +20,8 @@ y_sort_enabled = true
 [node name="PlayerUI" type="Node" parent="." unique_id=357021717]
 
 [node name="PlayerHud" parent="PlayerUI" unique_id=873887529 instance=ExtResource("3_ws5ob")]
+
+[node name="TheAudio" type="Node" parent="." unique_id=469657220]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="TheAudio" unique_id=1747851105]
+stream = ExtResource("4_bqqt8")
