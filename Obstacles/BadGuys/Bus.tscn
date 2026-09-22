@@ -34,6 +34,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfbn6"]
+size = Vector2(220, 53)
+
 [node name="Bus" type="CharacterBody2D" unique_id=1146870719]
 collision_layer = 16
 collision_mask = 35
@@ -43,6 +46,10 @@ enemy_data = ExtResource("2_nfbn6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1164645985]
 sprite_frames = SubResource("SpriteFrames_830d4")
 autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482956351]
+position = Vector2(100, 1.5)
+shape = SubResource("RectangleShape2D_nfbn6")
 
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("4_nfbn6")]
 

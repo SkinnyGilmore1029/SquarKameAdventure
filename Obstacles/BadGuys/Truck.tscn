@@ -34,6 +34,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d28mh"]
+size = Vector2(248.00002, 54)
+
 [node name="Truck" type="CharacterBody2D" unique_id=1713679575]
 scale = Vector2(0.75, 0.75)
 collision_layer = 16
@@ -45,6 +48,10 @@ enemy_data = ExtResource("2_corrj")
 sprite_frames = SubResource("SpriteFrames_830d4")
 autoplay = "default"
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55743229]
+position = Vector2(-1.3333334, 17)
+shape = SubResource("RectangleShape2D_d28mh")
 
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("4_d28mh")]
 
