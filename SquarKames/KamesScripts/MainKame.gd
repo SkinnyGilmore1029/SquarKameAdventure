@@ -8,7 +8,7 @@ var current_camera_set: String = "Level1"
 var player_data := PlayerGlobals
 var camera_limits: Dictionary = {
 	"Level1" : {
-		"Top" : -800,
+		"Top" : -855,
 		"Bottom" : 800,
 		"Left" : 0,
 		"Right" : 1200

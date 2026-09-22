@@ -24,6 +24,14 @@ func _on_next_transitions() -> void:
 	if !animated_sprite.is_playing():
 		kame.global_position = kame.player_data.spawn_position
 		kame.player_data.players_lives -= 1
+
+		if kame.player_data.players_lives <= 0:
+			get_tree().paused = false
+			get_tree().change_scene_to_file(
+                "res://UI_Screens/Screens/GameOver.tscn"
+            )
+			return
+
 		SignalHub.subtract_one_up.emit(kame.player_data.players_lives)
 		get_tree().paused = false
 		transition.emit("Idle")

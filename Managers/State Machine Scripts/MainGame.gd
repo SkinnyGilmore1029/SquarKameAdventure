@@ -11,6 +11,14 @@ var kame_selection: Dictionary[String, String] = {
 
 func _ready() -> void:
 	change_kame()
+	if GameState.continuing_from_game_over:
+		GameState.continuing_from_game_over = false
+		LevelChange.call_deferred(
+			"change_level",
+			GameState.current_level,
+			PlayerGlobals.spawn_position
+		)
+	GameState.current_level = 1
 
 func change_kame()-> void:
 	var kame_selected = GameState.selected_kame

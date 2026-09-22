@@ -8,6 +8,7 @@ func _ready() -> void:
 	SignalHub.subtract_one_up.connect(take_one_up)
 	SignalHub.change_level_number.connect(change_levelnumber)
 	SignalHub.change_key_count.connect(change_keycount)
+	add_one_up(PlayerGlobals.players_lives)
 
 
 func add_one_up(new_count: int) -> void:

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ds1uae5q7vrdm"]
+
+[ext_resource type="Script" uid="uid://r02lwc06eyhb" path="res://UI_Screens/ScreenScripts/difficulty_setting.gd" id="1_0qrky"]
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="2_6j1g0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgajt"]
+bg_color = Color(0.8901961, 0.09019608, 0.03137255, 1)
+
+[node name="DifficultySetting" type="Control" unique_id=718369290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qrky")
+
+[node name="ScreenContainer" type="PanelContainer" parent="." unique_id=630543870]
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xgajt")
+
+[node name="DifficultyVbox" type="VBoxContainer" parent="ScreenContainer" unique_id=1716453618]
+layout_mode = 2
+
+[node name="ScreenSpacing" type="MarginContainer" parent="ScreenContainer/DifficultyVbox" unique_id=2098939746]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="ScreenTitle" type="Label" parent="ScreenContainer/DifficultyVbox/ScreenSpacing" unique_id=1458181427]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35686275, 0.16470589, 0.5254902, 1)
+theme_override_font_sizes/font_size = 44
+text = "Choose Your Fate!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TheButtons" type="VBoxContainer" parent="ScreenContainer/DifficultyVbox" unique_id=796515511]
+layout_mode = 2
+theme = ExtResource("2_6j1g0")
+
+[node name="EasyButton" type="Button" parent="ScreenContainer/DifficultyVbox/TheButtons" unique_id=947023974]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Easy"
+
+[node name="NormalButton" type="Button" parent="ScreenContainer/DifficultyVbox/TheButtons" unique_id=1539428050]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Normal"
+
+[node name="HardButton" type="Button" parent="ScreenContainer/DifficultyVbox/TheButtons" unique_id=1223025240]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hard"
+
+[node name="InsaneButton" type="Button" parent="ScreenContainer/DifficultyVbox/TheButtons" unique_id=931977524]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Insane"
+
+[node name="InsaneWarning" type="PanelContainer" parent="ScreenContainer/DifficultyVbox/TheButtons/InsaneButton" unique_id=1691128572]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 131.0
+offset_top = 48.0
+offset_right = 561.0
+offset_bottom = 97.0
+
+[node name="InsaneWarningLabel" type="Label" parent="ScreenContainer/DifficultyVbox/TheButtons/InsaneButton/InsaneWarning" unique_id=1816233539]
+layout_mode = 2
+text = "This mode makes you start with one life,
+and makes your  player slower. You Have Been Warned!"
+
+[connection signal="pressed" from="ScreenContainer/DifficultyVbox/TheButtons/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="ScreenContainer/DifficultyVbox/TheButtons/NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="ScreenContainer/DifficultyVbox/TheButtons/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="focus_entered" from="ScreenContainer/DifficultyVbox/TheButtons/InsaneButton" to="." method="_on_insane_button_focus_entered"]
+[connection signal="focus_exited" from="ScreenContainer/DifficultyVbox/TheButtons/InsaneButton" to="." method="_on_insane_button_focus_exited"]
+[connection signal="pressed" from="ScreenContainer/DifficultyVbox/TheButtons/InsaneButton" to="." method="_on_insane_button_pressed"]

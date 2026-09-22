@@ -33,7 +33,7 @@ func change_level(new_level: int, spawn_location: Vector2) -> void:
 	#change the players spawn postion
 	PlayerGlobals.spawn_position = spawn_location
 	SignalHub.change_level_number.emit(new_level)
+	GameState.current_level = new_level
 
 	#Tell everything connected to the signal we changed the level.
 	SignalHub.changed_levels.emit(next_level_instance.name)
-
