@@ -22,7 +22,11 @@ y_sort_enabled = true
 [node name="PlayerHud" parent="PlayerUI" unique_id=873887529 instance=ExtResource("3_ws5ob")]
 
 [node name="TheAudio" type="Node" parent="." unique_id=469657220]
+process_mode = 3
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="TheAudio" unique_id=1747851105]
+process_mode = 3
 stream = ExtResource("4_bqqt8")
-volume_db = -10.0
+volume_db = -15.0
+pitch_scale = 0.8
+bus = &"Background"

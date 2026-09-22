@@ -3,5 +3,5 @@
 [ext_resource type="Script" uid="uid://b0mwfrt33ftdg" path="res://Managers/AudioManagers/audio_bus.gd" id="1_ldl4y"]
 
 [node name="AudioBus" type="AudioStreamPlayer" unique_id=720810588]
-volume_db = -20.0
+bus = &"SoundEffects"
 script = ExtResource("1_ldl4y")

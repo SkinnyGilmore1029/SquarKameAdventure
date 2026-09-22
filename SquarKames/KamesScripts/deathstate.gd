@@ -39,6 +39,7 @@ func _on_next_transitions() -> void:
 
 func _on_enter() -> void:
 	get_tree().paused = true
+	AudioBus.play_sound("Death")
 	if kame.player_data.player_direction not in the_death_states:
 		push_warning("%s is not one of the four directions check deathstate.gd" % kame.player_data.player_direction)
 		animated_sprite.play(the_death_states["up"])

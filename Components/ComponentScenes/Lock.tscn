@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://1ee02bkbnbkh" path="res://Components/ComponentScripts/lock.gd" id="1_4ch0i"]
 [ext_resource type="PackedScene" uid="uid://cakrxc56i2ayx" path="res://Components/ComponentScenes/UnlockComponent.tscn" id="2_plbyh"]
 [ext_resource type="Script" uid="uid://cy0jam7l62l43" path="res://Components/ComponentScripts/unlock_component.gd" id="3_brgan"]
-[ext_resource type="AudioStream" uid="uid://c23jfde7038me" path="res://Assets/Audio/SoundEffects/explosion.wav" id="5_e5hyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guak4"]
 size = Vector2(189, 173.33331)
@@ -33,8 +32,5 @@ script = ExtResource("3_brgan")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockComponent" unique_id=1387893176]
 position = Vector2(-6.5, 31.666666)
 shape = SubResource("RectangleShape2D_830d4")
-
-[node name="UnlockSound" type="AudioStreamPlayer" parent="." unique_id=2122921848]
-stream = ExtResource("5_e5hyg")
 
 [connection signal="body_entered" from="UnlockComponent" to="UnlockComponent" method="_on_body_entered"]

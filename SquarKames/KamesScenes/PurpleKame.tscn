@@ -185,7 +185,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"DeathDown",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -202,7 +202,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"DeathLeft",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,7 +219,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"DeathRight",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -236,7 +236,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"DeathUp",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -364,7 +364,7 @@ script = ExtResource("1_nhuji")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=119986425]
 process_mode = 3
 sprite_frames = SubResource("SpriteFrames_5w72y")
-animation = &"DeathUp"
+animation = &"DeathDown"
 autoplay = "IdleUp"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=407594087]

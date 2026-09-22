@@ -4,7 +4,8 @@ extends AudioStreamPlayer
 var audio_book: Dictionary[String, StringName] = {
     "Key" : "res://Assets/Audio/SoundEffects/coin.wav",
     "OneUps" : "res://Assets/Audio/SoundEffects/power_up.wav",
-    "Locks" : "res://Assets/Audio/SoundEffects/explosion.wav"
+    "Locks" : "res://Assets/Audio/SoundEffects/explosion.wav",
+	"Death" : "res://Assets/Audio/SoundEffects/freesound_community-death-103830.mp3"
 }
 
 
@@ -14,5 +15,6 @@ func play_sound(sound_name: String) -> void:
 		return
 
 	stream = load(audio_book[sound_name])
-	volume_db = -15.0
+	volume_db = -10.0
+	bus = "SoundEffects"
 	play()

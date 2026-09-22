@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c44kwwsu8klcp" path="res://Assets/Pictures/HelpfulThings/1up.png" id="1_bonaj"]
 [ext_resource type="Script" uid="uid://ctjrsedy4uiho" path="res://HelpfulStuff/Scripts/one_up.gd" id="1_s5w63"]
 [ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_nbgci"]
-[ext_resource type="AudioStream" uid="uid://docsygon52lhx" path="res://Assets/Audio/SoundEffects/power_up.wav" id="4_k8eku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
 radius = 22.0
@@ -24,7 +23,3 @@ texture = ExtResource("1_bonaj")
 position = Vector2(-2, -2)
 shape = SubResource("CapsuleShape2D_830d4")
 debug_color = Color(0.8352941, 0.2901961, 0.654902, 0.6627451)
-
-[node name="PickUpSound" type="AudioStreamPlayer" parent="." unique_id=1364492086]
-stream = ExtResource("4_k8eku")
-volume_db = -15.0
