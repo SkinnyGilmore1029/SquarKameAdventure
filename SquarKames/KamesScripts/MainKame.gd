@@ -18,6 +18,12 @@ var camera_limits: Dictionary = {
 		"Bottom" : 815,
 		"Left" : 0,
 		"Right" : 2400
+	},
+	"Level3" : {
+		"Top" : -786,
+		"Bottom" : 1609,
+		"Left" : 0,
+		"Right" : 2020
 	}
 }
 
@@ -28,6 +34,7 @@ func _ready() -> void:
 	SignalHub.key_collected.connect(add_key)
 	SignalHub.key_used.connect(take_key)
 	SignalHub.one_up_global.connect(add_oneup)
+	set_camera_position()
 	set_player_data()
 
 
@@ -58,6 +65,9 @@ func new_level_pos(level_name: String) -> void:
 
 func set_player_data() -> void:
 	self.global_position = player_data.new_game_spawn_position
+	player_data.spawn_position = player_data.new_game_spawn_position
+
+func set_camera_position() -> void:
 	player_data.spawn_position = player_data.new_game_spawn_position
 	player_camera.limit_right = camera_limits[current_camera_set]["Right"]
 	player_camera.limit_bottom = camera_limits[current_camera_set]["Bottom"]

@@ -2,8 +2,8 @@ class_name Level1Manager
 extends Node2D
 
 
-@onready var bad_guys_node = %Level1_BadGuys
 @export var level_data: LevelDataManager
+@onready var bad_guys_node = %Level1_BadGuys
 @onready var hint_frog_text := $Helpful/HintFrog/HintPanel/Label
 
 
@@ -23,7 +23,7 @@ func set_level_data() -> void:
 	"Bus": [Vector2(-233, -510)]
 	}
 	level_data.speed_choices = {
-	"Car": [250, 300, 350],
-	"Truck": [150, 200, 220],
-	"Bus": [100, 125, 175]
+	"Car" : [250, 300, 350],
+	"Truck" : [150, 200, 220],
+	"Bus" : [100, 125, 175]
 	}

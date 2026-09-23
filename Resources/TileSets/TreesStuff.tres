@@ -1,0 +1,55 @@
+[gd_resource type="TileSet" format=3 uid="uid://brl6gnhakc0cy"]
+
+[ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="1_pp0vs"]
+[ext_resource type="Texture2D" uid="uid://djinfohglcqfp" path="res://Assets/Pictures/Backgrounds/Slowcone.png" id="2_idotu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idotu"]
+texture = ExtResource("1_pp0vs")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.66555, -10.8814535, 5.66555, -11.061312, 4.0468216, 4.9461155, -0.26979065, 12.320324, -2.9676743, 4.0468216)
+1:0/size_in_atlas = Vector2i(2, 2)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.66555, -10.8814535, 5.66555, -11.061312, 8, -2.5180216, 4.0468216, 4.9461155, -0.26979065, 12.320324, -2.9676743, 4.0468216, -8, -2.1583042)
+3:0/size_in_atlas = Vector2i(2, 2)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.66555, -10.8814535, 5.66555, -11.061312, 8, -2.5180216, 4.0468216, 4.9461155, -0.26979065, 12.320324, -2.9676743, 4.0468216, -8, -2.1583042)
+2:4/size_in_atlas = Vector2i(3, 1)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.611665, -5.3957615, 9.892231, -2.6978807, 10.791523, 4.136751, -11.690817, 4.856186, -14.928274, 0.71943474)
+0:4/size_in_atlas = Vector2i(2, 1)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.7985878, -1.978445, 14.02898, 1.6187286, 13.849121, 5.036045, -5.3957615, 5.75548, -8, 0.5395775)
+8:2/size_in_atlas = Vector2i(1, 2)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.6187286, 0.35971832, 1.7985878, 0.8992939, 1.1653944, 6.175906, 0.17985916, 14.3887005)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.0791531, -3.4173155, 4.4964676, 2.3381634, -2.5180225, 3.7770348, -5.5756207, -1.0791512)
+8:4/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ctgv"]
+texture = ExtResource("2_idotu")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.712372, -0.17985725, -0.17985916, -12.230392, 10.251947, -1.4388695, 10.251947, 10.791525, 14.568558, 11.870676, 13.849121, 14.568556, -14.208839, 14.928274, -14.208839, 11.151241, -9.712372, 11.3311)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 17
+sources/1 = SubResource("TileSetAtlasSource_idotu")
+sources/2 = SubResource("TileSetAtlasSource_3ctgv")

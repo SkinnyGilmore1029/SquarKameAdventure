@@ -4,7 +4,8 @@ extends Node
 
 var level_scenes: Dictionary[int,Array] = {
 	1 : ["res://TheLevels/LevelScenes/Level1.tscn", Vector2(560, 768)],
-	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715)]
+	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715)],
+	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589)]
 }
 
 
