@@ -364,10 +364,8 @@ script = ExtResource("1_4rgcv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297307678]
 process_mode = 3
 sprite_frames = SubResource("SpriteFrames_f7lib")
-animation = &"DeathUp"
+animation = &"IdleUp"
 autoplay = "IdleUp"
-frame = 3
-frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1472236222]
 

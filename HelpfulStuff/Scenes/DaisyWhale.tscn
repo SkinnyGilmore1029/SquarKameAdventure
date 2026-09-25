@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://kakjop7whix4"]
+
+[ext_resource type="Texture2D" uid="uid://l4cjikgpp2s2" path="res://Assets/Pictures/Npc/Daisy_friend.png" id="1_5hd5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry7jr"]
+size = Vector2(98, 34)
+
+[node name="DaisyWhale" type="StaticBody2D" unique_id=130768798]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402586545]
+texture = ExtResource("1_5hd5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862548965]
+shape = SubResource("RectangleShape2D_ry7jr")

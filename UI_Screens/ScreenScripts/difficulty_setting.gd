@@ -4,7 +4,7 @@ extends Control
 var main_scene: StringName = "res://MainGame.tscn"
 
 func _ready() -> void:
-	%EasyButton.grab_focus()
+	%NormalButton.grab_focus()
 
 func _on_easy_button_pressed() -> void:
 	PlayerGlobals.players_lives = 99
