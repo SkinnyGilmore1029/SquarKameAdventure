@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://6u4vjs5taoiw"]
+
+[ext_resource type="Script" uid="uid://cdblqtldayeok" path="res://Managers/EnemyManagers/StaticEnemyLogic.gd" id="1_14joc"]
+[ext_resource type="Texture2D" uid="uid://lhvop7obyhpk" path="res://Assets/Pictures/Bad Guys/The_slog.png" id="1_vvyiq"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_0auau"]
+[ext_resource type="Resource" uid="uid://bsjmog7j8ruj2" path="res://Obstacles/BadGuysResources/Fly.tres" id="2_kjf7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0auau"]
+atlas = ExtResource("1_vvyiq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_teii0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0auau")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14joc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teii0"]
+size = Vector2(27, 24)
+
+[node name="Fly" type="CharacterBody2D" unique_id=1268779883]
+collision_layer = 16
+collision_mask = 403
+script = ExtResource("1_14joc")
+enemy_data = ExtResource("2_kjf7u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1458594516]
+sprite_frames = SubResource("SpriteFrames_teii0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889273703]
+shape = SubResource("RectangleShape2D_14joc")
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_0auau")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathCollsion" unique_id=858895823]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_teii0")
+debug_color = Color(0.7265217, 0.4704616, 0.20346135, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=674981940]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -485,7 +485,7 @@ joypads/ignore_joypad_on_unfocused_application=true
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Solid Objects"
-2d_physics/layer_3="Hints"
+2d_physics/layer_3="Hints/Interactable"
 2d_physics/layer_4="Collectables"
 2d_physics/layer_5="Enemies"
 2d_physics/layer_6="Despawn"

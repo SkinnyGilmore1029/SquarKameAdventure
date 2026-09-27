@@ -13,20 +13,8 @@ var kame_selection: Dictionary[String, String] = {
 func _ready() -> void:
 	change_kame()
 	music.play()
-	if GameState.continuing_from_game_over:
-		GameState.continuing_from_game_over = false
-		LevelChange.call_deferred(
-			"change_level",
-			GameState.current_level,
-		)
-		return
-	if GameState.picking_level:
-		GameState.picking_level = false
-		LevelChange.call_deferred(
-			"change_level",
-			GameState.current_level,
-		)
-		return
+	check_game_over()
+	picking_level()
 	#Just in case you game over on level 1.
 	GameState.current_level = 1
 
@@ -44,3 +32,21 @@ func change_kame()-> void:
 	var kame_scene := load(kame_selection[kame_selected])
 	var kame_instance = kame_scene.instantiate()
 	player_node.add_child(kame_instance)
+
+func check_game_over() -> void:
+	if GameState.continuing_from_game_over:
+		GameState.continuing_from_game_over = false
+		LevelChange.call_deferred(
+			"change_level",
+			GameState.current_level,
+		)
+		return
+
+func picking_level()-> void:
+	if GameState.picking_level:
+		GameState.picking_level = false
+		LevelChange.call_deferred(
+			"change_level",
+			GameState.current_level,
+		)
+		return

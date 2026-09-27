@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kk1umno4obcc"]
+
+[ext_resource type="Script" uid="uid://d3o744ucfgw1b" path="res://Components/PuzzleComponentsScripts/offering_area.gd" id="1_dhq4f"]
+
+[node name="OfferingArea" type="Area2D" unique_id=376644079]
+collision_layer = 4
+collision_mask = 256
+script = ExtResource("1_dhq4f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

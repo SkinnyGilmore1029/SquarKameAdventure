@@ -1,15 +1,53 @@
 [gd_scene format=3 uid="uid://kakjop7whix4"]
 
 [ext_resource type="Texture2D" uid="uid://l4cjikgpp2s2" path="res://Assets/Pictures/Npc/Daisy_friend.png" id="1_5hd5g"]
+[ext_resource type="Script" uid="uid://ccupb3jvmskdb" path="res://HelpfulStuff/Scripts/daisy_whale.gd" id="1_ry7jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry7jr"]
-size = Vector2(98, 34)
+size = Vector2(81, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6krg7"]
+size = Vector2(78, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hd5g"]
+bg_color = Color(0.7647059, 0.05490196, 0.43529412, 1)
 
 [node name="DaisyWhale" type="StaticBody2D" unique_id=130768798]
 texture_filter = 1
+collision_layer = 6
+script = ExtResource("1_ry7jr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402586545]
 texture = ExtResource("1_5hd5g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862548965]
+[node name="PhysicalCollision" type="CollisionShape2D" parent="." unique_id=1862548965]
+position = Vector2(-5.5, 2)
 shape = SubResource("RectangleShape2D_ry7jr")
+
+[node name="TextDetection" type="Area2D" parent="." unique_id=622988734]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetection" unique_id=861969490]
+position = Vector2(-5, 19.5)
+shape = SubResource("RectangleShape2D_6krg7")
+debug_color = Color(0, 0.8745098, 0.078431375, 0.41960785)
+
+[node name="TextBox" type="PanelContainer" parent="." unique_id=107497628]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.0
+offset_top = -69.0
+offset_right = 75.0
+offset_bottom = -26.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hd5g")
+
+[node name="MessageLabel" type="Label" parent="TextBox" unique_id=1183704824]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5577949, 0.9660091, 0.74730504, 1)
+theme_override_font_sizes/font_size = 14
+text = "I am hungry please bring
+me something to eat!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="TextDetection" to="." method="open_text_box"]
+[connection signal="body_exited" from="TextDetection" to="." method="close_text_box"]
