@@ -43,6 +43,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="KameSelectContainer/TitleContainer" unique_id=2000084302]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="KameSelectContainer/TitleContainer/VBoxContainer" unique_id=1563787839]
 layout_mode = 2
@@ -56,64 +57,89 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_1bt6t")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="KameSelectContainer" unique_id=1248749095]
+[node name="VBoxContainer" type="VBoxContainer" parent="KameSelectContainer" unique_id=1387352784]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KameSelectContainer/VBoxContainer" unique_id=1248749095]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 theme = ExtResource("1_6l24j")
 theme_override_constants/separation = 36
 
-[node name="PurpleKameContainer" type="VBoxContainer" parent="KameSelectContainer/HBoxContainer" unique_id=603245349]
+[node name="PurpleKameContainer" type="VBoxContainer" parent="KameSelectContainer/VBoxContainer/HBoxContainer" unique_id=603245349]
 layout_mode = 2
 size_flags_vertical = 4
 offset_transform_position = Vector2(0, 58)
 
-[node name="PurpleKameTexture" type="TextureRect" parent="KameSelectContainer/HBoxContainer/PurpleKameContainer" unique_id=902053223]
+[node name="PurpleKameTexture" type="TextureRect" parent="KameSelectContainer/VBoxContainer/HBoxContainer/PurpleKameContainer" unique_id=902053223]
 custom_maximum_size = Vector2(181, 181)
 layout_mode = 2
 texture = SubResource("AtlasTexture_s4ky7")
 expand_mode = 4
 
-[node name="PurpleKameButton" type="Button" parent="KameSelectContainer/HBoxContainer/PurpleKameContainer" unique_id=838003347]
+[node name="PurpleKameButton" type="Button" parent="KameSelectContainer/VBoxContainer/HBoxContainer/PurpleKameContainer" unique_id=838003347]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "PurpleKame"
 
-[node name="GreenKameContainer" type="VBoxContainer" parent="KameSelectContainer/HBoxContainer" unique_id=784260997]
+[node name="GreenKameContainer" type="VBoxContainer" parent="KameSelectContainer/VBoxContainer/HBoxContainer" unique_id=784260997]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GreenKameTexture" type="TextureRect" parent="KameSelectContainer/HBoxContainer/GreenKameContainer" unique_id=731005375]
+[node name="GreenKameTexture" type="TextureRect" parent="KameSelectContainer/VBoxContainer/HBoxContainer/GreenKameContainer" unique_id=731005375]
 layout_mode = 2
 texture = SubResource("AtlasTexture_1bt6t")
 expand_mode = 4
 
-[node name="GreenKameButton" type="Button" parent="KameSelectContainer/HBoxContainer/GreenKameContainer" unique_id=1952855811]
+[node name="GreenKameButton" type="Button" parent="KameSelectContainer/VBoxContainer/HBoxContainer/GreenKameContainer" unique_id=1952855811]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "GreenKame"
 
-[node name="OrangeKameContainer" type="VBoxContainer" parent="KameSelectContainer/HBoxContainer" unique_id=1839378544]
+[node name="OrangeKameContainer" type="VBoxContainer" parent="KameSelectContainer/VBoxContainer/HBoxContainer" unique_id=1839378544]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OrangeKameTexture" type="TextureRect" parent="KameSelectContainer/HBoxContainer/OrangeKameContainer" unique_id=404817614]
+[node name="OrangeKameTexture" type="TextureRect" parent="KameSelectContainer/VBoxContainer/HBoxContainer/OrangeKameContainer" unique_id=404817614]
 custom_maximum_size = Vector2(181, 181)
 layout_mode = 2
 texture = SubResource("AtlasTexture_6l24j")
 expand_mode = 4
 
-[node name="OrangeKameButton" type="Button" parent="KameSelectContainer/HBoxContainer/OrangeKameContainer" unique_id=2052199453]
+[node name="OrangeKameButton" type="Button" parent="KameSelectContainer/VBoxContainer/HBoxContainer/OrangeKameContainer" unique_id=2052199453]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "OrangeKame"
 
-[connection signal="pressed" from="KameSelectContainer/HBoxContainer/PurpleKameContainer/PurpleKameButton" to="KameSelectContainer" method="Purple_button_pressed"]
-[connection signal="pressed" from="KameSelectContainer/HBoxContainer/GreenKameContainer/GreenKameButton" to="KameSelectContainer" method="Green_button_pressed"]
-[connection signal="pressed" from="KameSelectContainer/HBoxContainer/OrangeKameContainer/OrangeKameButton" to="KameSelectContainer" method="Orange_button_pressed"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1415461100]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 317.0
+offset_right = 357.0
+offset_bottom = 359.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_6l24j")
+
+[node name="BackButton" type="Button" parent="HBoxContainer2" unique_id=607600175]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="KameSelectContainer/VBoxContainer/HBoxContainer/PurpleKameContainer/PurpleKameButton" to="KameSelectContainer" method="Purple_button_pressed"]
+[connection signal="pressed" from="KameSelectContainer/VBoxContainer/HBoxContainer/GreenKameContainer/GreenKameButton" to="KameSelectContainer" method="Green_button_pressed"]
+[connection signal="pressed" from="KameSelectContainer/VBoxContainer/HBoxContainer/OrangeKameContainer/OrangeKameButton" to="KameSelectContainer" method="Orange_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/BackButton" to="KameSelectContainer" method="_on_back_button_pressed"]

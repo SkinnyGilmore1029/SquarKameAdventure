@@ -36,19 +36,20 @@ func check_parent() -> void:
 		return
 
 	# Make sure the nested dictionary is not empty.
-	if len(node_hub.get(parent)) == 0:
+	if len(node_hub[parent]) == 0:
 		push_warning("No data for %s" % parent)
 		return
 
+	#Now everything is checked can just use dictionary.
 	# Get the parent's configuration.
-	var collectable_data = node_hub.get(parent)
+	var collectable_data = node_hub[parent]
 
 	# Get the configured name and signal.
-	var collectable_name = collectable_data.get("Name")
-	var collectable_signal = collectable_data.get("UI_Signal")
+	var collectable_name = collectable_data["Name"]
+	var collectable_signal = collectable_data["UI_Signal"]
 
 	# If the signal needs no arguments, emit it and free the collectable.
-	if !collectable_data.get("Has Args"):
+	if !collectable_data["Has Args"]:
 		collectable_signal.emit()
 		get_parent().queue_free()
 		return

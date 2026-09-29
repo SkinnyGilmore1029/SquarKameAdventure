@@ -11,10 +11,10 @@ var kame_selection: Dictionary[String, String] = {
 @onready var music := $TheAudio/BackgroundMusic
 
 func _ready() -> void:
-	change_kame()
-	music.play()
 	check_game_over()
 	picking_level()
+	change_kame()
+	music.play()
 	#Just in case you game over on level 1.
 	GameState.current_level = 1
 

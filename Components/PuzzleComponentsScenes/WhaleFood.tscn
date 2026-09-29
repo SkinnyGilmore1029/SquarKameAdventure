@@ -2,13 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="1_ah0ay"]
 [ext_resource type="Script" uid="uid://dp75cdi1q84hn" path="res://Components/PuzzleComponentsScripts/OfferingScript.gd" id="1_s8g0y"]
+[ext_resource type="PackedScene" uid="uid://dbxgti40w3qb4" path="res://Components/ComponentScenes/Pushable2D.tscn" id="3_6k0ay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kipu"]
 atlas = ExtResource("1_ah0ay")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8g0y"]
-radius = 13.038404
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqp1k"]
+radius = 13.0
 
 [node name="WhaleFood" type="RigidBody2D" unique_id=400521202]
 collision_layer = 256
@@ -25,3 +29,9 @@ texture = SubResource("AtlasTexture_0kipu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1599052468]
 position = Vector2(-1, 3)
 shape = SubResource("CircleShape2D_s8g0y")
+
+[node name="Pushable2d" parent="." unique_id=1073834761 instance=ExtResource("3_6k0ay")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable2d" unique_id=1348292816]
+position = Vector2(-1, 3)
+shape = SubResource("CircleShape2D_bqp1k")

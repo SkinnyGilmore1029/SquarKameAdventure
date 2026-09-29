@@ -1,0 +1,2 @@
+class_name PushLogs
+extends RigidBody2D

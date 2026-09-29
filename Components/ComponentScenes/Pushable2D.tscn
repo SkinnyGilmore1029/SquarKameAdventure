@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbxgti40w3qb4"]
+
+[ext_resource type="Script" uid="uid://cqowbsvtwaaov" path="res://Components/ComponentScripts/PushScript.gd" id="1_0x8k8"]
+
+[node name="Pushable2d" type="Area2D" unique_id=1073834761]
+script = ExtResource("1_0x8k8")

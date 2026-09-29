@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmo6w3y7nvd4h"]
 
-[ext_resource type="Script" uid="uid://64ia06tokh21" path="res://UI_Screens/game_over.gd" id="1_3ay76"]
+[ext_resource type="Script" uid="uid://dv1p4s8vdbiel" path="res://UI_Screens/ScreenScripts/game_over.gd" id="1_3ay76"]
 [ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_gi7ft"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi7ft"]

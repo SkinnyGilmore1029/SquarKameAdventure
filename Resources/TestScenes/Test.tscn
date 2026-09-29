@@ -13,12 +13,10 @@ tile_set = ExtResource("1_0g5o2")
 
 [node name="PushLog" parent="." unique_id=3132426 instance=ExtResource("2_hxuk3")]
 position = Vector2(307, 122)
-angular_damp = 0.0
 
 [node name="PushRock" parent="." unique_id=812960192 instance=ExtResource("4_3df30")]
 position = Vector2(235, 125)
 mass = 100.0
-constant_force = Vector2(50, 50)
 
 [node name="OrangeKame" parent="." unique_id=475591077 instance=ExtResource("3_hxuk3")]
 position = Vector2(117, 101)

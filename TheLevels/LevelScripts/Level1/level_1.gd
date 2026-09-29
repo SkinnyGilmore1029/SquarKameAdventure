@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func set_level_data() -> void:
-	hint_frog_text.text = "Find the Key to\n advance to the\n next area."
+	hint_frog_text.text = "You can find both\n keys in the flowers!"
 	level_data.enemy_types = ["Car", "Truck", "Bus"]
 	level_data.spawn_positions = {
 	"Car": [Vector2(1300, 526), Vector2(-100,322)],
