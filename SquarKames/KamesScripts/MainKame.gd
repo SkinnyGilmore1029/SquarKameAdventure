@@ -2,6 +2,8 @@ class_name MainKame
 extends CharacterBody2D
 
 @onready var player_camera: Camera2D = $Camera2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var state_machine: Node = $StateMachine
 var current_camera_set: String
 
 

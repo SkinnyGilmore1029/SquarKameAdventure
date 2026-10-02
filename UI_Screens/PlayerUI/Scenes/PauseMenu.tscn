@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b4kyisnrq50t6"]
+
+[ext_resource type="Script" uid="uid://d3qcm5fnmef1s" path="res://UI_Screens/PlayerUI/Scripts/pause_canvas.gd" id="1_tkpth"]
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="2_72jkd"]
+[ext_resource type="Script" uid="uid://bltsx10glhpiy" path="res://UI_Screens/PlayerUI/Scripts/pause_menu.gd" id="2_ugn27"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=659599420]
+script = ExtResource("1_tkpth")
+
+[node name="PauseControl" type="Control" parent="." unique_id=1584886503]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_72jkd")
+script = ExtResource("2_ugn27")
+
+[node name="TitleContainer" type="PanelContainer" parent="PauseControl" unique_id=1210694330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -3.9750001
+anchor_right = 0.5
+anchor_bottom = -3.9750001
+offset_left = -60.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="PauseControl/TitleContainer" unique_id=247451206]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 3
+uppercase = true
+
+[node name="ButtonContainer" type="PanelContainer" parent="PauseControl" unique_id=1002215075]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonVBox" type="VBoxContainer" parent="PauseControl/ButtonContainer" unique_id=1539773406]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PauseControl/ButtonContainer/ButtonVBox" unique_id=299006324]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="PauseControl/ButtonContainer/ButtonVBox" unique_id=72515515]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="TitleButton" type="Button" parent="PauseControl/ButtonContainer/ButtonVBox" unique_id=1384196586]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Title"
+
+[connection signal="pressed" from="PauseControl/ButtonContainer/ButtonVBox/ContinueButton" to="PauseControl" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseControl/ButtonContainer/ButtonVBox/OptionsButton" to="PauseControl" method="_on_options_button_pressed"]
+[connection signal="pressed" from="PauseControl/ButtonContainer/ButtonVBox/TitleButton" to="PauseControl" method="_on_title_button_pressed"]

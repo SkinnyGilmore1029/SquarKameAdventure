@@ -13,3 +13,13 @@ static func is_movement_input() ->bool:
 	if direction == Vector2.ZERO:
 		return false
 	return true
+
+func pause_game() -> bool:
+	if Input.is_action_just_pressed("Pause"):
+		return true
+	return false
+
+func back_button_pushed() -> bool:
+	if Input.is_action_just_pressed("Cancel"):
+		return true
+	return false
