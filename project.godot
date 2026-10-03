@@ -21,8 +21,8 @@ buses/default_bus_layout=""
 [autoload]
 
 GameState="*uid://dqv0fkcoviuf4"
-SignalHub="*uid://bclwcpkspmdp8"
 PlayerGlobals="*uid://d2kew3tosx5lt"
+SignalHub="*uid://bclwcpkspmdp8"
 GameInput="*uid://yujxax8klej0"
 EnemySpawner="*uid://c1lj7fe1txxka"
 LevelChange="*uid://dhr757wnkrx2s"

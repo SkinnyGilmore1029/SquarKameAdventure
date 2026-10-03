@@ -12,3 +12,9 @@ var speed: float = 230.0
 var spawn_position: Vector2
 
 var key_count: int = 0
+
+var kame_selection: Dictionary[String, String] = {
+	"Orange" : "res://SquarKames/KamesScenes/OrangeKame.tscn",
+	"Green" : "res://SquarKames/KamesScenes/SquarKame.tscn",
+	"Purple" : "res://SquarKames/KamesScenes/PurpleKame.tscn"
+}

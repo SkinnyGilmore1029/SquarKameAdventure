@@ -1,25 +1,29 @@
 class_name MainGame
 extends Node2D
 
-var kame_selection: Dictionary[String, String] = {
-	"Orange" : "res://SquarKames/KamesScenes/OrangeKame.tscn",
-	"Green" : "res://SquarKames/KamesScenes/SquarKame.tscn",
-	"Purple" : "res://SquarKames/KamesScenes/PurpleKame.tscn"
-}
+
 
 @onready var player_node: Node2D = $PlayerNode
-
 @onready var music := $TheAudio/BackgroundMusic
 @onready var screen_transitions: Node = $ScreenTranstion
 
+var coming_from_game_over: bool
+var coming_from_picking_level: bool
+
 func _ready() -> void:
-	var coming_from_game_over: bool = GameState.continuing_from_game_over
-	var coming_from_picking_level: bool = GameState.picking_level
+	#Get the bool values form GameState before anything changes them.
+	coming_from_game_over = GameState.continuing_from_game_over
+	coming_from_picking_level= GameState.picking_level
+
+	#Check if we are coming from a game over or picking a level. If so we will not start a new game but continue the current one.
 	check_game_over()
 	picking_level()
 	#Player node is load here before pausing.
 	change_kame()
-	#Just in case you game over on level 1.
+	start_new_game()
+
+
+func start_new_game() -> void:
 	GameState.current_level = 1
 	if not coming_from_game_over and not coming_from_picking_level:
 		var tree = get_tree()
@@ -35,14 +39,14 @@ func change_kame()-> void:
 	var kame_selected = GameState.selected_kame
 	#check dictionary first.
 	#if kame not in the dictionary default to the green one.
-	if kame_selected not in kame_selection:
+	if kame_selected not in PlayerGlobals.kame_selection:
 		kame_selected = "Green"
 
 	#make sure only one Kame is in the Game.
 	if player_node.get_child_count() > 0:
 		player_node.get_child(0).queue_free()
 
-	var kame_scene := load(kame_selection[kame_selected])
+	var kame_scene := load(PlayerGlobals.kame_selection[kame_selected])
 	var kame_instance = kame_scene.instantiate()
 	player_node.add_child(kame_instance)
 

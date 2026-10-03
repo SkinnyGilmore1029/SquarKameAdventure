@@ -17,6 +17,7 @@ func _ready() -> void:
 func fade_in(level: int) -> void:
 	visible = true
 	music.stop()
+	kame_playing = await get_kame_playing()
 	kame_playing.state_machine.process_mode = Node.PROCESS_MODE_DISABLED
 	kame_playing.animated_sprite.process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().paused = true
