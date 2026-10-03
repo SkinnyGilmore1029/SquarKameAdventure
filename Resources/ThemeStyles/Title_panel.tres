@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://bes7cg31a7qkm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odn5n"]
+bg_color = Color(0.09019608, 0.41960785, 0.3019608, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.9490196, 0.54901963, 0.15686275, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_odn5n")

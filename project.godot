@@ -20,12 +20,12 @@ buses/default_bus_layout=""
 
 [autoload]
 
-GameInput="*uid://yujxax8klej0"
-EnemySpawner="*uid://c1lj7fe1txxka"
+GameState="*uid://dqv0fkcoviuf4"
 SignalHub="*uid://bclwcpkspmdp8"
 PlayerGlobals="*uid://d2kew3tosx5lt"
+GameInput="*uid://yujxax8klej0"
+EnemySpawner="*uid://c1lj7fe1txxka"
 LevelChange="*uid://dhr757wnkrx2s"
-GameState="*uid://dqv0fkcoviuf4"
 AudioBus="*uid://b0mwfrt33ftdg"
 
 [debug]

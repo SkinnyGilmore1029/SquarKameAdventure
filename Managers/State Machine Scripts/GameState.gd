@@ -17,3 +17,9 @@ var difficulty_screen: StringName = "res://UI_Screens/Screens/DifficultySetting.
 var character_select: StringName = "res://UI_Screens/Screens/KameSelect.tscn"
 var main_scene: StringName = "res://MainGame.tscn"
 var option_screen: StringName = "res://UI_Screens/Screens/OptionsScreen.tscn"
+
+var level_names: Dictionary[int, String] = {
+    1 : "Apple Road",
+    2 : "Crocodile Creek",
+    3 : "Speed Runners Nightmare"
+}

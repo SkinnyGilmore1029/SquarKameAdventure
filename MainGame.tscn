@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bo2ya40ywl6ox" path="res://UI_Screens/PlayerUI/Scenes/PlayerHud.tscn" id="3_ws5ob"]
 [ext_resource type="PackedScene" uid="uid://b4kyisnrq50t6" path="res://UI_Screens/PlayerUI/Scenes/PauseMenu.tscn" id="4_8qpgq"]
 [ext_resource type="AudioStream" uid="uid://wd50ruggl1am" path="res://Assets/Audio/BackgroundMusic/tatamusic-game-gaming-minecraft-background-music-377647.mp3" id="4_bqqt8"]
+[ext_resource type="PackedScene" uid="uid://c5upplknocb28" path="res://UI_Screens/Screens/ScreenTranstion.tscn" id="6_pv6b4"]
 
 [node name="MainGame" type="Node2D" unique_id=899722064]
 y_sort_enabled = true
@@ -33,3 +34,5 @@ process_mode = 3
 stream = ExtResource("4_bqqt8")
 volume_db = -15.0
 pitch_scale = 0.8
+
+[node name="ScreenTranstion" parent="." unique_id=1681915311 instance=ExtResource("6_pv6b4")]

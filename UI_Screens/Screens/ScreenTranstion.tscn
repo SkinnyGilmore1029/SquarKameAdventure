@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c5upplknocb28"]
+
+[ext_resource type="Script" uid="uid://c4yjfen1eocvr" path="res://UI_Screens/ScreenScripts/screen_transtion.gd" id="1_oajhf"]
+[ext_resource type="Theme" uid="uid://bes7cg31a7qkm" path="res://Resources/ThemeStyles/Title_panel.tres" id="2_jck52"]
+[ext_resource type="Theme" uid="uid://cs17au4osel30" path="res://Resources/ThemeStyles/Title_labels.tres" id="3_xjhuv"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r46bu"]
+color = Color(1, 1, 1, 1)
+grow_begin = 2.0
+grow_end = -140.0
+thickness = 10
+
+[node name="ScreenTranstion" type="CanvasLayer" unique_id=1681915311]
+process_mode = 3
+script = ExtResource("1_oajhf")
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=733217217]
+unique_name_in_owner = true
+offset_right = 638.0
+offset_bottom = 359.0
+color = Color(0, 0, 0, 1)
+
+[node name="LevelCompleteContainer" type="PanelContainer" parent="." unique_id=1853716969]
+unique_name_in_owner = true
+offset_left = 9.0
+offset_right = 629.0
+offset_bottom = 63.0
+theme = ExtResource("2_jck52")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelCompleteContainer" unique_id=1983810710]
+layout_mode = 2
+theme = ExtResource("3_xjhuv")
+alignment = 1
+
+[node name="LevelTitleLabel" type="Label" parent="LevelCompleteContainer/HBoxContainer" unique_id=924195510]
+layout_mode = 2
+theme = ExtResource("3_xjhuv")
+text = "LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LastLevelNumberLabel" type="Label" parent="LevelCompleteContainer/HBoxContainer" unique_id=1148281613]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="LevelCompleteLabel" type="Label" parent="LevelCompleteContainer/HBoxContainer" unique_id=1621075833]
+layout_mode = 2
+text = "COMPLETE!"
+
+[node name="LevelLabelsContainer" type="PanelContainer" parent="." unique_id=719905031]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.27800003
+anchor_right = 0.17300001
+anchor_bottom = 0.27800003
+offset_left = 14.279999
+offset_top = -15.080009
+offset_right = 302.28
+offset_bottom = 130.91998
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelLabelsContainer" unique_id=1218565088]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelLabelsContainer/VBoxContainer" unique_id=937689724]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LevelLabel" type="Label" parent="LevelLabelsContainer/VBoxContainer/HBoxContainer" unique_id=598706696]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "LEVEL"
+
+[node name="LevelNumberLabel" type="Label" parent="LevelLabelsContainer/VBoxContainer/HBoxContainer" unique_id=1034364041]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2"
+
+[node name="HSeparator" type="HSeparator" parent="LevelLabelsContainer/VBoxContainer" unique_id=237076083]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_r46bu")
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelLabelsContainer/VBoxContainer" unique_id=1709104101]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="LevelNameLabel" type="Label" parent="LevelLabelsContainer/VBoxContainer/MarginContainer" unique_id=816487127]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_xjhuv")
+text = "LEVEL NAME  HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
