@@ -70,15 +70,18 @@ layout_mode = 2
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="TheButtons" unique_id=833559499]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Level 3"
 
+[node name="Level4Button" type="Button" parent="TheButtons" unique_id=1195259452]
+layout_mode = 2
+text = "Level 4"
+
 [node name="BackButton" type="Button" parent="TheButtons" unique_id=2004032486]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Back to TitleScreen"
 
 [connection signal="pressed" from="TheButtons/Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="TheButtons/Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="TheButtons/Level4Button" to="." method="_on_level_4_button_pressed"]
 [connection signal="pressed" from="TheButtons/BackButton" to="." method="_on_back_button_pressed"]

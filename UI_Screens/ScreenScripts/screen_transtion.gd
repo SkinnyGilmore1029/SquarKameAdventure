@@ -31,11 +31,11 @@ func fade_in(level: int) -> void:
 		%FadeRect,
 		"modulate:a",
 		1.0,
-		2.5
+		3.0
 	)
 
 	transition_tween.parallel().tween_property(
-		%LevelLabelsContainer,
+		%LevelCompleteContainer,
 		"modulate:a",
 		1.0,
 		2.5
@@ -43,10 +43,10 @@ func fade_in(level: int) -> void:
 
 
 	transition_tween.parallel().tween_property(
-		%LevelCompleteContainer,
+		%LevelLabelsContainer,
 		"modulate:a",
 		1.0,
-		2.5
+		1.0
 	).set_delay(1.0)
 	await transition_tween.finished
 
@@ -60,17 +60,17 @@ func fade_out() -> void:
 	%FadeRect.modulate.a = 1.0
 
 	transition_tween.tween_property(
-		%LevelCompleteContainer,
-		"modulate:a",
-		0.0,
-		2.5
-	)
-
-	transition_tween.parallel().tween_property(
 		%LevelLabelsContainer,
 		"modulate:a",
 		0.0,
-		2.5
+		3.0
+	)
+
+	transition_tween.parallel().tween_property(
+		%LevelCompleteContainer,
+		"modulate:a",
+		0.0,
+		3.0
 	).set_delay(0.5)
 
 
@@ -78,7 +78,7 @@ func fade_out() -> void:
 		%FadeRect,
 		"modulate:a",
 		0.0,
-		2.5
+		3.0
 	).set_delay(1.0)
 	await transition_tween.finished
 	visible = false

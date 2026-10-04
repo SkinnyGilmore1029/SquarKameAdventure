@@ -6,8 +6,6 @@
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_r46bu"]
 color = Color(1, 1, 1, 1)
-grow_begin = 2.0
-grow_end = -140.0
 thickness = 10
 
 [node name="ScreenTranstion" type="CanvasLayer" unique_id=1681915311]
