@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ch162f0e8eiwu"]
+
+[node name="SafeZone" type="StaticBody2D" unique_id=1520125555]
+collision_layer = 128
+collision_mask = 16

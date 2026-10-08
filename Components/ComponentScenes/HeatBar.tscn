@@ -22,7 +22,8 @@ offset_right = 132.0
 offset_bottom = 27.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="HeatBar" unique_id=955978420]
+[node name="TempLabel" type="Label" parent="HeatBar" unique_id=955978420]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -114.0
 offset_top = 2.0
@@ -30,5 +31,6 @@ offset_right = 52.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(0.09019608, 0.1254902, 0.16470589, 1)
 theme_override_colors/font_shadow_color = Color(0.37746742, 0.12383116, 0.7407865, 0)
-text = "Kame's Temperature "
+text = "Normal"
+horizontal_alignment = 1
 vertical_alignment = 1

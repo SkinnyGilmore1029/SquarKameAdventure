@@ -43,6 +43,7 @@ radius = 46.0
 height = 98.0
 
 [node name="Gator" type="CharacterBody2D" unique_id=435176561]
+y_sort_enabled = true
 collision_layer = 16
 collision_mask = 131
 script = ExtResource("1_uk60s")

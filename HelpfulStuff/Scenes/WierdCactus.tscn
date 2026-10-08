@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://chulp60gsokij"]
+
+[ext_resource type="Script" uid="uid://bdvm07c08f8ab" path="res://HelpfulStuff/Scripts/wierd_cactus.gd" id="1_1e6cg"]
+[ext_resource type="Texture2D" uid="uid://bibrbv20lyssi" path="res://Assets/Pictures/Npc/WierdCactus.png" id="1_j2fdr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e6cg"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(0, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wlis"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(24, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c24fx"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(48, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glgyu"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(72, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pffeh"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(96, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtqd7"]
+atlas = ExtResource("1_j2fdr")
+region = Rect2(120, 0, 24, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riw0x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e6cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wlis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c24fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glgyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pffeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtqd7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2fdr"]
+size = Vector2(13, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6cg"]
+size = Vector2(23, 35)
+
+[node name="WierdCactus" type="CharacterBody2D" unique_id=1831307187]
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_1e6cg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=643541745]
+sprite_frames = SubResource("SpriteFrames_riw0x")
+autoplay = "default"
+frame = 3
+frame_progress = 0.36032286
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565815316]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_j2fdr")
+
+[node name="SpawnFlyArea" type="Area2D" parent="." unique_id=35377635]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnFlyArea" unique_id=276728060]
+position = Vector2(0.5, 7.5)
+shape = SubResource("RectangleShape2D_1e6cg")
+
+[connection signal="body_entered" from="SpawnFlyArea" to="." method="_on_spawn_fly_area_body_entered"]

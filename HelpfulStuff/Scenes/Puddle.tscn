@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c7rio1xyo456s"]
+
+[ext_resource type="Script" uid="uid://8uvapqny8jeg" path="res://HelpfulStuff/Scripts/puddle.gd" id="1_7yci8"]
+[ext_resource type="Texture2D" uid="uid://cu53yt6k7f4j7" path="res://Assets/Pictures/Backgrounds/desert_demo_terrain.png" id="2_qc5cq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ami"]
+atlas = ExtResource("2_qc5cq")
+region = Rect2(80, 16, 48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_883v2"]
+radius = 17.507141
+
+[node name="Puddle" type="Node2D" unique_id=659849268]
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_7yci8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616003294]
+texture = SubResource("AtlasTexture_s3ami")
+
+[node name="PuddleArea" type="Area2D" parent="." unique_id=1980035334]
+
+[node name="PuddleCollision" type="CollisionShape2D" parent="PuddleArea" unique_id=1885887833]
+shape = SubResource("CircleShape2D_883v2")
+debug_color = Color(0, 0.36078432, 0.5137255, 0.6627451)
+
+[connection signal="body_entered" from="PuddleArea" to="." method="enter_puddle"]
+[connection signal="body_exited" from="PuddleArea" to="." method="exit_puddle"]
