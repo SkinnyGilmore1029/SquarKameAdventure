@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://vfwiikimqml7"]
 
 [ext_resource type="TileSet" uid="uid://cftxfmme4w6f3" path="res://Resources/TileSets/DesertTiles.tres" id="1_erstg"]
+[ext_resource type="Script" uid="uid://btw78smgrqiic" path="res://TheLevels/LevelScripts/Level4/level_4.gd" id="1_vpwee"]
 
 [node name="Level4" type="Node2D" unique_id=47411587]
+script = ExtResource("1_vpwee")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=1429780969]
 

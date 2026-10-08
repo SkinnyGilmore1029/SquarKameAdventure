@@ -1,4 +1,3 @@
-class_name Level3Manager
 extends Node2D
 
 @export var level_data: LevelDataManager

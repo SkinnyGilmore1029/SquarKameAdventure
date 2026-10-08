@@ -1,4 +1,3 @@
-class_name Level1Manager
 extends Node2D
 
 

@@ -1,4 +1,3 @@
-class_name Level2Manager
 extends Node2D
 
 
@@ -17,6 +16,7 @@ func _ready() -> void:
 
 
 func set_level_up() -> void:
+	#set only if picking from level select, otherwise level 1 already set it.
 	hint_frog_text.text = "Those Stars are actually buttons.\n See what happens if you push\n them all!"
 	key.hide()
 	key.get_node("Collectable/CollisionShape2D").set_deferred("disabled", true)
