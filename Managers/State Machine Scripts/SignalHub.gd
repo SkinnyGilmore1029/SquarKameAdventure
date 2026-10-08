@@ -8,6 +8,7 @@ signal one_up_collected(new_count)
 signal subtract_one_up(new_count)
 signal one_up_global
 signal player_died
+signal reset_heat
 
 #-----------------Collectables------------------------
 signal key_collected(new_count)
@@ -22,7 +23,8 @@ signal start_hot_bar(value)
 signal stop_hot_bar
 signal entered_puddle
 signal exited_puddle
-
+signal tornado_spawned
+signal tornado_despawned
 
 
 #-----------------MenuSignals-------------------------

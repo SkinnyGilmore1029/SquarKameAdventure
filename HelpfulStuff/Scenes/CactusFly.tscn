@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dtjt42ct42yxd"]
+
+[node name="CactusFly" type="CharacterBody2D" unique_id=989079460]

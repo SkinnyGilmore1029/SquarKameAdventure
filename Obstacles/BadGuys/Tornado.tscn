@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dkwvudaxek24t"]
+
+[ext_resource type="Script" uid="uid://4uyaf84821w3" path="res://Managers/EnemyManagers/TimerEnemyLogic.gd" id="1_ifh1w"]
+[ext_resource type="Texture2D" uid="uid://b3ywuy6huhsqy" path="res://Assets/Pictures/Bad Guys/Tornado_sheet.png" id="1_nv4tw"]
+[ext_resource type="Resource" uid="uid://by8yqju0k4apj" path="res://Obstacles/BadGuysResources/Tornado.tres" id="2_lvnqe"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="3_lvnqe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsgq1"]
+atlas = ExtResource("1_nv4tw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifh1w"]
+atlas = ExtResource("1_nv4tw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvnqe"]
+atlas = ExtResource("1_nv4tw")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkki2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsgq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifh1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvnqe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkki2"]
+radius = 20.0
+height = 108.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60r1j"]
+radius = 25.0
+height = 110.0
+
+[node name="Tornado" type="CharacterBody2D" unique_id=2097557115]
+collision_layer = 16
+collision_mask = 155
+script = ExtResource("1_ifh1w")
+enemy_data = ExtResource("2_lvnqe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1801836550]
+sprite_frames = SubResource("SpriteFrames_wkki2")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14567244]
+position = Vector2(-14, 3)
+shape = SubResource("CapsuleShape2D_wkki2")
+debug_color = Color(0.25490198, 0.62352943, 0.38039216, 0.7647059)
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("3_lvnqe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathCollsion" unique_id=380457498]
+position = Vector2(-14, 2)
+shape = SubResource("CapsuleShape2D_60r1j")
+
+[node name="Timers" type="Node" parent="." unique_id=930027117]
+
+[node name="DeSpawnTimer" type="Timer" parent="Timers" unique_id=1554021164]
+wait_time = 20.0
+autostart = true
+
+[node name="SpeedTimer" type="Timer" parent="Timers" unique_id=1429369110]
+autostart = true
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]
+[connection signal="timeout" from="Timers/DeSpawnTimer" to="." method="_on_de_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpeedTimer" to="." method="_on_speed_timer_timeout"]

@@ -13,6 +13,9 @@ var bad_guy_folder := DirAccess.open("res://Obstacles/BadGuys")
 
 ##gets all the children nodes paths so i don't have to always update the dictionary
 func _ready() -> void:
+	get_files()
+
+func get_files() -> void:
 	for file in bad_guy_folder.get_files():
 		if file.ends_with(".tscn"):
 			enemy_scenes[file.get_basename()] = "res://Obstacles/BadGuys/" + file

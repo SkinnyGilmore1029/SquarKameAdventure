@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://ch162f0e8eiwu" path="res://Components/ComponentScenes/SafeZone.tscn" id="9_76fra"]
 [ext_resource type="PackedScene" uid="uid://chulp60gsokij" path="res://HelpfulStuff/Scenes/WierdCactus.tscn" id="11_wv66m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rha50"]
+size = Vector2(170, 96)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06h8b"]
 size = Vector2(71, 17)
 
@@ -146,7 +149,14 @@ position = Vector2(-2141, 85)
 
 [node name="SafeZones" type="Node2D" parent="." unique_id=961251578]
 
-[node name="SafeZone10" parent="SafeZones" unique_id=1520125555 instance=ExtResource("9_76fra")]
+[node name="SafeZone11" parent="SafeZones" unique_id=1520125555 instance=ExtResource("9_76fra")]
+position = Vector2(693, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone11" unique_id=1956140670]
+position = Vector2(31, 38)
+shape = SubResource("RectangleShape2D_rha50")
+
+[node name="SafeZone10" parent="SafeZones" unique_id=414476303 instance=ExtResource("9_76fra")]
 position = Vector2(11, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone10" unique_id=629279433]
@@ -232,3 +242,12 @@ position = Vector2(281, 181)
 
 [node name="WierdCactus5" parent="Cacti" unique_id=209569855 instance=ExtResource("11_wv66m")]
 position = Vector2(573, 575)
+
+[node name="Timers" type="Node" parent="." unique_id=1336041267]
+
+[node name="SpawnTornado" type="Timer" parent="Timers" unique_id=500316802]
+unique_name_in_owner = true
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timers/SpawnTornado" to="." method="_on_spawn_tornado_timeout"]

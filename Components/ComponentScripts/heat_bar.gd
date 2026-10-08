@@ -19,6 +19,7 @@ func _connect_puddle_signals() -> void:
 	SignalHub.stop_hot_bar.connect(kill_tween_bar)
 	SignalHub.entered_puddle.connect(enter_puddle)
 	SignalHub.exited_puddle.connect(exit_puddle)
+	SignalHub.reset_heat.connect(_set_heat_bar)
 
 func _process(_delta: float) -> void:
 	_heat_bar_color()

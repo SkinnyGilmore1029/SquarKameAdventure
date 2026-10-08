@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djc3rrq1r36fa"
-path="res://.godot/imported/ScorpionSheet.png-2e7bc28a6c2c9242f0fbd00cc8c36d9e.ctex"
+uid="uid://vuiuijks4q3b"
+path="res://.godot/imported/goodscrop.png-ec30423fa31d7332eb0d81b5523c984b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Bad Guys/ScorpionSheet.png"
-dest_files=["res://.godot/imported/ScorpionSheet.png-2e7bc28a6c2c9242f0fbd00cc8c36d9e.ctex"]
+source_file="res://Assets/Pictures/Bad Guys/goodscrop.png"
+dest_files=["res://.godot/imported/goodscrop.png-ec30423fa31d7332eb0d81b5523c984b.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

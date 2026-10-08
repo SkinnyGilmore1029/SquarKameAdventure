@@ -1,74 +1,60 @@
 [gd_scene format=3 uid="uid://epaplhi7tn24"]
 
 [ext_resource type="Script" uid="uid://bo3rke3fmfwtv" path="res://Managers/EnemyManagers/AnimatedStaticLogic.gd" id="1_0kmga"]
-[ext_resource type="Texture2D" uid="uid://ckttapbavajn6" path="res://Assets/Pictures/Bad Guys/NewScorpian.png" id="1_7xxay"]
 [ext_resource type="Resource" uid="uid://dqtcyidlmy55x" path="res://Obstacles/BadGuysResources/Scorpian.tres" id="2_0kmga"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_lbdst"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbdst"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kdg0"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kmga"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(96, 0, 48, 48)
+[ext_resource type="Texture2D" uid="uid://vuiuijks4q3b" path="res://Assets/Pictures/Bad Guys/goodscrop.png" id="3_0kmga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31t1g"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(0, 96, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kodn8"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(48, 96, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lknh2"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(96, 96, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ktqk"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(0, 48, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxeh3"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(48, 48, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiqv6"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(96, 48, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74bk2"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(0, 144, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5pgy"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(48, 144, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51fkn"]
-atlas = ExtResource("1_7xxay")
-region = Rect2(96, 144, 48, 48)
+atlas = ExtResource("3_0kmga")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knfxg"]
+atlas = ExtResource("3_0kmga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdymv"]
+atlas = ExtResource("3_0kmga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7840o"]
+atlas = ExtResource("3_0kmga")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xxay"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lbdst")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8kdg0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0kmga")
-}],
-"loop": 1,
-"name": &"down",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_31t1g")
@@ -80,7 +66,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lknh2")
 }],
 "loop": 1,
-"name": &"left",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -94,7 +80,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_hiqv6")
 }],
 "loop": 1,
-"name": &"right",
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,18 +94,33 @@ animations = [{
 "texture": SubResource("AtlasTexture_51fkn")
 }],
 "loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knfxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdymv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7840o")
+}],
+"loop": 1,
 "name": &"up",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kdg0"]
-size = Vector2(11, 25)
+size = Vector2(6.1666665, 11.666666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmga"]
-size = Vector2(20, 35)
+size = Vector2(8.666667, 15.333332)
 
 [node name="Scorpian" type="CharacterBody2D" unique_id=773741873]
 y_sort_enabled = true
+scale = Vector2(3, 3)
 collision_layer = 16
 collision_mask = 403
 script = ExtResource("1_0kmga")
@@ -131,17 +132,18 @@ animation = &"up"
 autoplay = "up"
 
 [node name="WallCollision" type="CollisionShape2D" parent="." unique_id=1307686655]
-position = Vector2(0, 5)
+position = Vector2(2.666667, 6.8333335)
 shape = SubResource("RectangleShape2D_8kdg0")
 
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_lbdst")]
-collision_mask = 1
+collision_mask = 17
 
 [node name="DeathCollision" type="CollisionShape2D" parent="DeathCollsion" unique_id=228395492]
-position = Vector2(0, 2.5)
+position = Vector2(2.3333333, 5.666667)
 shape = SubResource("RectangleShape2D_0kmga")
 debug_color = Color(0.8882342, 0.26790467, 0.49292773, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=2075706400]
 
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

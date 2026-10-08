@@ -8,6 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is MainKame:
 		#This signal is connected in MainKame.gd
 		#This has to be called first to keep the PlayersGlobals synced with the player hub.
+		SignalHub.reset_heat.emit()
 		SignalHub.player_died.emit()
 
 
