@@ -3,10 +3,10 @@ extends Node
 
 
 var level_scenes: Dictionary[int,Array] = {
-	1 : ["res://TheLevels/LevelScenes/Level1.tscn", Vector2(560, 768)],
-	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715)],
-	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589)],
-	4 : ["res://TheLevels/LevelScenes/Level4.tscn", Vector2(704,63)],
+	1 : ["res://TheLevels/LevelScenes/Level1.tscn", Vector2(560, 768), false],
+	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715), false],
+	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589), false],
+	4 : ["res://TheLevels/LevelScenes/Level4.tscn", Vector2(704,63), true],
 }
 
 
@@ -42,6 +42,7 @@ func change_level(new_level: int) -> void:
 	PlayerGlobals.spawn_position = level_scenes[new_level][1]
 	SignalHub.change_level_number.emit(new_level)
 	GameState.current_level = new_level
+	GameState.hot_level= level_scenes[new_level][2]
 
 	#Tell everything connected to the signal we changed the level.
 	SignalHub.changed_levels.emit(next_level_instance.name)
