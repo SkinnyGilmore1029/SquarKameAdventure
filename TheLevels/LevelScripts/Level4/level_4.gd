@@ -1,3 +1,4 @@
+
 extends Node2D
 
 @export var level_data: LevelDataManager
@@ -5,6 +6,9 @@ extends Node2D
 @onready var hint_frog := $Hints/HintFrog/HintPanel/Label
 @onready var hint_frog2 := $Hints/HintFrog2/HintPanel/Label
 @onready var bad_guy_node = get_node("Level4_BadGuys/Respawning")
+
+var fly_group1: Array = []
+var fly_group2: Array = []
 
 func _ready() -> void:
 	set_level()

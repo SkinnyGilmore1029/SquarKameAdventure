@@ -1,3 +1,29 @@
 [gd_scene format=3 uid="uid://dtjt42ct42yxd"]
 
+[ext_resource type="Script" uid="uid://cktn3odfbbfvd" path="res://HelpfulStuff/Scripts/cactus_fly.gd" id="1_a7q7a"]
+[ext_resource type="Texture2D" uid="uid://cki2ia0rdw4q7" path="res://Assets/Pictures/Bad Guys/fly.png" id="1_wwnfh"]
+[ext_resource type="PackedScene" uid="uid://bdmqarfmbfn62" path="res://Components/ComponentScenes/Collectable.tscn" id="2_ccgrf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccgrf"]
+radius = 5.0990195
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7q7a"]
+radius = 14.0
+
 [node name="CactusFly" type="CharacterBody2D" unique_id=989079460]
+script = ExtResource("1_a7q7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1583723443]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_wwnfh")
+
+[node name="WallCollision" type="CollisionShape2D" parent="." unique_id=669958921]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_ccgrf")
+
+[node name="Collectable" parent="." unique_id=751867652 instance=ExtResource("2_ccgrf")]
+
+[node name="CollectableCollision" type="CollisionShape2D" parent="Collectable" unique_id=1012595165]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_a7q7a")
+debug_color = Color(0.5579835, 0.5606934, 0.04649438, 0.41960785)

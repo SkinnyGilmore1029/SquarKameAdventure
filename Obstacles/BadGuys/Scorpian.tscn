@@ -113,10 +113,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kdg0"]
-size = Vector2(6.1666665, 11.666666)
+size = Vector2(6.416667, 11.666666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmga"]
-size = Vector2(8.666667, 15.333332)
+size = Vector2(9.333334, 15.333332)
 
 [node name="Scorpian" type="CharacterBody2D" unique_id=773741873]
 y_sort_enabled = true
@@ -132,14 +132,14 @@ animation = &"up"
 autoplay = "up"
 
 [node name="WallCollision" type="CollisionShape2D" parent="." unique_id=1307686655]
-position = Vector2(2.666667, 6.8333335)
+position = Vector2(2.5416667, 6.8333335)
 shape = SubResource("RectangleShape2D_8kdg0")
 
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_lbdst")]
 collision_mask = 17
 
 [node name="DeathCollision" type="CollisionShape2D" parent="DeathCollsion" unique_id=228395492]
-position = Vector2(2.3333333, 5.666667)
+position = Vector2(2, 5.666667)
 shape = SubResource("RectangleShape2D_0kmga")
 debug_color = Color(0.8882342, 0.26790467, 0.49292773, 0.41960785)
 

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pnjnqq2vpiv" path="res://HelpfulStuff/Scenes/HintFrog.tscn" id="8_s71b8"]
 [ext_resource type="PackedScene" uid="uid://ch162f0e8eiwu" path="res://Components/ComponentScenes/SafeZone.tscn" id="9_76fra"]
 [ext_resource type="PackedScene" uid="uid://chulp60gsokij" path="res://HelpfulStuff/Scenes/WierdCactus.tscn" id="11_wv66m"]
+[ext_resource type="Script" uid="uid://d0y5tdfutjtuu" path="res://TheLevels/LevelScripts/Level4/FlyResource.gd" id="12_p6cyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rha50"]
 size = Vector2(170, 96)
@@ -44,6 +45,31 @@ size = Vector2(81, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8trpi"]
 size = Vector2(113, 92)
+
+[sub_resource type="Resource" id="Resource_lqikb"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-25, 50)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_fwb3d"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-40, 100)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_5tcn2"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-50, 75)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_qpeb7"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-30, 80)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_8trpi"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-50, 100)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
 
 [node name="Level4" type="Node2D" unique_id=47411587]
 script = ExtResource("1_vpwee")
@@ -145,7 +171,8 @@ position = Vector2(-1862, 552)
 [node name="Puddle9" parent="Puddles" unique_id=1757881775 instance=ExtResource("3_vx1ic")]
 position = Vector2(-2141, 85)
 
-[node name="TheFlies" type="Node2D" parent="." unique_id=414254538]
+[node name="TheFliesGroup" type="Node2D" parent="." unique_id=414254538]
+unique_name_in_owner = true
 
 [node name="SafeZones" type="Node2D" parent="." unique_id=961251578]
 
@@ -230,18 +257,23 @@ shape = SubResource("RectangleShape2D_8trpi")
 
 [node name="WierdCactus" parent="Cacti" unique_id=1831307187 instance=ExtResource("11_wv66m")]
 position = Vector2(685, 394)
+fly_data = SubResource("Resource_lqikb")
 
 [node name="WierdCactus2" parent="Cacti" unique_id=949560158 instance=ExtResource("11_wv66m")]
 position = Vector2(261, 1142)
+fly_data = SubResource("Resource_fwb3d")
 
 [node name="WierdCactus3" parent="Cacti" unique_id=515007283 instance=ExtResource("11_wv66m")]
 position = Vector2(424, 886)
+fly_data = SubResource("Resource_5tcn2")
 
 [node name="WierdCactus4" parent="Cacti" unique_id=1610456245 instance=ExtResource("11_wv66m")]
 position = Vector2(281, 181)
+fly_data = SubResource("Resource_qpeb7")
 
 [node name="WierdCactus5" parent="Cacti" unique_id=209569855 instance=ExtResource("11_wv66m")]
 position = Vector2(573, 575)
+fly_data = SubResource("Resource_8trpi")
 
 [node name="Timers" type="Node" parent="." unique_id=1336041267]
 

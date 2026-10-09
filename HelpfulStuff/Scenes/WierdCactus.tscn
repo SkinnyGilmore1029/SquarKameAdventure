@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdvm07c08f8ab" path="res://HelpfulStuff/Scripts/wierd_cactus.gd" id="1_1e6cg"]
 [ext_resource type="Texture2D" uid="uid://bibrbv20lyssi" path="res://Assets/Pictures/Npc/WierdCactus.png" id="1_j2fdr"]
+[ext_resource type="Resource" uid="uid://cutdjlgp2brhk" path="res://TheLevels/LevelResources/Flyspawn.tres" id="2_2wlis"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1e6cg"]
 atlas = ExtResource("1_j2fdr")
@@ -63,6 +64,7 @@ size = Vector2(23, 35)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_1e6cg")
+fly_data = ExtResource("2_2wlis")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=643541745]
 sprite_frames = SubResource("SpriteFrames_riw0x")
@@ -75,6 +77,7 @@ position = Vector2(0.5, 13)
 shape = SubResource("RectangleShape2D_j2fdr")
 
 [node name="SpawnFlyArea" type="Area2D" parent="." unique_id=35377635]
+unique_name_in_owner = true
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnFlyArea" unique_id=276728060]

@@ -22,6 +22,13 @@ var node_hub: Dictionary = {
 		"Has Args" : true,
 		"Args" : [PlayerGlobals, "players_lives"],
 		"BackgroundSignal" : SignalHub.one_up_global
+	},
+	TheFlies: {
+		"Name" : "Flies",
+		"UI_Signal" : null,
+		"Has Args" : false,
+		"Args" :  null,
+		"BackgroundSignal" : null
 	}
 }
 

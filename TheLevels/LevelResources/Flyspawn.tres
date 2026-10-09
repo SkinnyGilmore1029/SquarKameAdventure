@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FlyResource" format=3 uid="uid://cutdjlgp2brhk"]
+
+[ext_resource type="Script" uid="uid://d0y5tdfutjtuu" path="res://TheLevels/LevelScripts/Level4/FlyResource.gd" id="1_t72nk"]
+
+[resource]
+script = ExtResource("1_t72nk")
+offset_vector = Vector2(25, 50)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
