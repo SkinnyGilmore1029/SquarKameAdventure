@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckttapbavajn6"
-path="res://.godot/imported/NewScorpian.png-6698a60e7ce52de2848dc56f5203ce31.ctex"
+uid="uid://ckm3p7c65l6f1"
+path="res://.godot/imported/Lizard.png-24b976d0b809c6c28e0bad57ec19146e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Bad Guys/NewScorpian.png"
-dest_files=["res://.godot/imported/NewScorpian.png-6698a60e7ce52de2848dc56f5203ce31.ctex"]
+source_file="res://Assets/Pictures/Npc/Lizard.png"
+dest_files=["res://.godot/imported/Lizard.png-24b976d0b809c6c28e0bad57ec19146e.ctex"]
 
 [params]
 

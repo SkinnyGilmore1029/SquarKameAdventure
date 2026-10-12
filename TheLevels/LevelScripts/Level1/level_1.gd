@@ -19,10 +19,10 @@ func set_level_data() -> void:
 	level_data.spawn_positions = {
 	"Car": [Vector2(1300, 526), Vector2(-100,322)],
 	"Truck": [Vector2(1325, -304)],
-	"Bus": [Vector2(-233, -510)]
+	"Bus": [Vector2(-233, -525)]
 	}
 	level_data.speed_choices = {
 	"Car" : [250, 300, 350],
 	"Truck" : [150, 200, 220],
-	"Bus" : [100, 125, 175]
+	"Bus" : [175, 195, 215]
 	}

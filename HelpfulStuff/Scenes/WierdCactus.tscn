@@ -58,7 +58,7 @@ animations = [{
 size = Vector2(13, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6cg"]
-size = Vector2(23, 35)
+size = Vector2(31, 52)
 
 [node name="WierdCactus" type="CharacterBody2D" unique_id=1831307187]
 collision_layer = 2
@@ -81,7 +81,7 @@ unique_name_in_owner = true
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnFlyArea" unique_id=276728060]
-position = Vector2(0.5, 7.5)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_1e6cg")
 
 [connection signal="body_entered" from="SpawnFlyArea" to="." method="_on_spawn_fly_area_body_entered"]

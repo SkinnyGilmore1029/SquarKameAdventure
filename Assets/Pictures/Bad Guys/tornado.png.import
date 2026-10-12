@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daynbj5ajqpdk"
-path="res://.godot/imported/cactus_sheet.png-45ad939d47da17b717b6876fd73723bc.ctex"
+uid="uid://cjys1cj8otjv8"
+path="res://.godot/imported/tornado.png-5729179b887e41e34398aeff5fd9ae9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Npc/cactus_sheet.png"
-dest_files=["res://.godot/imported/cactus_sheet.png-45ad939d47da17b717b6876fd73723bc.ctex"]
+source_file="res://Assets/Pictures/Bad Guys/tornado.png"
+dest_files=["res://.godot/imported/tornado.png-5729179b887e41e34398aeff5fd9ae9e.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

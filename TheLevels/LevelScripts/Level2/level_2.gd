@@ -31,11 +31,13 @@ func add_to_button_count(button_node: Node2D, parent_node: Node2D) -> void:
 			button_group1.append(button_node)
 			if make_key_visible(parent_node_name):
 				key.show()
+				AudioBus.play_sound("Appear")
 				key.get_node("Collectable/CollisionShape2D").set_deferred("disabled", false)
 		"ButtonGroup2":
 			button_group2.append(button_node)
 			if make_key_visible(parent_node_name):
 				key_2.show()
+				AudioBus.play_sound("Appear")
 				key_2.get_node("Collectable/CollisionShape2D").set_deferred("disabled", false)
 
 func make_key_visible(parent_name: String) -> bool:

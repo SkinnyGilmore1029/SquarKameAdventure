@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3ywuy6huhsqy"
-path="res://.godot/imported/Tornado_sheet.png-c904c8f227dbc5751659ab260980c862.ctex"
+uid="uid://d2p4ucryw5us5"
+path="res://.godot/imported/bus.png-60d589e007d048d60eb67d0d3fd938d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Bad Guys/Tornado_sheet.png"
-dest_files=["res://.godot/imported/Tornado_sheet.png-c904c8f227dbc5751659ab260980c862.ctex"]
+source_file="res://Assets/Pictures/Bad Guys/bus.png"
+dest_files=["res://.godot/imported/bus.png-60d589e007d048d60eb67d0d3fd938d0.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

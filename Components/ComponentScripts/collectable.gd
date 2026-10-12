@@ -22,13 +22,6 @@ var node_hub: Dictionary = {
 		"Has Args" : true,
 		"Args" : [PlayerGlobals, "players_lives"],
 		"BackgroundSignal" : SignalHub.one_up_global
-	},
-	TheFlies: {
-		"Name" : "Flies",
-		"UI_Signal" : null,
-		"Has Args" : false,
-		"Args" :  null,
-		"BackgroundSignal" : null
 	}
 }
 
@@ -68,6 +61,12 @@ func check_parent() -> void:
 	if the_args == null or the_args.size() < 2:
 		push_warning("%s does not have any Args in its array. check collectable.gd" % collectable_name)
 		get_parent().queue_free()
+		return
+
+
+	#Does not have a source just an argument.
+	if the_args[0] == null:
+		collectable_signal.emit(the_args[1])
 		return
 
 	# Emit the UI signal if one is configured.

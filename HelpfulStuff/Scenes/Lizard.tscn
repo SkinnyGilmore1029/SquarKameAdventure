@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://brxvwh1cj6ng6"]
+
+[ext_resource type="Texture2D" uid="uid://ckm3p7c65l6f1" path="res://Assets/Pictures/Npc/Lizard.png" id="1_j4dbs"]
+[ext_resource type="Script" uid="uid://y0q048qp1isw" path="res://HelpfulStuff/Scripts/lizard.gd" id="1_m7roo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpeb7"]
+radius = 22.0
+height = 80.02215
+
+[node name="Lizard" type="CharacterBody2D" unique_id=1990089305]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_m7roo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=811203392]
+scale = Vector2(2, 2)
+texture = ExtResource("1_j4dbs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=564209143]
+polygon = PackedVector2Array(25, -12, 35, -8, 39, 0, 34, 7, 34, 19, 19, 16, 16, 18, 19, 21, 12, 22, 8, 19, 3, 22, -7, 22, -5, 13, -20, 13, -28, 0, -18, -11, -10, -2, -5, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=249199927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1288035106]
+position = Vector2(8, 2)
+rotation = 1.5373682
+shape = SubResource("CapsuleShape2D_qpeb7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

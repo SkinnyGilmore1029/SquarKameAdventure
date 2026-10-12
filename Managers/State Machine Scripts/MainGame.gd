@@ -4,7 +4,6 @@ extends Node2D
 
 
 @onready var player_node: Node2D = $PlayerNode
-@onready var music := $TheAudio/BackgroundMusic
 @onready var screen_transitions: Node = $ScreenTranstion
 
 var coming_from_game_over: bool
