@@ -10,10 +10,11 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.790511, 0.67296195, 0.9920277, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_830d4"]
 radius = 24.186773
@@ -29,15 +30,16 @@ y_sort_enabled = true
 unique_name_in_owner = true
 visible = false
 z_index = 1
-offset_left = -73.0
-offset_top = -109.0
-offset_right = 67.0
-offset_bottom = -14.0
+offset_left = -90.0
+offset_top = -130.0
+offset_right = 50.0
+offset_bottom = -35.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xepa7")
 
 [node name="Label" type="Label" parent="HintPanel" unique_id=2096330841]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.35193086, 0.8404114, 0.76672995, 1)
+theme_override_font_sizes/font_size = 24
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794670284]

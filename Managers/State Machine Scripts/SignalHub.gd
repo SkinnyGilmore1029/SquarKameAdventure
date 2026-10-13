@@ -26,6 +26,7 @@ signal exited_puddle
 signal tornado_spawned
 signal tornado_despawned
 signal collected_fly(fly_name)
+signal can_move_lizard
 
 
 #-----------------MenuSignals-------------------------

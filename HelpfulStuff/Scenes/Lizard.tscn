@@ -7,11 +7,22 @@
 radius = 22.0
 height = 80.02215
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7roo"]
+bg_color = Color(0.31764707, 0.49019608, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5666675, 0.8878493, 0.64536166, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Lizard" type="CharacterBody2D" unique_id=1990089305]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 4
-collision_mask = 3
 script = ExtResource("1_m7roo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=811203392]
@@ -21,11 +32,28 @@ texture = ExtResource("1_j4dbs")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=564209143]
 polygon = PackedVector2Array(25, -12, 35, -8, 39, 0, 34, 7, 34, 19, 19, 16, 16, 18, 19, 21, 12, 22, 8, 19, 3, 22, -7, 22, -5, 13, -20, 13, -28, 0, -18, -11, -10, -2, -5, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=249199927]
+[node name="BodyCollision" type="Area2D" parent="." unique_id=249199927]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1288035106]
+[node name="BodyCollision" type="CollisionShape2D" parent="BodyCollision" unique_id=1288035106]
 position = Vector2(8, 2)
 rotation = 1.5373682
 shape = SubResource("CapsuleShape2D_qpeb7")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="FlyCountContainer" type="PanelContainer" parent="." unique_id=604887538]
+unique_name_in_owner = true
+visible = false
+offset_left = -24.0
+offset_top = -44.0
+offset_right = 16.0
+offset_bottom = -21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m7roo")
+
+[node name="FlyCountLabel" type="Label" parent="FlyCountContainer" unique_id=1942220583]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Flies 0/5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="BodyCollision" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="BodyCollision" to="." method="_on_body_collision_body_exited"]
