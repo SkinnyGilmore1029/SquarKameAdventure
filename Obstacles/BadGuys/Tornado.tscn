@@ -43,6 +43,8 @@ radius = 25.0
 height = 110.0
 
 [node name="Tornado" type="CharacterBody2D" unique_id=2097557115]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 16
 collision_mask = 155
 script = ExtResource("1_ifh1w")

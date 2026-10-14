@@ -32,15 +32,19 @@ var camera_limits: Dictionary = {
 		"Bottom" : 2090,
 		"Left" : -2300,
 		"Right" : 850
+	},
+	"Level5" : {
+		"Top" : 0,
+		"Bottom" : 2176,
+		"Left" : 0,
+		"Right" : 2740
 	}
 }
-
 
 func _ready() -> void:
 	connect_all_signals()
 	set_camera_position()
 	set_player_data()
-
 
 func died() -> void:
 	$StateMachine.transition_to("Death")

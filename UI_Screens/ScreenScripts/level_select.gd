@@ -1,6 +1,7 @@
 class_name LevelSelectControl
 extends Control
 
+@onready var the_tree: SceneTree = get_tree()
 
 func _ready():
 	%Level2Button.grab_focus()
@@ -17,8 +18,11 @@ func _on_level_3_button_pressed() -> void:
 func _on_level_4_button_pressed() -> void:
 	set_game_state(4)
 
+func _on_level_5_button_pressed() -> void:
+	set_game_state(5)
+
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file(GameState.title_screen)
+	the_tree.change_scene_to_file(GameState.title_screen)
 
 
 
@@ -27,4 +31,6 @@ func _on_back_button_pressed() -> void:
 func set_game_state(level:int) -> void:
 	GameState.current_level = level
 	GameState.picking_level = true
-	get_tree().change_scene_to_file(GameState.difficulty_screen)
+	the_tree.change_scene_to_file(GameState.difficulty_screen)
+
+

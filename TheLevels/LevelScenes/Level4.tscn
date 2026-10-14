@@ -15,6 +15,31 @@
 [ext_resource type="Script" uid="uid://d0y5tdfutjtuu" path="res://TheLevels/LevelScripts/Level4/FlyResource.gd" id="12_p6cyd"]
 [ext_resource type="PackedScene" uid="uid://brxvwh1cj6ng6" path="res://HelpfulStuff/Scenes/Lizard.tscn" id="14_fwb3d"]
 
+[sub_resource type="Resource" id="Resource_lqikb"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-25, 50)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_fwb3d"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-40, 100)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_5tcn2"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-50, 75)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_qpeb7"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-30, 80)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
+[sub_resource type="Resource" id="Resource_8trpi"]
+script = ExtResource("12_p6cyd")
+offset_vector = Vector2(-50, 100)
+metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uu2l"]
 size = Vector2(115.5, 20)
 
@@ -57,34 +82,16 @@ size = Vector2(81, 83)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8trpi"]
 size = Vector2(113, 92)
 
-[sub_resource type="Resource" id="Resource_lqikb"]
-script = ExtResource("12_p6cyd")
-offset_vector = Vector2(-25, 50)
-metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
-
-[sub_resource type="Resource" id="Resource_fwb3d"]
-script = ExtResource("12_p6cyd")
-offset_vector = Vector2(-40, 100)
-metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
-
-[sub_resource type="Resource" id="Resource_5tcn2"]
-script = ExtResource("12_p6cyd")
-offset_vector = Vector2(-50, 75)
-metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
-
-[sub_resource type="Resource" id="Resource_qpeb7"]
-script = ExtResource("12_p6cyd")
-offset_vector = Vector2(-30, 80)
-metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
-
-[sub_resource type="Resource" id="Resource_8trpi"]
-script = ExtResource("12_p6cyd")
-offset_vector = Vector2(-50, 100)
-metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
-
 [node name="Level4" type="Node2D" unique_id=47411587]
 script = ExtResource("1_vpwee")
 level_data = ExtResource("2_sv1vb")
+
+[node name="Timers" type="Node" parent="." unique_id=1336041267]
+
+[node name="SpawnTornado" type="Timer" parent="Timers" unique_id=500316802]
+unique_name_in_owner = true
+wait_time = 5.0
+autostart = true
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=1429780969]
 
@@ -192,6 +199,52 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(148.99998, 333.99997)
 scale = Vector2(0.4, 0.4)
 
+[node name="Cacti" type="Node2D" parent="." unique_id=1745307436]
+
+[node name="CactusGroup1" type="Node2D" parent="Cacti" unique_id=1609840822]
+
+[node name="WierdCactus" parent="Cacti/CactusGroup1" unique_id=1831307187 instance=ExtResource("11_wv66m")]
+position = Vector2(685, 394)
+fly_data = SubResource("Resource_lqikb")
+
+[node name="WierdCactus2" parent="Cacti/CactusGroup1" unique_id=949560158 instance=ExtResource("11_wv66m")]
+position = Vector2(195, 958)
+fly_data = SubResource("Resource_fwb3d")
+
+[node name="WierdCactus3" parent="Cacti/CactusGroup1" unique_id=515007283 instance=ExtResource("11_wv66m")]
+position = Vector2(572, 897)
+fly_data = SubResource("Resource_5tcn2")
+
+[node name="WierdCactus4" parent="Cacti/CactusGroup1" unique_id=1610456245 instance=ExtResource("11_wv66m")]
+position = Vector2(281, 181)
+fly_data = SubResource("Resource_qpeb7")
+
+[node name="WierdCactus5" parent="Cacti/CactusGroup1" unique_id=209569855 instance=ExtResource("11_wv66m")]
+position = Vector2(573, 575)
+fly_data = SubResource("Resource_8trpi")
+
+[node name="CactusGroup2" type="Node2D" parent="Cacti" unique_id=1247850194]
+
+[node name="WierdCactus6" parent="Cacti/CactusGroup2" unique_id=2057261379 instance=ExtResource("11_wv66m")]
+position = Vector2(-1279, 1434)
+fly_data = SubResource("Resource_8trpi")
+
+[node name="WierdCactus7" parent="Cacti/CactusGroup2" unique_id=840395928 instance=ExtResource("11_wv66m")]
+position = Vector2(-1308, 1919)
+fly_data = SubResource("Resource_8trpi")
+
+[node name="WierdCactus8" parent="Cacti/CactusGroup2" unique_id=1999191621 instance=ExtResource("11_wv66m")]
+position = Vector2(-332, 1891)
+fly_data = SubResource("Resource_8trpi")
+
+[node name="WierdCactus9" parent="Cacti/CactusGroup2" unique_id=1194210287 instance=ExtResource("11_wv66m")]
+position = Vector2(-238, 1397)
+fly_data = SubResource("Resource_8trpi")
+
+[node name="WierdCactus10" parent="Cacti/CactusGroup2" unique_id=2134296522 instance=ExtResource("11_wv66m")]
+position = Vector2(-1162, 946)
+fly_data = SubResource("Resource_8trpi")
+
 [node name="Puddles" type="Node2D" parent="." unique_id=1388760697]
 
 [node name="Puddle" parent="Puddles" unique_id=659849268 instance=ExtResource("3_vx1ic")]
@@ -220,6 +273,15 @@ position = Vector2(-1862, 552)
 
 [node name="Puddle9" parent="Puddles" unique_id=1757881775 instance=ExtResource("3_vx1ic")]
 position = Vector2(-2141, 85)
+
+[node name="Lizards" type="Node2D" parent="." unique_id=1300150350]
+
+[node name="Lizard" parent="Lizards" unique_id=1990089305 instance=ExtResource("14_fwb3d")]
+position = Vector2(81, 35)
+
+[node name="Lizard2" parent="Lizards" unique_id=1828776819 instance=ExtResource("14_fwb3d")]
+position = Vector2(-937.99994, 1709.9999)
+rotation = -0.04451757
 
 [node name="TheFliesGroup" type="Node2D" parent="." unique_id=414254538]
 unique_name_in_owner = true
@@ -327,59 +389,6 @@ position = Vector2(-2268, 1283)
 position = Vector2(59, 28)
 shape = SubResource("RectangleShape2D_8trpi")
 
-[node name="Cacti" type="Node2D" parent="." unique_id=1745307436]
-
-[node name="CactusGroup1" type="Node2D" parent="Cacti" unique_id=1609840822]
-
-[node name="WierdCactus" parent="Cacti/CactusGroup1" unique_id=1831307187 instance=ExtResource("11_wv66m")]
-position = Vector2(685, 394)
-fly_data = SubResource("Resource_lqikb")
-
-[node name="WierdCactus2" parent="Cacti/CactusGroup1" unique_id=949560158 instance=ExtResource("11_wv66m")]
-position = Vector2(195, 958)
-fly_data = SubResource("Resource_fwb3d")
-
-[node name="WierdCactus3" parent="Cacti/CactusGroup1" unique_id=515007283 instance=ExtResource("11_wv66m")]
-position = Vector2(572, 897)
-fly_data = SubResource("Resource_5tcn2")
-
-[node name="WierdCactus4" parent="Cacti/CactusGroup1" unique_id=1610456245 instance=ExtResource("11_wv66m")]
-position = Vector2(281, 181)
-fly_data = SubResource("Resource_qpeb7")
-
-[node name="WierdCactus5" parent="Cacti/CactusGroup1" unique_id=209569855 instance=ExtResource("11_wv66m")]
-position = Vector2(573, 575)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="CactusGroup2" type="Node2D" parent="Cacti" unique_id=1247850194]
-
-[node name="WierdCactus6" parent="Cacti/CactusGroup2" unique_id=2057261379 instance=ExtResource("11_wv66m")]
-position = Vector2(-1279, 1434)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="WierdCactus7" parent="Cacti/CactusGroup2" unique_id=840395928 instance=ExtResource("11_wv66m")]
-position = Vector2(-1308, 1919)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="WierdCactus8" parent="Cacti/CactusGroup2" unique_id=1999191621 instance=ExtResource("11_wv66m")]
-position = Vector2(-332, 1891)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="WierdCactus9" parent="Cacti/CactusGroup2" unique_id=1194210287 instance=ExtResource("11_wv66m")]
-position = Vector2(-238, 1397)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="WierdCactus10" parent="Cacti/CactusGroup2" unique_id=2134296522 instance=ExtResource("11_wv66m")]
-position = Vector2(-1162, 946)
-fly_data = SubResource("Resource_8trpi")
-
-[node name="Timers" type="Node" parent="." unique_id=1336041267]
-
-[node name="SpawnTornado" type="Timer" parent="Timers" unique_id=500316802]
-unique_name_in_owner = true
-wait_time = 5.0
-autostart = true
-
 [node name="TorandoMarkers" type="Node2D" parent="." unique_id=648608528]
 
 [node name="TornadoSpawn1" type="Marker2D" parent="TorandoMarkers" unique_id=2041280890]
@@ -405,14 +414,5 @@ position = Vector2(-712, 2010)
 [node name="TornadoSpawn6" type="Marker2D" parent="TorandoMarkers" unique_id=2113746899]
 unique_name_in_owner = true
 position = Vector2(-904, 1573)
-
-[node name="Lizards" type="Node2D" parent="." unique_id=1300150350]
-
-[node name="Lizard" parent="Lizards" unique_id=1990089305 instance=ExtResource("14_fwb3d")]
-position = Vector2(81, 35)
-
-[node name="Lizard2" parent="Lizards" unique_id=1828776819 instance=ExtResource("14_fwb3d")]
-position = Vector2(-937.99994, 1709.9999)
-rotation = -0.04451757
 
 [connection signal="timeout" from="Timers/SpawnTornado" to="." method="_on_spawn_tornado_timeout"]

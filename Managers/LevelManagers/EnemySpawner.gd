@@ -5,20 +5,15 @@ extends Node
 var level_enemies_strings: Array[String]
 
 #Loads with ready function
-var enemy_scenes: Dictionary[String, String]
-var bad_guy_folder := DirAccess.open("res://Obstacles/BadGuys")
+var enemy_scenes: Dictionary[String, String] = {
+	"Car" : "res://Obstacles/BadGuys/Car.tscn",
+	"Truck" : "res://Obstacles/BadGuys/Truck.tscn",
+	"Bus" : "res://Obstacles/BadGuys/Bus.tscn",
+	"Tornado" : "res://Obstacles/BadGuys/Tornado.tscn",
+	"Bolder" : "res://Obstacles/BadGuys/Bolder.tscn"
 
+}
 
-
-
-##gets all the children nodes paths so i don't have to always update the dictionary
-func _ready() -> void:
-	get_files()
-
-func get_files() -> void:
-	for file in bad_guy_folder.get_files():
-		if file.ends_with(".tscn"):
-			enemy_scenes[file.get_basename()] = "res://Obstacles/BadGuys/" + file
 
 #-----------------Need this to start then will spawn one by one---------------
 
