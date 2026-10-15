@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bsivbud2vjma6"]
+
+[ext_resource type="Script" uid="uid://ca1w6886cvgqb" path="res://Obstacles/DisappearingScripts/magic_bush.gd" id="1_2ea3f"]
+[ext_resource type="Texture2D" uid="uid://cihm0j61nar87" path="res://Assets/Pictures/Backgrounds/desert_demo_objects.png" id="1_41353"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np7mf"]
+atlas = ExtResource("1_41353")
+region = Rect2(144, 48, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ea3f"]
+size = Vector2(53, 53)
+
+[node name="MagicBush" type="StaticBody2D" unique_id=1719157423]
+collision_layer = 64
+script = ExtResource("1_2ea3f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039947785]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_np7mf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=42415931]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2ea3f")

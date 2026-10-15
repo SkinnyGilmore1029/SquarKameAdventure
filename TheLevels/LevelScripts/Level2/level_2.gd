@@ -39,6 +39,8 @@ func add_to_button_count(button_node: Node2D, parent_node: Node2D) -> void:
 				key_2.show()
 				AudioBus.play_sound("Appear")
 				key_2.get_node("Collectable/CollisionShape2D").set_deferred("disabled", false)
+		_:
+			return
 
 func make_key_visible(parent_name: String) -> bool:
 	match parent_name:

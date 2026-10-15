@@ -23,6 +23,8 @@ var option_screen: StringName = "res://UI_Screens/Screens/OptionsScreen.tscn"
 var level_names: Dictionary[int, String] = {
     1 : "Apple Road",
     2 : "Crocodile Creek",
-    3 : "Speed Runners Nightmare"
+    3 : "Speed Runners Nightmare",
+    4 : "Dessert Chaos",
+    5 : "Oasis Run"
 }
 

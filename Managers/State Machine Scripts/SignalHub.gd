@@ -19,6 +19,7 @@ signal key_used
 #-----------------LevelSignals------------------------
 signal check_point(parent_pos)
 signal button_pushed_level2(button_node,parent_node)
+signal button_pushed_level5(button_node,parent_node)
 signal start_hot_bar(value)
 signal stop_hot_bar
 signal entered_puddle

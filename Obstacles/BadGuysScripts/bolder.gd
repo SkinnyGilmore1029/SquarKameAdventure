@@ -15,5 +15,6 @@ func move_bolder() -> void:
 	move_and_slide()
 
 func _on_change_xspeed_timeout() -> void:
+	y_speed = enemy_data.speed
 	var x_speed: int = randi_range((-enemy_data.speed + enemy_data.speed_offset), (enemy_data.speed + enemy_data.speed_offset))
 	velocity = Vector2(x_speed, y_speed)
