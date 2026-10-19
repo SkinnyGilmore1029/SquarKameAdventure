@@ -1,27 +1,23 @@
 [gd_scene format=3 uid="uid://d0pnjnqq2vpiv"]
 
-[ext_resource type="Texture2D" uid="uid://dny8yee5kdgl8" path="res://Assets/Pictures/Npc/Hint.png" id="1_30av4"]
+[ext_resource type="Texture2D" uid="uid://g2x5s3ucdcin" path="res://Assets/Pictures/Npc/hint_buble.png" id="1_pgoxh"]
+[ext_resource type="Texture2D" uid="uid://c5wj8l5jgnbre" path="res://Assets/Pictures/Npc/new_hint_frog.png" id="1_xepa7"]
 [ext_resource type="Script" uid="uid://d2et8nbqmjlw3" path="res://HelpfulStuff/Scripts/Hint.gd" id="2_xepa7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xepa7"]
-bg_color = Color(0.6668774, 0.47337306, 0.9917038, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.790511, 0.67296195, 0.9920277, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pswb0"]
+texture = ExtResource("1_pgoxh")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(5, 6, 22, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_830d4"]
-radius = 24.186773
+radius = 10.793516
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_830d4"]
-radius = 42.0
-height = 124.0
+radius = 14.0
+height = 38.0
 
 [node name="HintFrog" type="Node2D" unique_id=1870643998]
 y_sort_enabled = true
@@ -30,34 +26,38 @@ y_sort_enabled = true
 unique_name_in_owner = true
 visible = false
 z_index = 1
-offset_left = -90.0
-offset_top = -130.0
-offset_right = 50.0
-offset_bottom = -35.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xepa7")
+offset_left = -14.0
+offset_top = -66.0
+offset_right = 74.0
+offset_bottom = -20.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pswb0")
 
 [node name="Label" type="Label" parent="HintPanel" unique_id=2096330841]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.35193086, 0.8404114, 0.76672995, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.18, 0.22, 0.2, 1)
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794670284]
-texture = ExtResource("1_30av4")
+texture = ExtResource("1_xepa7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1595832676]
+position = Vector2(3.5, -35.5)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1913672582]
 position = Vector2(-5, 35)
 shape = SubResource("CircleShape2D_830d4")
+debug_color = Color(0.972549, 0.47058824, 0.38431373, 0.9137255)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1034430276]
+position = Vector2(5.5, -33)
 collision_layer = 4
 script = ExtResource("2_xepa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=499702192]
-position = Vector2(-6, 28)
+position = Vector2(-7, 32)
 shape = SubResource("CapsuleShape2D_830d4")
 debug_color = Color(0.74753356, 0.29021192, 0.6677109, 0.41960785)
 

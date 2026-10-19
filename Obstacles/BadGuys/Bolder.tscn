@@ -1,33 +1,40 @@
 [gd_scene format=3 uid="uid://spow3me7jpnt"]
 
-[ext_resource type="Texture2D" uid="uid://buwjrivuwxd2q" path="res://Assets/Pictures/Bad Guys/bolder2v.2.png" id="1_6iu7y"]
 [ext_resource type="Script" uid="uid://lni17y0doooa" path="res://Obstacles/BadGuysScripts/bolder.gd" id="1_ggfk4"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_ggfk4"]
 [ext_resource type="Resource" uid="uid://bl4dp4mkvku42" path="res://Obstacles/BadGuysResources/Bolder.tres" id="2_jm155"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jm155"]
-atlas = ExtResource("1_6iu7y")
-region = Rect2(0, 0, 129, 128)
+[ext_resource type="Texture2D" uid="uid://3tbagianhoah" path="res://Assets/Pictures/Bad Guys/New_bolder.png" id="3_jm155"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8k63"]
-atlas = ExtResource("1_6iu7y")
-region = Rect2(129, 0, 129, 128)
+atlas = ExtResource("3_jm155")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdexs"]
-atlas = ExtResource("1_6iu7y")
-region = Rect2(258, 0, 129, 128)
+atlas = ExtResource("3_jm155")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu2n2"]
+atlas = ExtResource("3_jm155")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63olc"]
+atlas = ExtResource("3_jm155")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uu2n2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jm155")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_r8k63")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdexs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu2n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63olc")
 }],
 "loop": 1,
 "name": &"default",
@@ -35,22 +42,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3um3"]
-radius = 45.01111
+radius = 27.018513
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7icu"]
-radius = 65.0
+radius = 36.0
 
 [node name="Bolder" type="CharacterBody2D" unique_id=382494339]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
 collision_layer = 16
 collision_mask = 129
 script = ExtResource("1_ggfk4")
 enemy_data = ExtResource("2_jm155")
 
 [node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=1150494578]
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_uu2n2")
+autoplay = "default"
+frame = 3
+frame_progress = 0.56236964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1292115433]
 shape = SubResource("CircleShape2D_q3um3")
@@ -58,7 +68,7 @@ shape = SubResource("CircleShape2D_q3um3")
 [node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_ggfk4")]
 collision_mask = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathCollsion" unique_id=1626565620]
+[node name="DeathCollision" type="CollisionShape2D" parent="DeathCollsion" unique_id=1626565620]
 shape = SubResource("CircleShape2D_l7icu")
 
 [node name="ChangeXspeed" type="Timer" parent="." unique_id=60152504]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pnvljdmtnm5"
-path="res://.godot/imported/PurpleKame.png-d894defd3184a00a1b590d74b8712025.ctex"
+uid="uid://c2e3ty0mw0e8e"
+path="res://.godot/imported/newkey.png-99cfaceea66314bd5b45049a6269faad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Player/PurpleKame.png"
-dest_files=["res://.godot/imported/PurpleKame.png-d894defd3184a00a1b590d74b8712025.ctex"]
+source_file="res://Assets/Pictures/HelpfulThings/newkey.png"
+dest_files=["res://.godot/imported/newkey.png-99cfaceea66314bd5b45049a6269faad.ctex"]
 
 [params]
 

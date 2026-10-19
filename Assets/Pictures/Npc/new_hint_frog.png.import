@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cedcubfbt5c25"
-path="res://.godot/imported/MainTurtle.png-1925de3db975c7201cfd40099de82d7e.ctex"
+uid="uid://c5wj8l5jgnbre"
+path="res://.godot/imported/new_hint_frog.png-81cf46e1ff22f7bdb4467202e3a11222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Player/MainTurtle.png"
-dest_files=["res://.godot/imported/MainTurtle.png-1925de3db975c7201cfd40099de82d7e.ctex"]
+source_file="res://Assets/Pictures/Npc/new_hint_frog.png"
+dest_files=["res://.godot/imported/new_hint_frog.png-81cf46e1ff22f7bdb4467202e3a11222.ctex"]
 
 [params]
 

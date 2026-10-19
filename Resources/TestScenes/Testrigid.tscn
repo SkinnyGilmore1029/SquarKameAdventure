@@ -1,26 +1,7 @@
 [gd_scene format=4 uid="uid://khr4gb6esim4"]
 
 [ext_resource type="TileSet" uid="uid://baf6c786nrfvt" path="res://Resources/TileSets/GrassTiles.tres" id="1_dpxu1"]
-[ext_resource type="Texture2D" uid="uid://buwjrivuwxd2q" path="res://Assets/Pictures/Bad Guys/bolder2v.2.png" id="1_m0orr"]
 [ext_resource type="PackedScene" uid="uid://cf1tnatxhjaia" path="res://SquarKames/KamesScenes/PurpleKame.tscn" id="3_ssy2j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytdq6"]
-atlas = ExtResource("1_m0orr")
-region = Rect2(0, 0, 129, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dpxu1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytdq6")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tb77x"]
-radius = 66.48308
 
 [node name="Node2D" type="Node2D" unique_id=1310249384]
 
@@ -30,18 +11,3 @@ tile_set = ExtResource("1_dpxu1")
 
 [node name="PurpleKame" parent="." unique_id=846854249 instance=ExtResource("3_ssy2j")]
 position = Vector2(-19.999985, 144)
-
-[node name="Testrigid" type="RigidBody2D" parent="." unique_id=1912895366]
-position = Vector2(305, 108)
-collision_layer = 256
-mass = 3.075
-gravity_scale = 0.0
-lock_rotation = true
-linear_damp = 20.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Testrigid" unique_id=866358210]
-sprite_frames = SubResource("SpriteFrames_dpxu1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Testrigid" unique_id=1991189696]
-position = Vector2(3, 0)
-shape = SubResource("CircleShape2D_tb77x")

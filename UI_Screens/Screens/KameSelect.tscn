@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ba8u50lqfjlrr" path="res://UI_Screens/ScreenScripts/kame_select_container.gd" id="1_5owhb"]
 [ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_6l24j"]
-[ext_resource type="Texture2D" uid="uid://6pnvljdmtnm5" path="res://Assets/Pictures/Player/PurpleKame.png" id="1_s4ky7"]
-[ext_resource type="Texture2D" uid="uid://cedcubfbt5c25" path="res://Assets/Pictures/Player/MainTurtle.png" id="2_1bt6t"]
-[ext_resource type="Texture2D" uid="uid://bratfod7k2l68" path="res://Assets/Pictures/Player/OrangeKame.png" id="2_uuq0h"]
+[ext_resource type="Texture2D" uid="uid://bi7c72p6xnfkc" path="res://Assets/Pictures/Player/new_purlpe.png" id="3_5owhb"]
+[ext_resource type="Texture2D" uid="uid://b2l6gi627n375" path="res://Assets/Pictures/Player/new_green_kame.png" id="4_fmdjw"]
+[ext_resource type="Texture2D" uid="uid://cn80naksmvev3" path="res://Assets/Pictures/Player/new_orange.png" id="5_ss25p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bt6t"]
 bg_color = Color(0.11695405, 0.66239965, 0.811724, 1)
@@ -16,16 +16,16 @@ grow_end = -138.0
 thickness = 9
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4ky7"]
-atlas = ExtResource("1_s4ky7")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("3_5owhb")
+region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bt6t"]
-atlas = ExtResource("2_1bt6t")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("4_fmdjw")
+region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l24j"]
-atlas = ExtResource("2_uuq0h")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("5_ss25p")
+region = Rect2(0, 0, 50, 50)
 
 [node name="KameSelect" type="Control" unique_id=1725564413]
 layout_mode = 3

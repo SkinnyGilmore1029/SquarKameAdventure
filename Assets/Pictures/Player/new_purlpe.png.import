@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d04fgxddcmhyk"
-path="res://.godot/imported/car sheet.png-4e4e06c1858a8f5a48716214eb4033bc.ctex"
+uid="uid://bi7c72p6xnfkc"
+path="res://.godot/imported/new_purlpe.png-6e5ab97829b099becee558e50e3a7508.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Bad Guys/car sheet.png"
-dest_files=["res://.godot/imported/car sheet.png-4e4e06c1858a8f5a48716214eb4033bc.ctex"]
+source_file="res://Assets/Pictures/Player/new_purlpe.png"
+dest_files=["res://.godot/imported/new_purlpe.png-6e5ab97829b099becee558e50e3a7508.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

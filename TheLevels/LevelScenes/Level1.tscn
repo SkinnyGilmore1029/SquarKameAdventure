@@ -604,7 +604,6 @@ position = Vector2(419, 66)
 
 [node name="HintFrog" parent="Helpful" unique_id=1870643998 instance=ExtResource("16_pswb0")]
 position = Vector2(227, 721)
-scale = Vector2(0.5, 0.5)
 
 [node name="Locks" type="Node2D" parent="." unique_id=1063704526]
 
