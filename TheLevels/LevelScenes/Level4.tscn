@@ -193,11 +193,9 @@ position = Vector2(-2030, 593)
 
 [node name="HintFrog" parent="Hints" unique_id=1870643998 instance=ExtResource("8_s71b8")]
 position = Vector2(344, 118.99999)
-scale = Vector2(0.4, 0.4)
 
 [node name="HintFrog2" parent="Hints" unique_id=1380870693 instance=ExtResource("8_s71b8")]
 position = Vector2(148.99998, 333.99997)
-scale = Vector2(0.4, 0.4)
 
 [node name="Cacti" type="Node2D" parent="." unique_id=1745307436]
 

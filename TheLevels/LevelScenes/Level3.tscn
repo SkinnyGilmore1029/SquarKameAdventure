@@ -603,15 +603,12 @@ shape = SubResource("RectangleShape2D_bcuym")
 
 [node name="HintFrog" parent="Helpful/Hints" unique_id=1870643998 instance=ExtResource("10_je4f3")]
 position = Vector2(46, -440)
-scale = Vector2(0.5, 0.5)
 
 [node name="HintFrog2" parent="Helpful/Hints" unique_id=1689628509 instance=ExtResource("10_je4f3")]
 position = Vector2(1775, -134)
-scale = Vector2(0.5, 0.5)
 
 [node name="HintFrog3" parent="Helpful/Hints" unique_id=1919123587 instance=ExtResource("10_je4f3")]
 position = Vector2(702, 272)
-scale = Vector2(0.5, 0.5)
 
 [node name="Teleporter" type="Node2D" parent="." unique_id=661116044]
 

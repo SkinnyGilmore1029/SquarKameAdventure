@@ -6,6 +6,7 @@ func _ready() -> void:
 
 func _on_new_game_button_pressed() -> void:
 	GameState.current_level = 1
+	SignalHub.just_started_level.emit()
 	get_tree().change_scene_to_file(GameState.difficulty_screen)
 
 func _on_level_select_button_pressed() -> void:

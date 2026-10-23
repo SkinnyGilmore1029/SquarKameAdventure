@@ -23,8 +23,8 @@ func _ready() -> void:
 
 
 func start_new_game() -> void:
-	GameState.current_level = 1
 	if not coming_from_game_over and not coming_from_picking_level:
+		GameState.current_level = 1
 		var tree = get_tree()
 		var kame_playing = player_node.get_child(0) as MainKame
 		await tree.process_frame
@@ -55,6 +55,7 @@ func check_game_over() -> void:
 		LevelChange.call_deferred(
 			"change_level",
 			GameState.current_level,
+			true,
 		)
 		return
 
@@ -64,5 +65,6 @@ func picking_level()-> void:
 		LevelChange.call_deferred(
 			"change_level",
 			GameState.current_level,
+			true,
 		)
 		return

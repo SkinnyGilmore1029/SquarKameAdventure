@@ -11,7 +11,7 @@ var level_scenes: Dictionary[int,Array] = {
 }
 
 
-func change_level(new_level: int) -> void:
+func change_level(new_level: int, is_starting_level: bool = false) -> void:
 	#check the dictionary first.
 	#don't waste time making variables if invalid entry.
 	if new_level not in level_scenes:
@@ -21,6 +21,10 @@ func change_level(new_level: int) -> void:
 	var screen_transitions: ScreenTransitions = get_node(
 	"/root/MainGame/ScreenTranstion"
 )
+	# Level selection and game-over continuation start a level; they are not completions.
+	# Set this before fade_in so the completion banner cannot appear during the transition.
+	if is_starting_level:
+		SignalHub.just_started_level.emit()
 	#Make the screen black before we change the level.
 	#gets stuck here?
 	await screen_transitions.fade_in(new_level)

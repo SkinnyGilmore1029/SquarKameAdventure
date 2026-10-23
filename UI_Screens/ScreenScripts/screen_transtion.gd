@@ -10,6 +10,7 @@ var kame_playing: MainKame
 
 func _ready() -> void:
 	visible = false
+	connect_signals()
 	kame_playing = await get_kame_playing()
 
 
@@ -53,12 +54,12 @@ func fade_in(level: int) -> void:
 
 #I want this one to make the background go from the pure black and words showing to being able to see the level. so black fades out to level.
 func fade_out() -> void:
+	SignalHub.just_started_level.emit()
 	visible = true
 	var transition_tween = create_tween()
 	%LevelLabelsContainer.modulate.a = 1.0
 	%LevelCompleteContainer.modulate.a = 1.0
 	%FadeRect.modulate.a = 1.0
-
 	transition_tween.tween_property(
 		%LevelLabelsContainer,
 		"modulate:a",
@@ -95,7 +96,7 @@ func get_level_name(level: int) -> String:
 
 func set_labels(level: int) -> void:
 	var current: int = GameState.current_level
-	%LevelNumberLabel.text = "LEVEL %d" % level
+	%LevelNumberLabel.text = "%d" % level
 	%LevelNameLabel.text = get_level_name(level)
 	%LastLevelNumberLabel.text = "%d" % (current)
 
@@ -109,3 +110,18 @@ func get_kame_playing() -> MainKame:
 		return null
 
 	return player_node.get_child(0) as MainKame
+
+func not_complete() -> void:
+	%LevelCompleteContainer.visible = false
+	%LevelLabel.text = "LEVEL"
+	%LevelNameLabel.visible = true
+
+func completed() -> void:
+	%LevelCompleteContainer.visible = true
+	%LevelLabel.text = "TRAVELING TO LEVEL"
+	%LevelNameLabel.visible = false
+
+func connect_signals() -> void:
+	SignalHub.just_started_level.connect(not_complete)
+	SignalHub.level_completed.connect(completed)
+

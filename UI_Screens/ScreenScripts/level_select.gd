@@ -31,6 +31,7 @@ func _on_back_button_pressed() -> void:
 func set_game_state(level:int) -> void:
 	GameState.current_level = level
 	GameState.picking_level = true
+	SignalHub.just_started_level.emit()
 	the_tree.change_scene_to_file(GameState.difficulty_screen)
 
 

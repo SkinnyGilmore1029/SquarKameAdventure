@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bh150bbx4mrgs"]
+
+[ext_resource type="Texture2D" uid="uid://ccbvkllh7g4ex" path="res://Assets/Pictures/Bad Guys/red_car.png" id="1_scjcy"]
+[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManagers/RespawningEnemyLogic.gd" id="1_y3hcj"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_1mvaq"]
+[ext_resource type="Resource" uid="uid://b7a4midjgu5x8" path="res://Obstacles/BadGuysResources/Car2.tres" id="2_aqs80"]
+[ext_resource type="PackedScene" uid="uid://rnkf4xolnsf5" path="res://Components/ComponentScenes/SpeedCheck.tscn" id="5_aqs80"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mvaq"]
+atlas = ExtResource("1_scjcy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed0t5"]
+atlas = ExtResource("1_scjcy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3hcj"]
+atlas = ExtResource("1_scjcy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aqs80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mvaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed0t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3hcj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed0t5"]
+size = Vector2(21.818184, 7)
+
+[node name="Car2" type="CharacterBody2D" unique_id=1619242470]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(5.5, 3)
+collision_layer = 16
+collision_mask = 35
+script = ExtResource("1_y3hcj")
+enemy_data = ExtResource("2_aqs80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=689977528]
+scale = Vector2(3.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_aqs80")
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928126449]
+position = Vector2(-1.2727275, 0.5)
+shape = SubResource("RectangleShape2D_ed0t5")
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_1mvaq")]
+collision_mask = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=1615388371]
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(56, -2, 52.727276, -5, 45.818184, -8, 32.545456, -7.3333335, 18, -17.333334, -24.181818, -19, -37.818184, -13.333334, -55.272728, -13, -56.18182, 3, -38.545456, 17, 38.909092, 19.333334, 56.727276, 9)
+
+[node name="SpeedCheck" parent="." unique_id=943464810 instance=ExtResource("5_aqs80")]
+position = Vector2(-57.636364, 1.0000002)
+target_position = Vector2(-25, 0)
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

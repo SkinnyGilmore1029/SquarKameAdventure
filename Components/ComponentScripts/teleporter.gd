@@ -9,4 +9,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var next_level_data = current_level.level_data
 		var next_level_int = next_level_data.send_to_level
 		SignalHub.stop_hot_bar.emit()
+		SignalHub.level_completed.emit()
 		LevelChange.call_deferred("change_level", next_level_int)

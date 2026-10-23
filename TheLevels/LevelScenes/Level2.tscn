@@ -398,7 +398,6 @@ position = Vector2(460, 97)
 
 [node name="HintFrog" parent="Helpful" unique_id=1870643998 instance=ExtResource("8_p81be")]
 position = Vector2(723, 749)
-scale = Vector2(0.5, 0.5)
 
 [node name="OneUp" parent="Helpful" unique_id=856018606 instance=ExtResource("10_a18ry")]
 position = Vector2(64, 74)

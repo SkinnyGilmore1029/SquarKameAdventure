@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://b3bkb2r3j6itk" path="res://Obstacles/BadGuysResources/Truck.tres" id="2_corrj"]
 [ext_resource type="Texture2D" uid="uid://0pbqflqr4pbn" path="res://Assets/Pictures/Bad Guys/Truck_sheet.png" id="3_corrj"]
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="4_d28mh"]
+[ext_resource type="PackedScene" uid="uid://rnkf4xolnsf5" path="res://Components/ComponentScenes/SpeedCheck.tscn" id="5_sdsqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d28mh"]
 atlas = ExtResource("3_corrj")
@@ -58,5 +59,9 @@ shape = SubResource("RectangleShape2D_d28mh")
 
 [node name="DeathCollisonPolygon" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=488397816]
 polygon = PackedVector2Array(-64, -94.66667, -88, -80, -90.66667, -46.666668, -122.66667, -42.666668, -122.66667, 38.666668, -92, 42.666668, -89.333336, 86.66667, -34.666668, 86.66667, -42.666668, 42.666668, 65.333336, 44, 65.333336, 88, 122.66667, 88, 121.333336, -94.66667)
+
+[node name="SpeedCheck" parent="." unique_id=943464810 instance=ExtResource("5_sdsqy")]
+position = Vector2(-132, -1.3333334)
+target_position = Vector2(-50, 0)
 
 [connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

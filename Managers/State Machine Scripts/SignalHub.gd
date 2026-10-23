@@ -38,4 +38,7 @@ signal change_level_number(new_level)
 signal has_fruit(the_taker: StaticBody2D)
 signal giving_offer
 
+#-----------------TransitionSignals-------------------
+signal just_started_level
+signal level_completed
 

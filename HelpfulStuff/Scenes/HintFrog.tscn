@@ -6,8 +6,8 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pswb0"]
 texture = ExtResource("1_pgoxh")
-texture_margin_left = 5.0
-texture_margin_top = 4.0
+texture_margin_left = 4.0
+texture_margin_top = 3.0
 texture_margin_right = 5.0
 texture_margin_bottom = 4.0
 region_rect = Rect2(5, 6, 22, 19)
@@ -26,16 +26,16 @@ y_sort_enabled = true
 unique_name_in_owner = true
 visible = false
 z_index = 1
-offset_left = -14.0
-offset_top = -66.0
-offset_right = 74.0
-offset_bottom = -20.0
+offset_left = -11.0
+offset_top = -86.0
+offset_right = 77.0
+offset_bottom = -40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_pswb0")
 
 [node name="Label" type="Label" parent="HintPanel" unique_id=2096330841]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18, 0.22, 0.2, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 vertical_alignment = 1
 
