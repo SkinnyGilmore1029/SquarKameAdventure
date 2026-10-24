@@ -6,13 +6,28 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is MainKame:
-		check_treasure()
-
-# TODO: Add a dictionary to pull points data from
-# TODO: Finish check_treasure
-# TODO: Rethink signals
+		_check_treasure()
 
 
-func check_treasure() -> void:
-	print("%s are worth ->  %d" % [treasure_data.treasure_name, treasure_data.point_value])
+func _check_treasure() -> void:
+	_add_to_current_points()
 	get_parent().queue_free()
+
+func _get_current_score() -> int:
+	return PlayerGlobals.current_score
+
+func _add_to_current_points() -> void:
+	var current: int = _get_current_score()
+
+	var point_value: int = treasure_data.point_value
+
+	if point_value == null or point_value == 0:
+		SignalHub.points_collected.emit(current)
+		push_warning("%s <-- has no point value set!" % treasure_data.name)
+		return
+
+	#have to update the score before showing the score on the UI.
+	SignalHub.update_current_score.emit(point_value)
+
+	#use the PlayerGlobals.current_score to keep everything synced.
+	SignalHub.points_collected.emit(_get_current_score())

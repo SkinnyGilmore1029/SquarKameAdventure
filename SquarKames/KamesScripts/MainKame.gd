@@ -60,12 +60,16 @@ func take_key() -> void:
 func add_oneup() -> void:
 	player_data.players_lives +=1
 
+func add_to_score(value: int) -> void:
+	player_data.current_score += value
+
 func connect_all_signals() -> void:
 	SignalHub.player_died.connect(died)
 	SignalHub.changed_levels.connect(new_level_pos)
 	SignalHub.key_collected.connect(add_key)
 	SignalHub.key_used.connect(take_key)
 	SignalHub.one_up_global.connect(add_oneup)
+	SignalHub.update_current_score.connect(add_to_score)
 
 func new_level_pos(level_name: String) -> void:
 	self.global_position = player_data.spawn_position

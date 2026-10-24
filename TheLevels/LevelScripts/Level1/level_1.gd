@@ -4,6 +4,7 @@ extends Node2D
 @export var level_data: LevelDataManager
 @onready var bad_guys_node = %Level1_BadGuys
 @onready var hint_frog_text := $Helpful/HintFrog/HintPanel/Label
+@onready var hint_frog2_text := $Helpful/HintFrog2/HintPanel/Label
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 func set_level_data() -> void:
 	hint_frog_text.text = "You can find both\n keys in the flowers!\n"
+	hint_frog2_text.text = "Collect as many fruit as you can.\nTry for a high score!\n"
 	level_data.enemy_types = ["Car", "Car2", "Truck", "Bus"]
 	level_data.spawn_positions = {
 	"Car": [Vector2(1300, 526), Vector2(-100,322), Vector2(1325, -304), Vector2(-233, -525)],

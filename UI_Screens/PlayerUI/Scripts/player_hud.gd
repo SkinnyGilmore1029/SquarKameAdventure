@@ -26,8 +26,5 @@ func change_levelnumber(new_level: int) -> void:
 func change_keycount(new_count: int) -> void:
 	%KeyCountLabel.text = str(new_count)
 
-func add_to_points(value: int) -> void:
-	var current_total = int(%PointsNumberLabel.text)
-	var new_total = current_total + value
-	PlayerGlobals.current_score = new_total
+func add_to_points(new_total: int) -> void:
 	%PointsNumberLabel.text = str(new_total)
