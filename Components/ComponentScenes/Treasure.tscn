@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ccngo0bchfhi6"]
+
+[ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_yrxqy"]
+
+[node name="Treasure" type="Area2D" unique_id=2003535308]
+collision_layer = 8
+script = ExtResource("1_yrxqy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

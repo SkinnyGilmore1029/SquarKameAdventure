@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PointTemplate" format=3 uid="uid://r5bpurd5bb3n"]
+
+[ext_resource type="Script" uid="uid://3vxtqfxju7po" path="res://HelpfulStuff/Scripts/PointTemplate.gd" id="1_kkclc"]
+
+[resource]
+script = ExtResource("1_kkclc")
+treasure_name = "Cherries"
+point_value = 25
+metadata/_custom_type_script = "uid://3vxtqfxju7po"

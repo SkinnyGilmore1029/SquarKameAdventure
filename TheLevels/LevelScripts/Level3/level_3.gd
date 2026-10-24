@@ -19,13 +19,15 @@ func set_level_data() -> void:
 	hint_frog_text.text = "The beetles are guarding a key."
 	hint_frog2_text.text = "You have to be brave.\nGo against the traffic.\nThere is a key at the\n end of the road."
 	hint_frog3_text.text = "Try pushing stuff around.\nIt may lead to a key!"
-	level_data.enemy_types= ["Car", "Truck"]
+	level_data.enemy_types= ["Car", "Car2", "Truck"]
 	level_data.spawn_positions = {
 		"Car" : [Vector2(-135,-275)],
+		"Car2" : [Vector2(-135,-275)],
 		"Truck" : [Vector2(2140,72)]
 	}
 	level_data.speed_choices = {
 		"Car" : [250, 300, 350],
+		"Car2" : [250, 300, 350],
 		"Truck" : [200, 230, 250]
 	}
 	key_3.visible = false

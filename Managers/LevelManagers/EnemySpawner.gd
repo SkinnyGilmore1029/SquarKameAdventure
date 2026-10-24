@@ -149,6 +149,7 @@ func new_spawn(enemy_type: String, the_level_data: LevelDataManager, bad_guy_nod
 		the_level_data.spawn_positions.get(enemy_type, []),
 		bad_guy_node
 		)
+	#print("Car spawn result: ", spawn_position, " children: ", bad_guy_node.get_children())
 
 	if spawn_position == Vector2.ZERO:
 		the_enemy_instance.queue_free()

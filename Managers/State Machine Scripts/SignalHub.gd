@@ -9,6 +9,7 @@ signal subtract_one_up(new_count)
 signal one_up_global
 signal player_died
 signal reset_heat
+signal points_collected(value)
 
 #-----------------Collectables------------------------
 signal key_collected(new_count)

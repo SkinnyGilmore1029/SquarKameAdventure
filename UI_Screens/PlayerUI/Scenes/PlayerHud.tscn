@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bt6v2khj73baf" path="res://UI_Screens/PlayerUI/Scripts/player_hud.gd" id="1_i15sm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i15sm"]
+bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_830d4"]
 bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
 
@@ -17,20 +20,44 @@ offset_right = 639.0
 offset_bottom = 40.0
 script = ExtResource("1_i15sm")
 
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=299285145]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 71.0
+offset_bottom = 51.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i15sm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=1010521539]
+layout_mode = 2
+
+[node name="PointsLabel" type="Label" parent="Control/PanelContainer/HBoxContainer" unique_id=1042625031]
+layout_mode = 2
+text = "Points: "
+
+[node name="PointsNumberLabel" type="Label" parent="Control/PanelContainer/HBoxContainer" unique_id=483847996]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+vertical_alignment = 1
+
 [node name="LifeContainer" type="PanelContainer" parent="Control" unique_id=1847948021]
 layout_mode = 0
 offset_right = 71.0
-offset_bottom = 40.0
+offset_bottom = 23.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_830d4")
 
-[node name="LivesHBoxContainer" type="HBoxContainer" parent="Control/LifeContainer" unique_id=862735383]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LifeContainer" unique_id=1393683519]
 layout_mode = 2
 
-[node name="LivesLabel" type="Label" parent="Control/LifeContainer/LivesHBoxContainer" unique_id=1736070467]
+[node name="LivesHBoxContainer" type="HBoxContainer" parent="Control/LifeContainer/VBoxContainer" unique_id=862735383]
+layout_mode = 2
+
+[node name="LivesLabel" type="Label" parent="Control/LifeContainer/VBoxContainer/LivesHBoxContainer" unique_id=1736070467]
 layout_mode = 2
 text = "Lives: "
+vertical_alignment = 1
 
-[node name="LifeCount" type="Label" parent="Control/LifeContainer/LivesHBoxContainer" unique_id=366859308]
+[node name="LifeCount" type="Label" parent="Control/LifeContainer/VBoxContainer/LivesHBoxContainer" unique_id=366859308]
 unique_name_in_owner = true
 layout_mode = 2
 text = "10"

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://diod44b51fxj1"]
+
+[ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="1_wov1e"]
+[ext_resource type="PackedScene" uid="uid://ccngo0bchfhi6" path="res://Components/ComponentScenes/Treasure.tscn" id="2_adcie"]
+[ext_resource type="Resource" uid="uid://r5bpurd5bb3n" path="res://HelpfulStuff/HelpfulResources/Cherries.tres" id="3_adcie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pktsd"]
+atlas = ExtResource("1_wov1e")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wov1e"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivn77"]
+radius = 14.035668
+
+[node name="Treasure1" type="StaticBody2D" unique_id=253010225]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16819181]
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_pktsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1667585147]
+shape = SubResource("CircleShape2D_wov1e")
+
+[node name="Treasure" parent="." unique_id=2003535308 instance=ExtResource("2_adcie")]
+treasure_data = ExtResource("3_adcie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure" unique_id=546776927]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_ivn77")
