@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bkqwrv77dspbf"]
+
+[ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_f8k1a"]
+[ext_resource type="Resource" uid="uid://dignkxempj2au" path="res://HelpfulStuff/HelpfulResources/Mushroom.tres" id="2_2lkjp"]
+[ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="2_iuosf"]
+[ext_resource type="Shader" uid="uid://bqx55rphy7cdx" path="res://Resources/Shaders/MushroomPoints.gdshader" id="3_iu7pr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lkjp"]
+shader = ExtResource("3_iu7pr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjmtu"]
+atlas = ExtResource("2_iuosf")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6ta7"]
+radius = 19.0
+height = 42.0
+
+[node name="Mushroom" type="Area2D" unique_id=1770708606]
+script = ExtResource("1_f8k1a")
+treasure_data = ExtResource("2_2lkjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352903917]
+material = SubResource("ShaderMaterial_2lkjp")
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_qjmtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000389117]
+position = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_l6ta7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

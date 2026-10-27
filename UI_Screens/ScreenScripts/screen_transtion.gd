@@ -1,9 +1,6 @@
 class_name ScreenTransitions
 extends CanvasLayer
 
-@onready var music: AudioStreamPlayer = get_node(
-	"../TheAudio/BackgroundMusic"
-)
 
 var player_node: Node2D
 var kame_playing: MainKame
@@ -17,7 +14,7 @@ func _ready() -> void:
 #I want this one to make the background go from the pure black and words showing not being able to see the level. so black fades in.
 func fade_in(level: int) -> void:
 	visible = true
-	music.stop()
+	AudioBus.background_music.stop()
 	kame_playing = await get_kame_playing()
 	kame_playing.state_machine.process_mode = Node.PROCESS_MODE_DISABLED
 	kame_playing.animated_sprite.process_mode = Node.PROCESS_MODE_DISABLED
@@ -86,7 +83,7 @@ func fade_out() -> void:
 	get_tree().paused = false
 	kame_playing.state_machine.process_mode = Node.PROCESS_MODE_ALWAYS
 	kame_playing.animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
-	music.play()
+	AudioBus.play_background()
 
 func get_level_name(level: int) -> String:
 	if level in GameState.level_names:
@@ -124,4 +121,3 @@ func completed() -> void:
 func connect_signals() -> void:
 	SignalHub.just_started_level.connect(not_complete)
 	SignalHub.level_completed.connect(completed)
-

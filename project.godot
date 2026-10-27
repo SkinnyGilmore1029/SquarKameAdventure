@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.8", "Forward Plus")
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://bpkae21rchkx1"
 
 [autoload]
 
@@ -26,7 +26,7 @@ SignalHub="*uid://bclwcpkspmdp8"
 GameInput="*uid://yujxax8klej0"
 EnemySpawner="*uid://c1lj7fe1txxka"
 LevelChange="*uid://dhr757wnkrx2s"
-AudioBus="*uid://b0mwfrt33ftdg"
+AudioBus="*uid://bqmdmrilasp4v"
 
 [debug]
 

@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://b0mwfrt33ftdg" path="res://Managers/AudioManagers/audio_bus.gd" id="1_ldl4y"]
 
 [node name="AudioBus" type="Node" unique_id=1480257185]
+script = ExtResource("1_ldl4y")
 
 [node name="AudioSFX" type="AudioStreamPlayer" parent="." unique_id=720810588]
-script = ExtResource("1_ldl4y")
 
 [node name="AudioBG" type="AudioStreamPlayer" parent="." unique_id=557239137]
-script = ExtResource("1_ldl4y")

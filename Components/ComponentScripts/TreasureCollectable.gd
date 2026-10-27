@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _check_treasure() -> void:
 	_add_to_current_points()
-	get_parent().queue_free()
+	queue_free()
 
 func _get_current_score() -> int:
 	return PlayerGlobals.current_score
