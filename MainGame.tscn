@@ -28,7 +28,4 @@ visible = false
 
 [node name="HeatBar" parent="PlayerUI" unique_id=329798617 instance=ExtResource("5_8dnxm")]
 
-[node name="TheAudio" type="Node" parent="." unique_id=469657220]
-process_mode = 3
-
 [node name="ScreenTranstion" parent="." unique_id=1681915311 instance=ExtResource("6_pv6b4")]

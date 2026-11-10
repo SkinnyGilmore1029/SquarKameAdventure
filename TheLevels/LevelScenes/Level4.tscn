@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://beamfpstveanw" path="res://HelpfulStuff/Scenes/OneUp.tscn" id="8_lqikb"]
 [ext_resource type="PackedScene" uid="uid://d0pnjnqq2vpiv" path="res://HelpfulStuff/Scenes/HintFrog.tscn" id="8_s71b8"]
 [ext_resource type="PackedScene" uid="uid://ch162f0e8eiwu" path="res://Components/ComponentScenes/SafeZone.tscn" id="9_76fra"]
+[ext_resource type="PackedScene" uid="uid://dvtr6ucjejlcx" path="res://HelpfulStuff/Scenes/PearPoints.tscn" id="10_qpeb7"]
+[ext_resource type="PackedScene" uid="uid://bkqwrv77dspbf" path="res://HelpfulStuff/Scenes/MushroomPoints.tscn" id="11_8trpi"]
 [ext_resource type="PackedScene" uid="uid://chulp60gsokij" path="res://HelpfulStuff/Scenes/WierdCactus.tscn" id="11_wv66m"]
 [ext_resource type="Script" uid="uid://d0y5tdfutjtuu" path="res://TheLevels/LevelScripts/Level4/FlyResource.gd" id="12_p6cyd"]
 [ext_resource type="PackedScene" uid="uid://brxvwh1cj6ng6" path="res://HelpfulStuff/Scenes/Lizard.tscn" id="14_fwb3d"]
@@ -196,6 +198,31 @@ position = Vector2(344, 118.99999)
 
 [node name="HintFrog2" parent="Hints" unique_id=1380870693 instance=ExtResource("8_s71b8")]
 position = Vector2(148.99998, 333.99997)
+
+[node name="Points" type="Node2D" parent="." unique_id=402067102]
+position = Vector2(148.99998, 333.99997)
+
+[node name="Pears" type="Node2D" parent="Points" unique_id=77842203]
+
+[node name="PearPoints" parent="Points/Pears" unique_id=1017755543 instance=ExtResource("10_qpeb7")]
+position = Vector2(264, -287.99997)
+
+[node name="PearPoints2" parent="Points/Pears" unique_id=1329807710 instance=ExtResource("10_qpeb7")]
+position = Vector2(-124, -94.99997)
+
+[node name="PearPoints3" parent="Points/Pears" unique_id=2007409852 instance=ExtResource("10_qpeb7")]
+position = Vector2(-103.999985, 297.00003)
+
+[node name="Mushrooms" type="Node2D" parent="Points" unique_id=82653356]
+
+[node name="Mushroom" parent="Points/Mushrooms" unique_id=1770708606 instance=ExtResource("11_8trpi")]
+position = Vector2(454, 150.00003)
+
+[node name="Mushroom2" parent="Points/Mushrooms" unique_id=2091324513 instance=ExtResource("11_8trpi")]
+position = Vector2(174, 387.00003)
+
+[node name="Mushroom3" parent="Points/Mushrooms" unique_id=1200468658 instance=ExtResource("11_8trpi")]
+position = Vector2(564, 761)
 
 [node name="Cacti" type="Node2D" parent="." unique_id=1745307436]
 

@@ -17,6 +17,10 @@ signal key_collected(new_count)
 signal change_key_count(new_count)
 signal key_used
 
+#-----------------Points------------------------------
+signal life_points_collected(value)
+
+
 
 #-----------------LevelSignals------------------------
 signal check_point(parent_pos)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dvtr6ucjejlcx"]
+
+[ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_4y7u2"]
+[ext_resource type="Shader" uid="uid://dq60g8gdb5ccl" path="res://Resources/Shaders/FruitPoints.gdshader" id="1_s0mvl"]
+[ext_resource type="Resource" uid="uid://cbiadi2l1sjm1" path="res://HelpfulStuff/HelpfulResources/Pears.tres" id="2_jftl6"]
+[ext_resource type="Texture2D" uid="uid://ifpbww522cv8" path="res://Assets/Pictures/Points/fruit.png" id="2_l3sr3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72nmh"]
+shader = ExtResource("1_s0mvl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idotu"]
+atlas = ExtResource("2_l3sr3")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ctgv"]
+radius = 9.0
+height = 42.0
+
+[node name="PearPoints" type="Area2D" unique_id=1017755543]
+script = ExtResource("1_4y7u2")
+treasure_data = ExtResource("2_jftl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=565676404]
+material = SubResource("ShaderMaterial_72nmh")
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_idotu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985284056]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_3ctgv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

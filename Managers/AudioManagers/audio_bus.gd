@@ -5,26 +5,34 @@ extends Node
 @onready var background_music: AudioStreamPlayer = $AudioBG
 
 
-var audio_book: Dictionary[String, String] = {
-	"Key" : "res://Assets/Audio/SoundEffects/coin.wav",
-	"OneUps" : "res://Assets/Audio/SoundEffects/power_up.wav",
-	"Locks" : "res://Assets/Audio/SoundEffects/explosion.wav",
-	"Death" : "res://Assets/Audio/SoundEffects/freesound_community-death-103830.mp3",
-	"Buttons" : "res://Assets/Audio/SoundEffects/tap.wav",
-	"Appear" : "res://Assets/Audio/SoundEffects/jump.wav"
+var audio_book: Dictionary[String, Array ] = {
+	"Key" : ["res://Assets/Audio/SoundEffects/coin.wav", .80],
+	"OneUps" : ["res://Assets/Audio/SoundEffects/power_up.wav", .75],
+	"Locks" : ["res://Assets/Audio/SoundEffects/explosion.wav", .85],
+	"Death" : ["res://Assets/Audio/SoundEffects/freesound_community-death-103830.mp3", 1.0],
+	"Buttons" : ["res://Assets/Audio/SoundEffects/tap.wav", 1.0],
+	"Appear" : ["res://Assets/Audio/SoundEffects/jump.wav", 1.0],
+	"Coin" : ["res://Assets/Audio/SoundEffects/power_up.wav", 0.5],
+	"Mushroom" : ["res://Assets/Audio/SoundEffects/power_up.wav", .85],
+	"Cherries" : ["res://Assets/Audio/SoundEffects/power_up.wav", 1.2],
+	"GreenApple" : ["res://Assets/Audio/SoundEffects/power_up.wav", .65],
+	"Pear" : ["res://Assets/Audio/SoundEffects/power_up.wav", 1.5]
 }
 
 func _ready() -> void:
-	add_sfx_compressor()
+	pass
 
 func play_sound(sound_name: String) -> void:
 	if sound_name not in audio_book:
 		push_warning("Sound '%s' not found." % sound_name)
 		return
-
+	var load_string: String = audio_book[sound_name][0]
+	var pitch: float = audio_book[sound_name][1]
 	sound_effects.bus = "SoundEffects"
-	sound_effects.stream = load(audio_book[sound_name])
-	sound_effects.volume_db = -10.0
+	sound_effects.stream = load(load_string)
+	sound_effects.volume_db = -5.0
+	sound_effects.pitch_scale = pitch
+
 	sound_effects.play()
 
 

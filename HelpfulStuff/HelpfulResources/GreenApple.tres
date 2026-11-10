@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PointTemplate" format=3 uid="uid://dm7g0br5xmvei"]
+
+[ext_resource type="Script" uid="uid://3vxtqfxju7po" path="res://HelpfulStuff/Scripts/PointTemplate.gd" id="1_hk47y"]
+
+[resource]
+script = ExtResource("1_hk47y")
+treasure_name = "GreenApple"
+point_value = 40
+metadata/_custom_type_script = "uid://3vxtqfxju7po"

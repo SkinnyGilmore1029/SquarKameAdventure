@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://boy3x8sufr5mn"]
+
+[ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_61nuc"]
+[ext_resource type="Shader" uid="uid://dq60g8gdb5ccl" path="res://Resources/Shaders/FruitPoints.gdshader" id="1_ksbin"]
+[ext_resource type="Texture2D" uid="uid://ifpbww522cv8" path="res://Assets/Pictures/Points/fruit.png" id="2_61nuc"]
+[ext_resource type="Resource" uid="uid://dm7g0br5xmvei" path="res://HelpfulStuff/HelpfulResources/GreenApple.tres" id="2_cjugw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm5wj"]
+shader = ExtResource("1_ksbin")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h07j2"]
+atlas = ExtResource("2_61nuc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61nuc"]
+radius = 23.0
+
+[node name="GreenApple" type="Area2D" unique_id=818441616]
+script = ExtResource("1_61nuc")
+treasure_data = ExtResource("2_cjugw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586523598]
+material = SubResource("ShaderMaterial_pm5wj")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_h07j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141017335]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_61nuc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

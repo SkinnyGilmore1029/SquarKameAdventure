@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PointTemplate" format=3 uid="uid://goojo5b2axuh"]
+
+[ext_resource type="Script" uid="uid://3vxtqfxju7po" path="res://HelpfulStuff/Scripts/PointTemplate.gd" id="1_8vgpb"]
+
+[resource]
+script = ExtResource("1_8vgpb")
+treasure_name = "Coin"
+point_value = 500
+metadata/_custom_type_script = "uid://3vxtqfxju7po"
