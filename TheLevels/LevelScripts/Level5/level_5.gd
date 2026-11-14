@@ -14,7 +14,9 @@ extends Node2D
 	%TornadoSpawn2.position,
 	%TornadoSpawn3.position,
 	%TornadoSpawn4.position,
-	%TornadoSpawn5.position]
+	%TornadoSpawn5.position,
+	%TornadoSpawn6.position,
+	%TornadoSpawn7.position]
 @onready var bush1: StaticBody2D = $MagicBushes/MagicBush
 @onready var bush2: StaticBody2D = $MagicBushes/MagicBush2
 

@@ -8,10 +8,6 @@ var high_score: int = 0
 var life_points: int = 0
 var points_to_gain_life: int = 800
 
-func _ready() -> void:
-	SignalHub.life_points_collected.connect(add_life_points)
-
-
 func _process(delta: float) -> void:
 	calculate_high_score()
 	points_life()
@@ -30,10 +26,7 @@ func points_life() -> void:
 		life_points = _remaining_life_points(life_points)
 
 
-
 func calculate_high_score() -> void:
 	if current_score > high_score:
 		high_score = current_score
 
-func add_life_points(points: int) -> void:
-	life_points += points

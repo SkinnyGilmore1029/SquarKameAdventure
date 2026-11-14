@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dc45n5l7umm7s"]
+
+[ext_resource type="Script" uid="uid://djui4mxkb66wi" path="res://Managers/EnemyManagers/RespawningEnemyLogic.gd" id="1_hc6w4"]
+[ext_resource type="Texture2D" uid="uid://bag2nqlvwoox3" path="res://Assets/Pictures/Bad Guys/deccker_buss.png" id="1_il0py"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_llpag"]
+[ext_resource type="Resource" uid="uid://cmkx7gokdq83w" path="res://Obstacles/BadGuysResources/DoubleBus.tres" id="2_uhgnb"]
+[ext_resource type="PackedScene" uid="uid://rnkf4xolnsf5" path="res://Components/ComponentScenes/SpeedCheck.tscn" id="3_x45r8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llpag"]
+atlas = ExtResource("1_il0py")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x45r8"]
+atlas = ExtResource("1_il0py")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc6w4"]
+atlas = ExtResource("1_il0py")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhgnb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llpag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x45r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc6w4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x45r8"]
+size = Vector2(196, 24)
+
+[node name="DoubleBus" type="CharacterBody2D" unique_id=1120094039]
+collision_layer = 16
+collision_mask = 35
+script = ExtResource("1_hc6w4")
+enemy_data = ExtResource("2_uhgnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1385577550]
+scale = Vector2(4, 3.5)
+sprite_frames = SubResource("SpriteFrames_uhgnb")
+autoplay = "default"
+
+[node name="DespawnCollision" type="CollisionShape2D" parent="." unique_id=1199873484]
+position = Vector2(7, 2)
+shape = SubResource("RectangleShape2D_x45r8")
+
+[node name="DeathCollsion" parent="." unique_id=341762157 instance=ExtResource("2_llpag")]
+
+[node name="deathcollision" type="CollisionPolygon2D" parent="DeathCollsion" unique_id=1034665793]
+polygon = PackedVector2Array(-99, -27, -85, -56, 95, -56, 112, -29, 112, 40, 72, 42, 61, 55, 48, 56, 34, 44, -51, 44, -63, 56, -77, 56, -90, 45, -103, 45, -104, 13, -98, 8, -97, -9)
+
+[node name="SpeedCheck" parent="." unique_id=943464810 instance=ExtResource("3_x45r8")]
+
+[connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

@@ -38,6 +38,8 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	#To do: find a way not to fire this every time the player dies, check if the player is pinned to something first.?
+	SignalHub.unpin_joint.emit()
 	get_tree().paused = true
 	AudioBus.play_sound("Death")
 	if kame.player_data.player_direction not in the_death_states:

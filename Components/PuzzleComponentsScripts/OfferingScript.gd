@@ -1,2 +1,3 @@
 class_name OfferingBody
 extends RigidBody2D
+

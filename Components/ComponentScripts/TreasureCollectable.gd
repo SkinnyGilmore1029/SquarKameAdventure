@@ -30,8 +30,5 @@ func _add_to_current_points() -> void:
 	#have to update the score before showing the score on the UI.
 	SignalHub.update_current_score.emit(point_value)
 
-	# Add to life points value.
-	SignalHub.life_points_collected.emit(point_value)
-
 	#use the PlayerGlobals.current_score to keep everything synced.
 	SignalHub.points_collected.emit(_get_current_score())

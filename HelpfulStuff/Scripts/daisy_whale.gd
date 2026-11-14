@@ -5,7 +5,7 @@ extends StaticBody2D
 @onready var message_label: Label = $TextBox/MessageLabel
 
 func _ready() -> void:
-	SignalHub.has_fruit.connect(got_strawberry)
+	SignalHub.has_fruit.connect(got_apple)
 
 func open_text_box(body: Node2D) -> void:
 	if body is MainKame:
@@ -17,7 +17,7 @@ func close_text_box(body: Node2D) -> void:
 		%TextBox.visible = false
 
 
-func got_strawberry(the_whale: StaticBody2D) -> void:
+func got_apple(the_whale: StaticBody2D) -> void:
 	if the_whale != self:
 		return
-	message_label.text = "Thank You for the strawberry!"
+	message_label.text = "Thank You for the Apple!"

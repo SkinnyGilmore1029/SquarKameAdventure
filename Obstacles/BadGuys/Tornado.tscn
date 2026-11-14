@@ -71,10 +71,11 @@ shape = SubResource("CapsuleShape2D_60r1j")
 [node name="Timers" type="Node" parent="." unique_id=930027117]
 
 [node name="DeSpawnTimer" type="Timer" parent="Timers" unique_id=1554021164]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true
 
 [node name="SpeedTimer" type="Timer" parent="Timers" unique_id=1429369110]
+wait_time = 2.0
 autostart = true
 
 [connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

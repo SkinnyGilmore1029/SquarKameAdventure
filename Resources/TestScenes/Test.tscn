@@ -4,6 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://bclkecsyx858k" path="res://Obstacles/Pushables/PushLog.tscn" id="2_hxuk3"]
 [ext_resource type="PackedScene" uid="uid://c4plgj0bg1e6q" path="res://SquarKames/KamesScenes/OrangeKame.tscn" id="3_hxuk3"]
 [ext_resource type="PackedScene" uid="uid://ceypumajwrbll" path="res://Obstacles/Pushables/PushRock.tscn" id="4_3df30"]
+[ext_resource type="Script" uid="uid://cd3i6dd8ykxv6" path="res://Resources/TestScenes/area_2d.gd" id="4_30y04"]
+[ext_resource type="Script" uid="uid://gm7v6medld3l" path="res://Resources/TestScenes/testscript.gd" id="5_jug5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jug5a"]
+size = Vector2(44, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3df30"]
+size = Vector2(20, 296)
 
 [node name="Test" type="Node2D" unique_id=242935711]
 
@@ -15,8 +23,31 @@ tile_set = ExtResource("1_0g5o2")
 position = Vector2(307, 122)
 
 [node name="PushRock" parent="." unique_id=812960192 instance=ExtResource("4_3df30")]
-position = Vector2(235, 125)
+position = Vector2(159, 100)
 mass = 100.0
+
+[node name="Area2D" type="Area2D" parent="PushRock" unique_id=1829350298]
+script = ExtResource("4_30y04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushRock/Area2D" unique_id=1612639754]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_jug5a")
 
 [node name="OrangeKame" parent="." unique_id=475591077 instance=ExtResource("3_hxuk3")]
 position = Vector2(117, 101)
+
+[node name="TestPin" type="PinJoint2D" parent="." unique_id=23441936]
+unique_name_in_owner = true
+position = Vector2(147, 142)
+node_a = NodePath("../OrangeKame")
+motor_target_velocity = 0.04660029
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1746441991]
+script = ExtResource("5_jug5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1348609319]
+position = Vector2(33, 105)
+shape = SubResource("RectangleShape2D_3df30")
+
+[connection signal="body_entered" from="PushRock/Area2D" to="PushRock/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

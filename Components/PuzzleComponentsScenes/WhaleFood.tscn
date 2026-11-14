@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="1_ah0ay"]
 [ext_resource type="Script" uid="uid://dp75cdi1q84hn" path="res://Components/PuzzleComponentsScripts/OfferingScript.gd" id="1_s8g0y"]
-[ext_resource type="PackedScene" uid="uid://dbxgti40w3qb4" path="res://Components/ComponentScenes/Pushable2D.tscn" id="3_6k0ay"]
+[ext_resource type="PackedScene" uid="uid://2t6dijaeyfwn" path="res://Components/ComponentScenes/PinComponent.tscn" id="3_6k0ay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kipu"]
 atlas = ExtResource("1_ah0ay")
@@ -11,15 +11,13 @@ region = Rect2(32, 32, 16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8g0y"]
 radius = 13.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bqp1k"]
-radius = 13.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_6k0ay"]
+radius = 22.203604
 
-[node name="WhaleFood" type="RigidBody2D" unique_id=400521202]
+[node name="WhaleFood" type="RigidBody2D" unique_id=1042818640]
 collision_layer = 256
 collision_mask = 327
 gravity_scale = 0.0
-lock_rotation = true
-linear_damp = 100.0
 script = ExtResource("1_s8g0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=369494357]
@@ -30,8 +28,12 @@ texture = SubResource("AtlasTexture_0kipu")
 position = Vector2(-1, 3)
 shape = SubResource("CircleShape2D_s8g0y")
 
-[node name="Pushable2d" parent="." unique_id=1073834761 instance=ExtResource("3_6k0ay")]
+[node name="WhalePin" type="PinJoint2D" parent="." unique_id=240854335]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable2d" unique_id=1348292816]
-position = Vector2(-1, 3)
-shape = SubResource("CircleShape2D_bqp1k")
+[node name="PinComponent" parent="." unique_id=1797700450 node_paths=PackedStringArray("node_pin") instance=ExtResource("3_6k0ay")]
+node_pin = NodePath("../WhalePin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinComponent" unique_id=543896544]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_6k0ay")
+debug_color = Color(0.8668995, 0.2715444, 0.58479303, 0.41960785)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://2t6dijaeyfwn"]
+
+[ext_resource type="Script" uid="uid://gett1earsspu" path="res://Components/ComponentScripts/PinScript.gd" id="1_uk1rp"]
+
+[node name="PinComponent" type="Area2D" unique_id=1797700450]
+script = ExtResource("1_uk1rp")
+
+[connection signal="body_entered" from="." to="." method="pin_to_player"]

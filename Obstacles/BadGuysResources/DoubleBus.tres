@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cmkx7gokdq83w"]
+
+[ext_resource type="Script" uid="uid://bcmycs6es7mw0" path="res://Managers/EnemyManagers/EnemyData.gd" id="1_ml0fk"]
+
+[resource]
+script = ExtResource("1_ml0fk")
+enemy_type = "DoubleBus"
+metadata/_custom_type_script = "uid://bcmycs6es7mw0"

@@ -10,6 +10,8 @@ var Roll_back_dict: Dictionary = {
 
 func _ready() -> void:
 	%ContinueButton.grab_focus()
+	Points.current_score = 0
+	Points.life_points = 0
 
 func _on_continue_button_pressed() -> void:
 	if GameState.difficulty_selected not in Roll_back_dict:

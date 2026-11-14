@@ -17,9 +17,6 @@ signal key_collected(new_count)
 signal change_key_count(new_count)
 signal key_used
 
-#-----------------Points------------------------------
-signal life_points_collected(value)
-
 
 
 #-----------------LevelSignals------------------------
@@ -48,3 +45,5 @@ signal giving_offer
 signal just_started_level
 signal level_completed
 
+#-----------------PinSignals--------------------------
+signal unpin_joint

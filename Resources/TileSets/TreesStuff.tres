@@ -46,7 +46,7 @@ texture = ExtResource("1_pp0vs")
 texture = ExtResource("2_idotu")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.712372, -0.17985725, -0.17985916, -12.230392, 10.251947, -1.4388695, 10.251947, 10.791525, 14.568558, 11.870676, 13.849121, 14.568556, -14.208839, 14.928274, -14.208839, 11.151241, -9.712372, 11.3311)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [resource]
 physics_layer_0/collision_layer = 2

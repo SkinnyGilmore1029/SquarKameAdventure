@@ -62,6 +62,7 @@ func add_oneup() -> void:
 
 func add_to_score(value: int) -> void:
 	Points.current_score += value
+	Points.life_points += value
 
 func connect_all_signals() -> void:
 	SignalHub.player_died.connect(died)
