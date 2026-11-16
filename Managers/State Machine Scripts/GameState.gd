@@ -5,6 +5,7 @@ var last_title_selection: String
 var current_level: int = 1
 var continuing_from_game_over: bool = false
 var picking_level: bool = false
+var from_pause_menu: bool = false
 var level_going_to: int
 var level_selected: int
 var hot_level:bool = false

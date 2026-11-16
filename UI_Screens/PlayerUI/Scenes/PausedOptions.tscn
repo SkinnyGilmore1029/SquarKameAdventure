@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b6l1tl6a44tvp"]
+
+[ext_resource type="Script" uid="uid://cplhtfkhb4eoo" path="res://UI_Screens/PlayerUI/Scripts/paused_options.gd" id="1_gb2ai"]
+[ext_resource type="PackedScene" uid="uid://cvtf7vmffcrls" path="res://UI_Screens/Screens/OptionsScreen.tscn" id="1_p162t"]
+
+[node name="PausedOptions" type="CanvasLayer" unique_id=107123466]
+script = ExtResource("1_gb2ai")
+
+[node name="OptionsScreen" parent="." unique_id=201731674 instance=ExtResource("1_p162t")]

@@ -14,33 +14,92 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_inw7r")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1385664703]
+[node name="Background" type="PanelContainer" parent="." unique_id=1385664703]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xgajt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1620149632]
+[node name="TitleLabel" type="Label" parent="." unique_id=929491811]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -149.0
-offset_right = 149.0
-offset_bottom = 40.0
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 34.0
 grow_horizontal = 2
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=929491811]
-layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Still Reaschering Might Be a while LOL."
+text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=165557510]
+[node name="Sliders" type="VBoxContainer" parent="." unique_id=1620149632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3828125
+anchor_top = 0.19722222
+anchor_right = 0.60625
+anchor_bottom = 0.5777778
+offset_bottom = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MainVolumelabel" type="Label" parent="Sliders" unique_id=74033915]
+layout_mode = 2
+text = "Main Volume: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainVolume" type="HSlider" parent="Sliders" unique_id=853356748]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -40.0
+max_value = 4.0
+
+[node name="SoundEffectslabel" type="Label" parent="Sliders" unique_id=1075706104]
+layout_mode = 2
+text = "Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundEffects" type="HSlider" parent="Sliders" unique_id=1058278532]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -40.0
+max_value = 4.0
+
+[node name="Label" type="Label" parent="Sliders" unique_id=1960325355]
+layout_mode = 2
+text = "Background Music"
+
+[node name="BackgroundMusic" type="HSlider" parent="Sliders" unique_id=882788961]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -40.0
+max_value = 4.0
+
+[node name="BackButtons" type="VBoxContainer" parent="." unique_id=594842297]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 290.0
+offset_right = 403.0
+offset_bottom = 356.0
+
+[node name="BackButton" type="Button" parent="BackButtons" unique_id=165557510]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back to TitleScreen
 "
 
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[node name="BackPauseButton" type="Button" parent="BackButtons" unique_id=1901298115]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Pause Menu"
+
+[connection signal="value_changed" from="Sliders/MainVolume" to="." method="_on_main_volume_value_changed"]
+[connection signal="value_changed" from="Sliders/SoundEffects" to="." method="_on_sound_effects_value_changed"]
+[connection signal="value_changed" from="Sliders/BackgroundMusic" to="." method="_on_background_music_value_changed"]
+[connection signal="pressed" from="BackButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButtons/BackPauseButton" to="." method="_on_back_pause_button_pressed"]

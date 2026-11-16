@@ -5,6 +5,8 @@ extends Node2D
 @onready var bad_guys_node = %Level1_BadGuys
 @onready var hint_frog_text := $Helpful/HintFrog/HintPanel/Label
 @onready var hint_frog2_text := $Helpful/HintFrog2/HintPanel/Label
+@onready var hint_frog3_text := $Helpful/HintFrog3/HintPanel/Label
+@onready var hint_frog4_text := $Helpful/HintFrog4/HintPanel/Label
 
 
 func _ready() -> void:
@@ -15,8 +17,10 @@ func _ready() -> void:
 
 
 func set_level_data() -> void:
-	hint_frog_text.text = "You can find both\n keys in the flowers!\n"
-	hint_frog2_text.text = "Collect as many fruit as you can.\nTry for a high score!\n"
+	hint_frog_text.text = "You will need to find the keys\nin each level to continue!\n"
+	hint_frog2_text.text = "Collecting fruit will give you points!\n Every 800 points will earn you a One-Up!\n"
+	hint_frog3_text.text = "The locks will save your progress in the levels!\nBut you have to open them first!\n"
+	hint_frog4_text.text = "There are Gold Coins hidden in every level!\n They are not easy to get though.\n"
 	level_data.enemy_types = ["Car", "Car2", "Truck", "Bus"]
 	level_data.spawn_positions = {
 	"Car": [Vector2(1300, 526), Vector2(-100,322), Vector2(1325, -304), Vector2(-233, -525)],

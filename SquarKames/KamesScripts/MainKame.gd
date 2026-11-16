@@ -74,13 +74,7 @@ func connect_all_signals() -> void:
 
 func new_level_pos(level_name: String) -> void:
 	self.global_position = player_data.spawn_position
-	if level_name not in camera_limits:
-		push_warning("Forgot to add %s to camera_limits in MainKame.gd" % level_name)
-		return
-	player_camera.limit_right = camera_limits[level_name]["Right"]
-	player_camera.limit_bottom = camera_limits[level_name]["Bottom"]
-	player_camera.limit_top = camera_limits[level_name]["Top"]
-	player_camera.limit_left = camera_limits[level_name]["Left"]
+	set_camera_position()
 
 func set_player_data() -> void:
 	self.global_position = player_data.new_game_spawn_position
@@ -89,7 +83,6 @@ func set_player_data() -> void:
 func set_camera_position() -> void:
 	var current_camera: String = "Level%d" % GameState.current_level
 	current_camera_set = current_camera
-	player_data.spawn_position = player_data.new_game_spawn_position
 	player_camera.limit_right = camera_limits[current_camera_set]["Right"]
 	player_camera.limit_bottom = camera_limits[current_camera_set]["Bottom"]
 	player_camera.limit_top = camera_limits[current_camera_set]["Top"]

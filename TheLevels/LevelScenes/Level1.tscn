@@ -469,9 +469,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_v480x")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_830d4"]
-size = Vector2(1253, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2otri"]
 size = Vector2(1, 1643)
 
@@ -524,14 +521,6 @@ tile_set = SubResource("TileSet_2otri")
 
 [node name="Borders" type="Node2D" parent="." unique_id=776387916]
 position = Vector2(1, -1)
-
-[node name="WorldBorderTop" parent="Borders" unique_id=1006647801 instance=ExtResource("3_6elrx")]
-position = Vector2(302, -880)
-
-[node name="TopCollision" type="CollisionShape2D" parent="Borders/WorldBorderTop" unique_id=307795500]
-position = Vector2(299, 67)
-shape = SubResource("RectangleShape2D_830d4")
-debug_color = Color(0.9181473, 0.27219272, 0.22757924, 0.41960785)
 
 [node name="WorldBorderLeft" parent="Borders" unique_id=472154894 instance=ExtResource("3_6elrx")]
 position = Vector2(-61, -226)
@@ -610,6 +599,12 @@ position = Vector2(227, 721)
 
 [node name="HintFrog2" parent="Helpful" unique_id=517567962 instance=ExtResource("16_pswb0")]
 position = Vector2(764, 758)
+
+[node name="HintFrog3" parent="Helpful" unique_id=1315664337 instance=ExtResource("16_pswb0")]
+position = Vector2(569, 150)
+
+[node name="HintFrog4" parent="Helpful" unique_id=1806224086 instance=ExtResource("16_pswb0")]
+position = Vector2(45, -412)
 
 [node name="Points" type="Node2D" parent="." unique_id=290852775]
 y_sort_enabled = true
