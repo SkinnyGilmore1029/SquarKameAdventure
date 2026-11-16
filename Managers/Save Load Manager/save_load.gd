@@ -12,7 +12,7 @@ func save_game():
     var file = FileAccess.open(save_path, FileAccess.WRITE)
 
     if file:
-        file.store_string(JSON.stringify(save_data))
+        file.store_string(JSON.stringify(save_data, "\t", false))
         file.close()
     else:
         push_error("Unable to create new save file!")

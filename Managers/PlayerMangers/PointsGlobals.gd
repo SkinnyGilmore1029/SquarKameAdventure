@@ -30,5 +30,10 @@ func points_life() -> void:
 func calculate_high_score() -> void:
 	if current_score > high_score:
 		high_score = current_score
+		SignalHub.update_high_score.emit(high_score)
 		if !new_high_score:
 			new_high_score = true
+
+func reset_high_score():
+	high_score = 0
+	SaveLoad.save_game()

@@ -80,20 +80,25 @@ layout_mode = 2
 min_value = -40.0
 max_value = 4.0
 
-[node name="BackButtons" type="VBoxContainer" parent="." unique_id=594842297]
+[node name="TheButtons" type="VBoxContainer" parent="." unique_id=594842297]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 290.0
-offset_right = 403.0
-offset_bottom = 356.0
+offset_left = 237.0
+offset_top = 257.0
+offset_right = 402.0
+offset_bottom = 358.0
 
-[node name="BackButton" type="Button" parent="BackButtons" unique_id=165557510]
+[node name="ResetHighScoreButton" type="Button" parent="TheButtons" unique_id=575910410]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reset High Score"
+
+[node name="BackButton" type="Button" parent="TheButtons" unique_id=165557510]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back to TitleScreen
 "
 
-[node name="BackPauseButton" type="Button" parent="BackButtons" unique_id=1901298115]
+[node name="BackPauseButton" type="Button" parent="TheButtons" unique_id=1901298115]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back to Pause Menu"
@@ -101,5 +106,6 @@ text = "Back to Pause Menu"
 [connection signal="value_changed" from="Sliders/MainVolume" to="." method="_on_main_volume_value_changed"]
 [connection signal="value_changed" from="Sliders/SoundEffects" to="." method="_on_sound_effects_value_changed"]
 [connection signal="value_changed" from="Sliders/BackgroundMusic" to="." method="_on_background_music_value_changed"]
-[connection signal="pressed" from="BackButtons/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="BackButtons/BackPauseButton" to="." method="_on_back_pause_button_pressed"]
+[connection signal="pressed" from="TheButtons/ResetHighScoreButton" to="." method="_on_reset_high_score_button_pressed"]
+[connection signal="pressed" from="TheButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TheButtons/BackPauseButton" to="." method="_on_back_pause_button_pressed"]

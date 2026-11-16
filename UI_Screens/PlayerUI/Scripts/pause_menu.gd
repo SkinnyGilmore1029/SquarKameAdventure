@@ -89,6 +89,9 @@ func grab_continue_button_focus() -> void:
 func reset_everything() -> void:
 	GameState.from_pause_menu = false
 	AudioBus.background_music.stop()
+	if Points.new_high_score:
+		SaveLoad.save_game()
+		Points.new_high_score = false
 	Points.current_score = 0
 	Points.life_points = 0
 	current_menu = "PauseMenu"

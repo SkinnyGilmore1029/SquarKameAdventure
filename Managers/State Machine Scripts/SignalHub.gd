@@ -11,6 +11,7 @@ signal player_died
 signal reset_heat
 signal update_current_score(value: int)
 signal points_collected(value: int)
+signal update_high_score(value: int)
 
 #-----------------Collectables------------------------
 signal key_collected(new_count: int)
@@ -53,4 +54,3 @@ signal focus_continue_button
 
 #-----------------PinSignals--------------------------
 signal unpin_joint
-
