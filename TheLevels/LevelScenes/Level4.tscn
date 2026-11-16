@@ -214,6 +214,42 @@ position = Vector2(-124, -94.99997)
 [node name="PearPoints3" parent="Points/Pears" unique_id=2007409852 instance=ExtResource("10_qpeb7")]
 position = Vector2(-103.999985, 297.00003)
 
+[node name="PearPoints4" parent="Points/Pears" unique_id=1169471739 instance=ExtResource("10_qpeb7")]
+position = Vector2(-145.99998, 819)
+
+[node name="PearPoints5" parent="Points/Pears" unique_id=1955929856 instance=ExtResource("10_qpeb7")]
+position = Vector2(622, 389)
+
+[node name="PearPoints6" parent="Points/Pears" unique_id=2063231770 instance=ExtResource("10_qpeb7")]
+position = Vector2(-542, 493)
+
+[node name="PearPoints7" parent="Points/Pears" unique_id=1718259158 instance=ExtResource("10_qpeb7")]
+position = Vector2(-1102, 789)
+
+[node name="PearPoints8" parent="Points/Pears" unique_id=783721957 instance=ExtResource("10_qpeb7")]
+position = Vector2(-1432, 545)
+
+[node name="PearPoints9" parent="Points/Pears" unique_id=1887932584 instance=ExtResource("10_qpeb7")]
+position = Vector2(-1558, 1218)
+
+[node name="PearPoints10" parent="Points/Pears" unique_id=1940918723 instance=ExtResource("10_qpeb7")]
+position = Vector2(-1304, 1557)
+
+[node name="PearPoints11" parent="Points/Pears" unique_id=1419712306 instance=ExtResource("10_qpeb7")]
+position = Vector2(-392, 1343)
+
+[node name="PearPoints12" parent="Points/Pears" unique_id=803293749 instance=ExtResource("10_qpeb7")]
+position = Vector2(-2112, 834)
+
+[node name="PearPoints13" parent="Points/Pears" unique_id=684418185 instance=ExtResource("10_qpeb7")]
+position = Vector2(-2383, 492)
+
+[node name="PearPoints14" parent="Points/Pears" unique_id=499135200 instance=ExtResource("10_qpeb7")]
+position = Vector2(-2374, -78)
+
+[node name="PearPoints15" parent="Points/Pears" unique_id=701767896 instance=ExtResource("10_qpeb7")]
+position = Vector2(-1587, -58.99997)
+
 [node name="Mushrooms" type="Node2D" parent="Points" unique_id=82653356]
 
 [node name="Mushroom" parent="Points/Mushrooms" unique_id=1770708606 instance=ExtResource("11_8trpi")]
@@ -224,6 +260,42 @@ position = Vector2(174, 387.00003)
 
 [node name="Mushroom3" parent="Points/Mushrooms" unique_id=1200468658 instance=ExtResource("11_8trpi")]
 position = Vector2(564, 761)
+
+[node name="Mushroom4" parent="Points/Mushrooms" unique_id=681354052 instance=ExtResource("11_8trpi")]
+position = Vector2(605, -96)
+
+[node name="Mushroom5" parent="Points/Mushrooms" unique_id=1057582309 instance=ExtResource("11_8trpi")]
+position = Vector2(136, -314.99997)
+
+[node name="Mushroom6" parent="Points/Mushrooms" unique_id=721054741 instance=ExtResource("11_8trpi")]
+position = Vector2(-132, 482.00003)
+
+[node name="Mushroom7" parent="Points/Mushrooms" unique_id=1944891153 instance=ExtResource("11_8trpi")]
+position = Vector2(-376, 591)
+
+[node name="Mushroom8" parent="Points/Mushrooms" unique_id=795871155 instance=ExtResource("11_8trpi")]
+position = Vector2(-672, 983)
+
+[node name="Mushroom9" parent="Points/Mushrooms" unique_id=1153774004 instance=ExtResource("11_8trpi")]
+position = Vector2(-1227, 1245)
+
+[node name="Mushroom10" parent="Points/Mushrooms" unique_id=1734274952 instance=ExtResource("11_8trpi")]
+position = Vector2(-282, 1416)
+
+[node name="Mushroom11" parent="Points/Mushrooms" unique_id=16118127 instance=ExtResource("11_8trpi")]
+position = Vector2(-1834, 1017)
+
+[node name="Mushroom12" parent="Points/Mushrooms" unique_id=495113297 instance=ExtResource("11_8trpi")]
+position = Vector2(-1617, 367)
+
+[node name="Mushroom13" parent="Points/Mushrooms" unique_id=565003445 instance=ExtResource("11_8trpi")]
+position = Vector2(-1834, 159)
+
+[node name="Mushroom14" parent="Points/Mushrooms" unique_id=517883242 instance=ExtResource("11_8trpi")]
+position = Vector2(-2010, -123.99997)
+
+[node name="Mushroom15" parent="Points/Mushrooms" unique_id=440082346 instance=ExtResource("11_8trpi")]
+position = Vector2(-2389, -318.99997)
 
 [node name="Coin" parent="." unique_id=1561227901 instance=ExtResource("12_8trpi")]
 position = Vector2(-1084, 800)

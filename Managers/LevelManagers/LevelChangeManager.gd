@@ -7,7 +7,7 @@ var level_scenes: Dictionary[int,Array] = {
 	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715), false],
 	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589), false],
 	4 : ["res://TheLevels/LevelScenes/Level4.tscn", Vector2(704,63), true],
-	5 : ["res://TheLevels/LevelScenes/Level5.tscn", Vector2(98,2082), true]
+	5 : ["res://TheLevels/LevelScenes/Level5.tscn", Vector2(146,2056), true]
 }
 
 
@@ -16,6 +16,8 @@ func change_level(new_level: int, is_starting_level: bool = false) -> void:
 	#don't waste time making variables if invalid entry.
 	if new_level not in level_scenes:
 		push_warning("Level %d not in level_scenes dictionary in LevelChangeManger.gd." % new_level)
+		SaveLoad.save_game()
+		get_tree().change_scene_to_file(GameState.title_screen)
 		return
 
 	var screen_transitions: ScreenTransitions = get_node(
