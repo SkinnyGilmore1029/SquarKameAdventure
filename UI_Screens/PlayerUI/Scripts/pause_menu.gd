@@ -60,8 +60,6 @@ func unknown_close_pause_menu() -> void:
 	kame_playing.animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
 	push_warning("Unknown menu state: %s" % current_menu)
 
-func reset_pause_menu() -> void:
-	current_menu = "PauseMenu"
 
 #------------------Button Functions------------------#
 

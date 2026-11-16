@@ -20,11 +20,12 @@ buses/default_bus_layout="uid://bpkae21rchkx1"
 
 [autoload]
 
+GameInput="*uid://yujxax8klej0"
 GameState="*uid://dqv0fkcoviuf4"
 PlayerGlobals="*uid://d2kew3tosx5lt"
-SignalHub="*uid://bclwcpkspmdp8"
 Points="*uid://cqxlablscsg4l"
-GameInput="*uid://yujxax8klej0"
+SaveLoad="*uid://dbcswal8ftcc0"
+SignalHub="*uid://bclwcpkspmdp8"
 EnemySpawner="*uid://c1lj7fe1txxka"
 LevelChange="*uid://dhr757wnkrx2s"
 AudioBus="*uid://bqmdmrilasp4v"

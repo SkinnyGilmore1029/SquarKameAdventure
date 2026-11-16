@@ -4,6 +4,7 @@ extends Node
 
 var current_score: int = 0
 var high_score: int = 0
+var new_high_score: bool = false
 
 var life_points: int = 0
 var points_to_gain_life: int = 800
@@ -29,4 +30,5 @@ func points_life() -> void:
 func calculate_high_score() -> void:
 	if current_score > high_score:
 		high_score = current_score
-
+		if !new_high_score:
+			new_high_score = true

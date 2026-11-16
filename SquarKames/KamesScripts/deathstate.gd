@@ -4,6 +4,7 @@ extends NodeState
 @export var kame: MainKame
 @export var animated_sprite: AnimatedSprite2D
 
+
 var the_death_states: Dictionary = {
 	"up" :"DeathUp",
 	"down" : "DeathDown",
@@ -11,6 +12,7 @@ var the_death_states: Dictionary = {
 	"right" : "DeathRight"
 }
 
+#-----------------State Machine Functions-------------
 
 func _on_process(_delta : float) -> void:
 	pass
@@ -38,15 +40,26 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+
 	#To do: find a way not to fire this every time the player dies, check if the player is pinned to something first.?
 	SignalHub.unpin_joint.emit()
+
 	get_tree().paused = true
+
 	AudioBus.play_sound("Death")
+
 	if kame.player_data.player_direction not in the_death_states:
 		push_warning("%s is not one of the four directions check deathstate.gd" % kame.player_data.player_direction)
 		animated_sprite.play(the_death_states["up"])
-	animated_sprite.play(the_death_states[kame.player_data.player_direction])
+		return
 
+	#do not use this if warning is pushed.
+	animated_sprite.play(the_death_states[kame.player_data.player_direction])
 
 func _on_exit() -> void:
 	animated_sprite.stop()
+
+
+
+
+

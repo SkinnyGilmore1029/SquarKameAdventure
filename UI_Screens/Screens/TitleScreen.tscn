@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://fmn5jj0te8hq"]
 
+[ext_resource type="Theme" uid="uid://cs17au4osel30" path="res://Resources/ThemeStyles/Title_labels.tres" id="1_vmts1"]
 [ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_xlpda"]
+[ext_resource type="Script" uid="uid://cwwkkjlagsmte" path="res://UI_Screens/ScreenScripts/high_score_container.gd" id="2_gjjjm"]
 [ext_resource type="Script" uid="uid://baaejwjfn4108" path="res://UI_Screens/ScreenScripts/TitleScreenControl.gd" id="2_pcufe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev8nc"]
@@ -48,6 +50,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xlpda")
 text = "SquareKame Adventure"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="HighScoreContainer" type="HBoxContainer" parent="GameTitleVBox" unique_id=104364225]
+layout_mode = 2
+theme = ExtResource("1_vmts1")
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("2_gjjjm")
+
+[node name="CurrentHighScoreLabel" type="Label" parent="GameTitleVBox/HighScoreContainer" unique_id=546832352]
+layout_mode = 2
+text = "High Score:"
+
+[node name="HighScorePointsLabel" type="Label" parent="GameTitleVBox/HighScoreContainer" unique_id=1421061282]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="TheButtons" type="Control" parent="." unique_id=1071197118]
 layout_mode = 1

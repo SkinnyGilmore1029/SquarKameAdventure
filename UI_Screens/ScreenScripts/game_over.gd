@@ -10,8 +10,13 @@ var Roll_back_dict: Dictionary = {
 
 func _ready() -> void:
 	%ContinueButton.grab_focus()
+	#Only save the high score at the game over.
+	if Points.new_high_score:
+		SaveLoad.save_game()
+		Points.new_high_score = false
 	Points.current_score = 0
 	Points.life_points = 0
+	AudioBus.background_music.stop()
 
 func _on_continue_button_pressed() -> void:
 	if GameState.difficulty_selected not in Roll_back_dict:
@@ -33,7 +38,7 @@ func _on_continue_button_pressed() -> void:
 func _on_title_screen_button_pressed() -> void:
 	if PlayerGlobals.speed == 180.0:
 		PlayerGlobals.speed = PlayerGlobals.default_speed
-	get_tree().change_scene_to_file(GameState.title_scene)
+	get_tree().change_scene_to_file(GameState.title_screen)
 
 func _on_exit_game_button_pressed() -> void:
 	get_tree().quit()
