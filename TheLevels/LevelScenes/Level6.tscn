@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b3pv0p5ojwuoo"]
+
+[node name="Level6" type="Node2D" unique_id=90500508]
+
+[node name="Background" type="Node2D" parent="." unique_id=79454006]
+
+[node name="Level6_BadGuys" type="Node2D" parent="." unique_id=770017088]
+
+[node name="Keys" type="Node2D" parent="." unique_id=1929538002]
+
+[node name="Locks" type="Node2D" parent="." unique_id=1853044398]
+
+[node name="Teleporters" type="Node2D" parent="." unique_id=359336935]
+
+[node name="Helpful" type="Node2D" parent="." unique_id=311485287]
+
+[node name="Points" type="Node2D" parent="." unique_id=530851289]
+
+[node name="Borders" type="Node2D" parent="." unique_id=706372698]
+
+[node name="TurtleEggs" type="Node2D" parent="." unique_id=724922420]

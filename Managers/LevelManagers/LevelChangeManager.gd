@@ -17,6 +17,7 @@ func change_level(new_level: int, is_starting_level: bool = false) -> void:
 	if new_level not in level_scenes:
 		push_warning("Level %d not in level_scenes dictionary in LevelChangeManger.gd." % new_level)
 		SaveLoad.save_game()
+		AudioBus.background_music.stop()
 		get_tree().change_scene_to_file(GameState.title_screen)
 		return
 

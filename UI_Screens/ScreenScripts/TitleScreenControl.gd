@@ -15,8 +15,14 @@ func _on_level_select_button_pressed() -> void:
 func _on_options_button_pressed() -> void:
 	get_tree().change_scene_to_file(GameState.option_screen)
 
+func _on_control_screen_button_pressed() -> void:
+	get_tree().change_scene_to_file(GameState.control_screen)
+
 func _on_exit_game_button_pressed() -> void:
 	get_tree().quit()
+
+
+
 
 
 

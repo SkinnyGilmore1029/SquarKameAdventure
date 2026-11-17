@@ -6,5 +6,7 @@
 script = ExtResource("1_ldl4y")
 
 [node name="AudioSFX" type="AudioStreamPlayer" parent="." unique_id=720810588]
+bus = &"SoundEffects"
 
 [node name="AudioBG" type="AudioStreamPlayer" parent="." unique_id=557239137]
+bus = &"BackGround"

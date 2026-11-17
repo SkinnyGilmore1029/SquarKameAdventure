@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cvtf7vmffcrls"]
 
 [ext_resource type="Script" uid="uid://dolf7u24wuvsf" path="res://UI_Screens/ScreenScripts/options_screen.gd" id="1_inw7r"]
+[ext_resource type="Theme" uid="uid://cs17au4osel30" path="res://Resources/ThemeStyles/Title_labels.tres" id="2_mub2d"]
+[ext_resource type="Theme" uid="uid://d3mymy7lsjr54" path="res://Resources/ThemeStyles/Sliders.tres" id="3_ya5wh"]
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="4_ya5wh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgajt"]
-bg_color = Color(0.8505924, 0.44515282, 0.6438167, 1)
+bg_color = Color(0.20784314, 0.72156864, 0.64705884, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjjjm"]
+bg_color = Color(0.48235294, 0.56078434, 0.6392157, 1)
 
 [node name="OptionsScreen" type="Control" unique_id=201731674]
 layout_mode = 3
@@ -20,16 +26,16 @@ offset_right = 640.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xgajt")
 
-[node name="TitleLabel" type="Label" parent="." unique_id=929491811]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -128.0
-offset_right = 128.0
-offset_bottom = 34.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1070870917]
+layout_mode = 0
+offset_right = 639.0
+offset_bottom = 40.0
+theme = ExtResource("2_mub2d")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjjjm")
+
+[node name="TitleLabel" type="Label" parent="PanelContainer" unique_id=929491811]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -37,17 +43,21 @@ vertical_alignment = 1
 [node name="Sliders" type="VBoxContainer" parent="." unique_id=1620149632]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3828125
-anchor_top = 0.19722222
-anchor_right = 0.60625
-anchor_bottom = 0.5777778
+anchor_left = 0.328125
+anchor_top = 0.16111112
+anchor_right = 0.6609375
+anchor_bottom = 0.6055556
 offset_bottom = -1.5258789e-05
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ya5wh")
+theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="MainVolumelabel" type="Label" parent="Sliders" unique_id=74033915]
 layout_mode = 2
+theme = ExtResource("2_mub2d")
+theme_override_font_sizes/font_size = 24
 text = "Main Volume: "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,11 +65,14 @@ vertical_alignment = 1
 [node name="MainVolume" type="HSlider" parent="Sliders" unique_id=853356748]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_ya5wh")
 min_value = -40.0
 max_value = 4.0
 
 [node name="SoundEffectslabel" type="Label" parent="Sliders" unique_id=1075706104]
 layout_mode = 2
+theme = ExtResource("2_mub2d")
+theme_override_font_sizes/font_size = 24
 text = "Sound Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -72,6 +85,8 @@ max_value = 4.0
 
 [node name="Label" type="Label" parent="Sliders" unique_id=1960325355]
 layout_mode = 2
+theme = ExtResource("2_mub2d")
+theme_override_font_sizes/font_size = 24
 text = "Background Music"
 
 [node name="BackgroundMusic" type="HSlider" parent="Sliders" unique_id=882788961]
@@ -82,10 +97,11 @@ max_value = 4.0
 
 [node name="TheButtons" type="VBoxContainer" parent="." unique_id=594842297]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 257.0
-offset_right = 402.0
-offset_bottom = 358.0
+offset_left = 178.0
+offset_top = 225.0
+offset_right = 481.0
+offset_bottom = 359.0
+theme = ExtResource("4_ya5wh")
 
 [node name="ResetHighScoreButton" type="Button" parent="TheButtons" unique_id=575910410]
 unique_name_in_owner = true

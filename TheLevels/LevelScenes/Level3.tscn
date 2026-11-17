@@ -203,6 +203,7 @@ tile_set = ExtResource("6_jht05")
 
 [node name="BorderLeft" type="StaticBody2D" parent="PlayerBorders" unique_id=342902846]
 collision_layer = 64
+collision_mask = 257
 
 [node name="BorderLeftCollision" type="CollisionShape2D" parent="PlayerBorders/BorderLeft" unique_id=1960979302]
 position = Vector2(-4, 440.5)
@@ -211,6 +212,7 @@ shape = SubResource("RectangleShape2D_jht05")
 [node name="BorderRight" type="StaticBody2D" parent="PlayerBorders" unique_id=782704654]
 position = Vector2(2021, -712)
 collision_layer = 64
+collision_mask = 257
 
 [node name="BorderRightCollision" type="CollisionShape2D" parent="PlayerBorders/BorderRight" unique_id=1005075451]
 position = Vector2(-6, 1152.5)
@@ -219,6 +221,7 @@ shape = SubResource("RectangleShape2D_q183e")
 [node name="BorderBottom" type="StaticBody2D" parent="PlayerBorders" unique_id=1226705500]
 position = Vector2(2, 1609)
 collision_layer = 64
+collision_mask = 257
 
 [node name="BorderBottomCollision" type="CollisionShape2D" parent="PlayerBorders/BorderBottom" unique_id=479316184]
 position = Vector2(1002, -9)
@@ -226,6 +229,7 @@ shape = SubResource("RectangleShape2D_xjrfn")
 
 [node name="StreetBarrier" type="StaticBody2D" parent="PlayerBorders" unique_id=708024823]
 collision_layer = 64
+collision_mask = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBorders/StreetBarrier" unique_id=728237729]
 position = Vector2(916, -346.5)

@@ -30,7 +30,7 @@ func play_sound(sound_name: String) -> void:
 	var pitch: float = audio_book[sound_name][1]
 	sound_effects.bus = "SoundEffects"
 	sound_effects.stream = load(load_string)
-	sound_effects.volume_db = -5.0
+	sound_effects.volume_db = -15.0
 	sound_effects.pitch_scale = pitch
 
 	sound_effects.play()

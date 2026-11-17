@@ -16,10 +16,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 44.0
+offset_left = -18.0
+offset_top = -55.0
+offset_right = 22.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_72jkd")
@@ -27,13 +27,15 @@ script = ExtResource("2_ugn27")
 
 [node name="TitleContainer" type="PanelContainer" parent="PauseControl" unique_id=1210694330]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = -1.937
 anchor_right = 0.5
-offset_left = -74.0
-offset_top = -125.0
-offset_right = 74.0
-offset_bottom = -51.0
+anchor_bottom = -1.937
+offset_left = -110.0
+offset_top = -0.03199768
+offset_right = 110.0
+offset_bottom = 73.968
 grow_horizontal = 2
 theme = ExtResource("4_s4i0v")
 
@@ -47,10 +49,13 @@ uppercase = true
 
 [node name="ButtonContainer" type="PanelContainer" parent="PauseControl" unique_id=1002215075]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = -0.79700005
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = -0.79700005
+offset_top = 51.008003
+offset_bottom = 115.008
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_s4i0v")
@@ -72,6 +77,32 @@ text = "Options"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back to Title"
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseControl" unique_id=1321045182]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.797
+anchor_right = 0.5
+anchor_bottom = 1.797
+offset_left = -134.0
+offset_top = 43.991997
+offset_right = 134.0
+offset_bottom = 117.992
+theme = ExtResource("4_s4i0v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseControl/PanelContainer" unique_id=1033108693]
+layout_mode = 2
+theme = ExtResource("5_0ko58")
+
+[node name="HighScoreText" type="Label" parent="PauseControl/PanelContainer/HBoxContainer" unique_id=276059645]
+layout_mode = 2
+text = "High Score:"
+
+[node name="HighScoreNumber" type="Label" parent="PauseControl/PanelContainer/HBoxContainer" unique_id=694323847]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="PauseControl/ButtonContainer/ButtonVBox/ContinueButton" to="PauseControl" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseControl/ButtonContainer/ButtonVBox/OptionsButton" to="PauseControl" method="_on_options_button_pressed"]

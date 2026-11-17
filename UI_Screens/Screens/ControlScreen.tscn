@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://dogo776r3ausw"]
+
+[ext_resource type="Script" uid="uid://cnol5gekcewwl" path="res://UI_Screens/ScreenScripts/control_screen.gd" id="1_jjewa"]
+[ext_resource type="Theme" uid="uid://cs17au4osel30" path="res://Resources/ThemeStyles/Title_labels.tres" id="1_qplrp"]
+[ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="2_dex41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1gfy"]
+bg_color = Color(0.20784314, 0.72156864, 0.64705884, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qplrp"]
+bg_color = Color(0.48235294, 0.56078434, 0.6392157, 1)
+
+[node name="ControlScreen" type="Control" unique_id=995061624]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jjewa")
+
+[node name="OptionsBackground" type="PanelContainer" parent="." unique_id=1724760085]
+layout_mode = 0
+offset_right = 642.0
+offset_bottom = 361.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1gfy")
+
+[node name="TitleContainer" type="PanelContainer" parent="." unique_id=1287245106]
+layout_mode = 0
+offset_right = 642.0
+offset_bottom = 55.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qplrp")
+
+[node name="TitleLabel" type="Label" parent="TitleContainer" unique_id=610619917]
+layout_mode = 2
+theme = ExtResource("1_qplrp")
+theme_override_colors/font_color = Color(0.95686275, 0.7254902, 0.25882354, 1)
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=840736377]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 50.0
+offset_right = 642.0
+offset_bottom = 90.0
+theme_override_constants/separation = 130
+
+[node name="Action" type="Label" parent="HBoxContainer" unique_id=628709395]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "ACTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controller" type="Label" parent="HBoxContainer" unique_id=1447754173]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CONTROLLER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyBoard" type="Label" parent="HBoxContainer" unique_id=1541704381]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "KEYBOARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionsLabelsVContainer" type="VBoxContainer" parent="." unique_id=1752138431]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 195.0
+offset_bottom = 320.0
+theme = ExtResource("1_qplrp")
+theme_override_constants/separation = 2
+
+[node name="MoveUP" type="Label" parent="ActionsLabelsVContainer" unique_id=1623698078]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "MOVE UP"
+vertical_alignment = 1
+
+[node name="MoveDOWN" type="Label" parent="ActionsLabelsVContainer" unique_id=1274902938]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "MOVE DOWN"
+
+[node name="MoveLEFT" type="Label" parent="ActionsLabelsVContainer" unique_id=835055649]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "MOVE LEFT"
+
+[node name="MoveRIGHT" type="Label" parent="ActionsLabelsVContainer" unique_id=699444862]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "MOVE RIGHT"
+
+[node name="Pause" type="Label" parent="ActionsLabelsVContainer" unique_id=491031800]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "PAUSE"
+
+[node name="Back" type="Label" parent="ActionsLabelsVContainer" unique_id=1771351922]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "BACK"
+
+[node name="ControllerLabelsContainer" type="VBoxContainer" parent="." unique_id=1128252413]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 86.0
+offset_right = 428.0
+offset_bottom = 324.0
+theme_override_constants/separation = 16
+
+[node name="MoveUpController" type="Label" parent="ControllerLabelsContainer" unique_id=1898610101]
+layout_mode = 2
+text = "JoySitck Up / D-Pad Up"
+vertical_alignment = 1
+
+[node name="MoveDownController" type="Label" parent="ControllerLabelsContainer" unique_id=992722477]
+layout_mode = 2
+text = "JoyStick Down / D-Pad Down"
+vertical_alignment = 1
+
+[node name="MoveLeftController" type="Label" parent="ControllerLabelsContainer" unique_id=296371382]
+layout_mode = 2
+text = "JoyStick Left / D-Pad Left"
+
+[node name="MoveRightController" type="Label" parent="ControllerLabelsContainer" unique_id=1580310839]
+layout_mode = 2
+text = "JoyStick Right / D-Pad Right"
+
+[node name="PauseController" type="Label" parent="ControllerLabelsContainer" unique_id=1084726765]
+layout_mode = 2
+text = "Start Button"
+
+[node name="BackController" type="Label" parent="ControllerLabelsContainer" unique_id=1835757608]
+layout_mode = 2
+text = "B Button"
+
+[node name="KeyboardLabelsContainer" type="VBoxContainer" parent="." unique_id=147477086]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 84.0
+offset_right = 623.0
+offset_bottom = 302.0
+theme_override_constants/separation = 16
+
+[node name="MoveUpKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=266548636]
+layout_mode = 2
+text = "Up Arrow / W Key"
+
+[node name="MoveDownKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=1927730799]
+layout_mode = 2
+text = "Down Arrow / S Key"
+
+[node name="MoveLeftKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=294151751]
+layout_mode = 2
+text = "Left Arrow / D Key"
+
+[node name="MoveRightKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=1775371891]
+layout_mode = 2
+text = "Right Arrow / A Key"
+
+[node name="PauseKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=1654240840]
+layout_mode = 2
+text = "P Key"
+
+[node name="BackKeyboard" type="Label" parent="KeyboardLabelsContainer" unique_id=1508477630]
+layout_mode = 2
+text = "ESC Key"
+
+[node name="BackControlButton" type="Button" parent="." unique_id=1632948506]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 190.0
+offset_top = 313.0
+offset_right = 388.0
+offset_bottom = 355.0
+theme = ExtResource("2_dex41")
+text = "Back to Title"
+
+[connection signal="pressed" from="BackControlButton" to="." method="_on_back_control_button_pressed"]

@@ -6,7 +6,7 @@ extends Control
 func _ready() -> void:
 	connect_signals()
 	add_one_up(PlayerGlobals.players_lives)
-	add_to_high_score(Points.high_score)
+	
 
 func connect_signals() -> void:
 	SignalHub.one_up_collected.connect(add_one_up)
@@ -14,7 +14,7 @@ func connect_signals() -> void:
 	SignalHub.change_level_number.connect(change_levelnumber)
 	SignalHub.change_key_count.connect(change_keycount)
 	SignalHub.points_collected.connect(add_to_points)
-	SignalHub.update_high_score.connect(add_to_high_score)
+	
 
 func add_one_up(new_count: int) -> void:
 	%LifeCount.text = str(new_count)
@@ -31,5 +31,3 @@ func change_keycount(new_count: int) -> void:
 func add_to_points(new_total: int) -> void:
 	%PointsNumberLabel.text = str(new_total)
 
-func add_to_high_score(new_total: int) -> void:
-	%HighScoreNumber.text = str(new_total)

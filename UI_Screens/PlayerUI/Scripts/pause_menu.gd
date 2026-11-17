@@ -9,6 +9,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	kame_playing = await get_kame_playing()
 	SignalHub.focus_continue_button.connect(grab_continue_button_focus)
+	SignalHub.update_high_score.connect(add_to_high_score)
+	add_to_high_score(Points.high_score)
 
 
 func _process(_delta:float) -> void:
@@ -60,6 +62,8 @@ func unknown_close_pause_menu() -> void:
 	kame_playing.animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
 	push_warning("Unknown menu state: %s" % current_menu)
 
+func add_to_high_score(new_total: int) -> void:
+	%HighScoreNumber.text = str(new_total)
 
 #------------------Button Functions------------------#
 
