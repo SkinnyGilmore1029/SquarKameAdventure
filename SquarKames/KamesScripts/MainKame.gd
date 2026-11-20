@@ -38,7 +38,13 @@ var camera_limits: Dictionary = {
 		"Bottom" : 2176,
 		"Left" : 0,
 		"Right" : 2740
-	}
+	},
+	"Level6" : {
+		"Top" : -353,
+		"Bottom" : 2225,
+		"Left" : -480,
+		"Right" : 2033
+	},
 }
 
 func _ready() -> void:

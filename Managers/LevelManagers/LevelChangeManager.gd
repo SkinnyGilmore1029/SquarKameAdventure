@@ -7,7 +7,8 @@ var level_scenes: Dictionary[int,Array] = {
 	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715), false],
 	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589), false],
 	4 : ["res://TheLevels/LevelScenes/Level4.tscn", Vector2(704,63), true],
-	5 : ["res://TheLevels/LevelScenes/Level5.tscn", Vector2(146,2056), true]
+	5 : ["res://TheLevels/LevelScenes/Level5.tscn", Vector2(146,2056), true],
+	6 : ["res://TheLevels/LevelScenes/Level6.tscn", Vector2(561, -290), false ]
 }
 
 

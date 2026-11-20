@@ -21,6 +21,9 @@ func _on_level_4_button_pressed() -> void:
 func _on_level_5_button_pressed() -> void:
 	set_game_state(5)
 
+func _on_level_6_button_pressed() -> void:
+	set_game_state(6)
+
 func _on_back_button_pressed() -> void:
 	the_tree.change_scene_to_file(GameState.title_screen)
 
@@ -33,5 +36,8 @@ func set_game_state(level:int) -> void:
 	GameState.picking_level = true
 	SignalHub.just_started_level.emit()
 	the_tree.change_scene_to_file(GameState.difficulty_screen)
+
+
+
 
 

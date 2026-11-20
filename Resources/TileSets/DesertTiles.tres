@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cu53yt6k7f4j7" path="res://Assets/Pictures/Backgrounds/desert_demo_terrain.png" id="1_wq48p"]
 [ext_resource type="Texture2D" uid="uid://cihm0j61nar87" path="res://Assets/Pictures/Backgrounds/desert_demo_objects.png" id="2_mp88g"]
 [ext_resource type="Texture2D" uid="uid://dmvef5yv158d6" path="res://Assets/Pictures/Backgrounds/Lily2.png" id="3_mp88g"]
+[ext_resource type="Texture2D" uid="uid://tss0c1bt0xjk" path="res://Assets/Pictures/Backgrounds/Mushrooms, Flowers, Stones.png" id="4_asogt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asogt"]
 texture = ExtResource("1_wq48p")
@@ -113,9 +114,60 @@ texture = ExtResource("3_mp88g")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpi2w"]
+texture = ExtResource("4_asogt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:3/size_in_atlas = Vector2i(1, 2)
+3:3/0 = 0
+2:4/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+0:3/0 = 0
+1:4/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+6:4/0 = 0
+5:4/0 = 0
+4:4/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+9:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+11:4/0 = 0
+6:1/size_in_atlas = Vector2i(2, 2)
+6:1/0 = 0
+8:1/size_in_atlas = Vector2i(2, 2)
+8:1/0 = 0
+10:1/size_in_atlas = Vector2i(2, 2)
+10:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 273
 sources/0 = SubResource("TileSetAtlasSource_asogt")
 sources/1 = SubResource("TileSetAtlasSource_v6o7r")
 sources/2 = SubResource("TileSetAtlasSource_m0326")
+sources/3 = SubResource("TileSetAtlasSource_jpi2w")
