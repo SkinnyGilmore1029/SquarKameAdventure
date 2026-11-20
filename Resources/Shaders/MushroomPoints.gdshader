@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
 void vertex() {
-	float top_influence = 1.0 - UV.y;
-	VERTEX.x += sin(TIME * 2.0)  * top_influence;
+	float top_influence = 1.0 - UV.x;
+	VERTEX.x += cos(TIME * 2.0)  * top_influence;
 }
 
 void fragment() {

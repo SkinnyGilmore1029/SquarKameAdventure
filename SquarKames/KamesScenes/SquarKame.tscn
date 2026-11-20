@@ -335,7 +335,7 @@ script = ExtResource("1_jgff5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=277971224]
 process_mode = 3
 sprite_frames = SubResource("SpriteFrames_2otri")
-animation = &"MovingUp"
+animation = &"MovingRight"
 autoplay = "IdleUp"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=121924744]
@@ -362,3 +362,6 @@ animated_sprite = NodePath("../../AnimatedSprite2D")
 script = ExtResource("6_tg3ie")
 kame = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="TailMarker" type="Marker2D" parent="." unique_id=438907808]
+position = Vector2(-15, 0)

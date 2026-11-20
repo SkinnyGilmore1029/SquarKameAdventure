@@ -362,3 +362,6 @@ animated_sprite = NodePath("../../AnimatedSprite2D")
 script = ExtResource("5_0tmfn")
 kame = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="TailMarker" type="Marker2D" parent="." unique_id=1749203945]
+position = Vector2(0, 14)

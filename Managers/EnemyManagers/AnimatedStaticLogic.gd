@@ -1,3 +1,4 @@
+class_name SquareCollisionLogic
 extends CharacterBody2D
 
 @export var enemy_data: EnemyData
@@ -16,6 +17,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+	handle_direction()
+	handle_collision_box()
 
 	if collision:
 		handle_collision(collision)
@@ -85,5 +88,8 @@ func handle_collision_box() -> void:
 
 func _on_timer_timeout() -> void:
 	var x_speed: int = randi_range(-enemy_data.speed, enemy_data.speed)
-	var y_speed: int = randi_range((-enemy_data.speed + enemy_data.speed_offset), (enemy_data.speed + enemy_data.speed_offset))
+	var y_speed: int = randi_range((-enemy_data.speed + enemy_data.speed_offset), (enemy_data.speed - enemy_data.speed_offset))
+	var new_wait: float = randf_range(1.0, 4.0)
 	velocity = Vector2(x_speed, y_speed)
+	%ScropionTimer.wait_time = new_wait
+	%ScropionTimer.start()

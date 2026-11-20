@@ -7,6 +7,7 @@ extends CharacterBody2D
 var current_camera_set: String
 
 
+
 var player_data := PlayerGlobals
 var camera_limits: Dictionary = {
 	"Level1" : {

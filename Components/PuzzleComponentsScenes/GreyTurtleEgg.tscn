@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c66psmwnh5sq0"]
+
+[ext_resource type="Script" uid="uid://dp75cdi1q84hn" path="res://Components/PuzzleComponentsScripts/OfferingScript.gd" id="1_8ybxh"]
+[ext_resource type="Texture2D" uid="uid://cyton0x0mrpja" path="res://Assets/Pictures/Pushable/egg-items.png" id="2_1pah0"]
+[ext_resource type="PackedScene" uid="uid://2t6dijaeyfwn" path="res://Components/ComponentScenes/PinComponent.tscn" id="3_lfr58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi6nl"]
+atlas = ExtResource("2_1pah0")
+region = Rect2(17, 1, 14, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vlng"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rom01"]
+radius = 12.0
+
+[node name="GreyTurtleEgg" type="RigidBody2D" unique_id=1093149135]
+collision_layer = 256
+collision_mask = 327
+gravity_scale = 0.0
+script = ExtResource("1_8ybxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=583736594]
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_gi6nl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1589721018]
+shape = SubResource("CapsuleShape2D_7vlng")
+
+[node name="TutrleEggJoint" type="PinJoint2D" parent="." unique_id=1604124579]
+
+[node name="PinComponent" parent="." unique_id=1797700450 node_paths=PackedStringArray("node_pin") instance=ExtResource("3_lfr58")]
+node_pin = NodePath("../TutrleEggJoint")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinComponent" unique_id=1136509454]
+shape = SubResource("CircleShape2D_rom01")
+debug_color = Color(0.6053823, 0.5408242, 0.06216055, 0.41960785)
