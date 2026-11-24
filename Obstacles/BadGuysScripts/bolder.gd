@@ -9,10 +9,8 @@ func _ready() -> void:
 	velocity = Vector2(x_speed, y_speed)
 
 func _physics_process(delta: float) -> void:
-	move_bolder()
-
-func move_bolder() -> void:
 	move_and_slide()
+
 
 func _on_change_xspeed_timeout() -> void:
 	y_speed = enemy_data.speed

@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cftxfmme4w6f3" path="res://Resources/TileSets/DesertTiles.tres" id="1_0dr5i"]
 [ext_resource type="Script" uid="uid://cek4txlp21ioj" path="res://TheLevels/LevelScripts/Level5/level_5.gd" id="1_cba0o"]
-[ext_resource type="Resource" uid="uid://chp2a6lireobf" path="res://TheLevels/LevelResources/Level5.tres" id="2_fth4n"]
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="2_qjka4"]
 [ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyTimer.tscn" id="4_c3wlm"]
 [ext_resource type="PackedScene" uid="uid://23hif2xyochc" path="res://Components/ComponentScenes/Key.tscn" id="4_eup24"]
 [ext_resource type="PackedScene" uid="uid://bqfylpyadho8d" path="res://Components/ComponentScenes/Lock.tscn" id="4_gsnv0"]
@@ -15,6 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bkqwrv77dspbf" path="res://HelpfulStuff/Scenes/Points/MushroomPoints.tscn" id="13_qjka4"]
 [ext_resource type="PackedScene" uid="uid://dvtr6ucjejlcx" path="res://HelpfulStuff/Scenes/Points/PearPoints.tscn" id="14_wfq8q"]
 [ext_resource type="PackedScene" uid="uid://co1rpk7m2hfsm" path="res://HelpfulStuff/Scenes/Points/Coin.tscn" id="15_qjka4"]
+
+[sub_resource type="Resource" id="Resource_wfq8q"]
+script = ExtResource("2_qjka4")
+send_to_level = 6
+metadata/_custom_type_script = "uid://cxmdrreflhaok"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wlm"]
 size = Vector2(757, 20)
@@ -69,7 +74,7 @@ size = Vector2(94, 142.99109)
 
 [node name="Level5" type="Node2D" unique_id=2103205763]
 script = ExtResource("1_cba0o")
-level_data = ExtResource("2_fth4n")
+level_data = SubResource("Resource_wfq8q")
 
 [node name="Background" type="Node2D" parent="." unique_id=1870601064]
 y_sort_enabled = true

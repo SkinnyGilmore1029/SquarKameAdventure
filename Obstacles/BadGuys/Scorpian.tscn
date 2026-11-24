@@ -112,8 +112,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kdg0"]
-size = Vector2(4.333334, 6.666667)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kmga"]
+radius = 2.0
+height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmga"]
 size = Vector2(9.333334, 14)
@@ -132,8 +133,8 @@ animation = &"up"
 autoplay = "up"
 
 [node name="WallCollision" type="CollisionShape2D" parent="." unique_id=1307686655]
-position = Vector2(2.5, 7.3333335)
-shape = SubResource("RectangleShape2D_8kdg0")
+position = Vector2(2.6666667, 5.666667)
+shape = SubResource("CapsuleShape2D_0kmga")
 
 [node name="DeathCollision" parent="." unique_id=341762157 instance=ExtResource("2_lbdst")]
 collision_mask = 17

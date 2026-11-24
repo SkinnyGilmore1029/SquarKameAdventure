@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://wue3hhwkcf3o" path="res://TheLevels/LevelScripts/Level2/level_2.gd" id="1_2ouho"]
 [ext_resource type="PackedScene" uid="uid://bxruixlmj26yb" path="res://Components/ComponentScenes/WorldBorder.tscn" id="1_agaps"]
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="2_hvp47"]
 [ext_resource type="TileSet" uid="uid://dnwhkx8ghbnb1" path="res://Resources/TileSets/Level2Maint.tres" id="2_lw2ew"]
-[ext_resource type="Resource" uid="uid://coong547jomil" path="res://TheLevels/LevelResources/Level2.tres" id="2_o055l"]
 [ext_resource type="Texture2D" uid="uid://difj2ff1qi2sg" path="res://Assets/Pictures/Backgrounds/grass.png" id="3_tqc1f"]
 [ext_resource type="PackedScene" uid="uid://cwbpmvu0yhhaf" path="res://Obstacles/BadGuys/Gator.tscn" id="6_2ngqh"]
 [ext_resource type="PackedScene" uid="uid://next43i6md1i" path="res://Components/ComponentScenes/Teleporter.tscn" id="6_o055l"]
@@ -19,6 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://co1rpk7m2hfsm" path="res://HelpfulStuff/Scenes/Points/Coin.tscn" id="17_hax72"]
 [ext_resource type="PackedScene" uid="uid://ceypumajwrbll" path="res://Obstacles/Pushables/PushRock.tscn" id="18_hvp47"]
 [ext_resource type="PackedScene" uid="uid://bclkecsyx858k" path="res://Obstacles/Pushables/PushLog.tscn" id="19_etenj"]
+
+[sub_resource type="Resource" id="Resource_etenj"]
+script = ExtResource("2_hvp47")
+send_to_level = 3
+metadata/_custom_type_script = "uid://cxmdrreflhaok"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ouho"]
 load_path = "res://.godot/imported/Water.png-cb4efd13a5e93b35a4dc8630a0a8e6fa.ctex"
@@ -157,7 +162,7 @@ size = Vector2(2416.5, 1.5)
 
 [node name="Level2" type="Node2D" unique_id=270366254]
 script = ExtResource("1_2ouho")
-level_data = ExtResource("2_o055l")
+level_data = SubResource("Resource_etenj")
 
 [node name="Background" type="Node2D" parent="." unique_id=851254763]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dw5vwgacpu6sb" path="res://TheLevels/LevelScripts/Level1/level_1.gd" id="1_tylve"]
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="2_1bvhh"]
-[ext_resource type="Resource" uid="uid://46n768njw4yp" path="res://TheLevels/LevelResources/Level1.tres" id="2_3e3qq"]
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="2_1guqi"]
 [ext_resource type="TileSet" uid="uid://baf6c786nrfvt" path="res://Resources/TileSets/GrassTiles.tres" id="2_dtnyl"]
 [ext_resource type="Texture2D" uid="uid://do8roowosl8f5" path="res://Assets/Pictures/Backgrounds/punyworld-overworld-tileset.png" id="2_tlmp4"]
 [ext_resource type="PackedScene" uid="uid://bxruixlmj26yb" path="res://Components/ComponentScenes/WorldBorder.tscn" id="3_6elrx"]
@@ -22,6 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://diod44b51fxj1" path="res://HelpfulStuff/Scenes/Points/CherryPoints.tscn" id="17_rgaem"]
 [ext_resource type="PackedScene" uid="uid://bkqwrv77dspbf" path="res://HelpfulStuff/Scenes/Points/MushroomPoints.tscn" id="18_xdgm5"]
 [ext_resource type="PackedScene" uid="uid://co1rpk7m2hfsm" path="res://HelpfulStuff/Scenes/Points/Coin.tscn" id="19_1guqi"]
+
+[sub_resource type="Resource" id="Resource_osmh3"]
+script = ExtResource("2_1guqi")
+send_to_level = 2
+metadata/_custom_type_script = "uid://cxmdrreflhaok"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tylve"]
 resource_name = "Dirt"
@@ -484,7 +489,7 @@ size = Vector2(41, 1521)
 [node name="Level1" type="Node2D" unique_id=1014654684]
 y_sort_enabled = true
 script = ExtResource("1_tylve")
-level_data = ExtResource("2_3e3qq")
+level_data = SubResource("Resource_osmh3")
 
 [node name="Background Room 1" type="Node2D" parent="." unique_id=1504679756]
 y_sort_enabled = true

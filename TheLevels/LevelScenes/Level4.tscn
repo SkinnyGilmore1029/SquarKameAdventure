@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cftxfmme4w6f3" path="res://Resources/TileSets/DesertTiles.tres" id="1_erstg"]
 [ext_resource type="Script" uid="uid://btw78smgrqiic" path="res://TheLevels/LevelScripts/Level4/level_4.gd" id="1_vpwee"]
-[ext_resource type="Resource" uid="uid://g7eeehve483i" path="res://TheLevels/LevelResources/Level4.tres" id="2_sv1vb"]
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="2_06h8b"]
 [ext_resource type="PackedScene" uid="uid://next43i6md1i" path="res://Components/ComponentScenes/Teleporter.tscn" id="3_pkmr4"]
 [ext_resource type="PackedScene" uid="uid://c7rio1xyo456s" path="res://HelpfulStuff/Scenes/Interactables/Puddle.tscn" id="3_vx1ic"]
 [ext_resource type="PackedScene" uid="uid://23hif2xyochc" path="res://Components/ComponentScenes/Key.tscn" id="4_ocvn7"]
@@ -16,7 +16,19 @@
 [ext_resource type="PackedScene" uid="uid://chulp60gsokij" path="res://HelpfulStuff/Scenes/Interactables/WierdCactus.tscn" id="11_wv66m"]
 [ext_resource type="PackedScene" uid="uid://co1rpk7m2hfsm" path="res://HelpfulStuff/Scenes/Points/Coin.tscn" id="12_8trpi"]
 [ext_resource type="Script" uid="uid://d0y5tdfutjtuu" path="res://TheLevels/LevelScripts/Level4/FlyResource.gd" id="12_p6cyd"]
+[ext_resource type="Script" uid="uid://3vxtqfxju7po" path="res://HelpfulStuff/Scripts/PointTemplate.gd" id="12_rha50"]
 [ext_resource type="PackedScene" uid="uid://brxvwh1cj6ng6" path="res://HelpfulStuff/Scenes/Npc/Lizard.tscn" id="14_fwb3d"]
+
+[sub_resource type="Resource" id="Resource_ke6hr"]
+script = ExtResource("2_06h8b")
+send_to_level = 5
+metadata/_custom_type_script = "uid://cxmdrreflhaok"
+
+[sub_resource type="Resource" id="Resource_7ktlw"]
+script = ExtResource("12_rha50")
+treasure_name = "Mushroom"
+point_value = 75
+metadata/_custom_type_script = "uid://3vxtqfxju7po"
 
 [sub_resource type="Resource" id="Resource_lqikb"]
 script = ExtResource("12_p6cyd")
@@ -87,7 +99,7 @@ size = Vector2(113, 92)
 
 [node name="Level4" type="Node2D" unique_id=47411587]
 script = ExtResource("1_vpwee")
-level_data = ExtResource("2_sv1vb")
+level_data = SubResource("Resource_ke6hr")
 
 [node name="Timers" type="Node" parent="." unique_id=1336041267]
 
@@ -296,6 +308,7 @@ position = Vector2(-2010, -123.99997)
 
 [node name="Mushroom15" parent="Points/Mushrooms" unique_id=440082346 instance=ExtResource("11_8trpi")]
 position = Vector2(-2389, -318.99997)
+treasure_data = SubResource("Resource_7ktlw")
 
 [node name="Coin" parent="." unique_id=1561227901 instance=ExtResource("12_8trpi")]
 position = Vector2(-1084, 800)

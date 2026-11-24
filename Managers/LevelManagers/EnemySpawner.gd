@@ -17,6 +17,7 @@ var enemy_scenes: Dictionary[String, String] = {
 	"Tornado" : "res://Obstacles/BadGuys/Tornado.tscn",
 	"Bolder" : "res://Obstacles/BadGuys/Bolder.tscn",
 	"DoubleBus" : "res://Obstacles/BadGuys/DoubleBus.tscn",
+	"BigBeetle" : "res://Obstacles/BadGuys/BigBeetle.tscn"
 
 }
 

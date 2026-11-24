@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bkqqetunw4lby" path="res://Assets/Pictures/Backgrounds/Bush_Tiles.png" id="3_efx3d"]
 [ext_resource type="Texture2D" uid="uid://cv84ppmxvppc0" path="res://Assets/Pictures/Backgrounds/Water.png" id="4_bm3xj"]
 [ext_resource type="Texture2D" uid="uid://cg7vjnqu0wlal" path="res://Assets/Pictures/Backgrounds/Water Objects.png" id="5_bm3xj"]
-[ext_resource type="Texture2D" uid="uid://tss0c1bt0xjk" path="res://Assets/Pictures/Backgrounds/Mushrooms, Flowers, Stones.png" id="6_xisdv"]
 [ext_resource type="Texture2D" uid="uid://cihm0j61nar87" path="res://Assets/Pictures/Backgrounds/desert_demo_objects.png" id="7_bln3s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xisdv"]
@@ -1165,8 +1164,11 @@ texture = ExtResource("5_bm3xj")
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.978447, -8, 8, -2.5180225, 9.892229, 3.2374573, -1.4388695, 8, -9.532513, 1.0791512)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_efx3d"]
+load_path = "res://.godot/imported/Mushrooms, Flowers, Stones.png-faa1f6f9bf012d7a914ce49ae159adbe.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jsrb"]
-texture = ExtResource("6_xisdv")
+texture = SubResource("CompressedTexture2D_efx3d")
 6:1/size_in_atlas = Vector2i(2, 2)
 6:1/0 = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 4.460829, 9.240292, 13.06386, -12.410253, 11.690819, -8, 1.9117832, 0.63726234, -1.5931549)

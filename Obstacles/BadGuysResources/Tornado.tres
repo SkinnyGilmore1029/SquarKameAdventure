@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_o85lv")
 enemy_type = "Tornado"
-speed = 200
+speed = 175
 speed_offset = 35
 metadata/_custom_type_script = "uid://bcmycs6es7mw0"

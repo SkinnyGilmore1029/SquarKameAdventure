@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl1uqix2xlr22" path="res://TheLevels/LevelScripts/Level3/level_3.gd" id="1_c702p"]
 [ext_resource type="TileSet" uid="uid://dmpmo8ygehfwv" path="res://Resources/TileSets/GrassHills.tres" id="2_3vkl7"]
-[ext_resource type="Resource" uid="uid://g3oko8f2t56t" path="res://TheLevels/LevelResources/Level3.tres" id="2_5hvsd"]
+[ext_resource type="Script" uid="uid://cxmdrreflhaok" path="res://Managers/LevelManagers/LevelData.gd" id="2_6adne"]
 [ext_resource type="Texture2D" uid="uid://bnhdd6knfyds5" path="res://Assets/Pictures/Backgrounds/StreetTileGrey.png" id="3_jwxxi"]
 [ext_resource type="Texture2D" uid="uid://s77k1dxav3s7" path="res://Assets/Pictures/Backgrounds/StreetTileYellow.png" id="4_3vkl7"]
 [ext_resource type="Texture2D" uid="uid://bgpjojsmrcrd4" path="res://Assets/Pictures/Backgrounds/fences.png" id="5_3vkl7"]
@@ -29,6 +29,11 @@
 [ext_resource type="PackedScene" uid="uid://diod44b51fxj1" path="res://HelpfulStuff/Scenes/Points/CherryPoints.tscn" id="26_6adne"]
 [ext_resource type="PackedScene" uid="uid://bkqwrv77dspbf" path="res://HelpfulStuff/Scenes/Points/MushroomPoints.tscn" id="27_6c7if"]
 [ext_resource type="PackedScene" uid="uid://co1rpk7m2hfsm" path="res://HelpfulStuff/Scenes/Points/Coin.tscn" id="28_gw2dr"]
+
+[sub_resource type="Resource" id="Resource_6c7if"]
+script = ExtResource("2_6adne")
+send_to_level = 4
+metadata/_custom_type_script = "uid://cxmdrreflhaok"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3gmwg"]
 load_path = "res://.godot/imported/Water.png-cb4efd13a5e93b35a4dc8630a0a8e6fa.ctex"
@@ -161,7 +166,7 @@ size = Vector2(20, 16)
 
 [node name="Level3" type="Node2D" unique_id=1553256130]
 script = ExtResource("1_c702p")
-level_data = ExtResource("2_5hvsd")
+level_data = SubResource("Resource_6c7if")
 
 [node name="Background" type="Node2D" parent="." unique_id=1498952447]
 

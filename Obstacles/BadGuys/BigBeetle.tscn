@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b4qt3nwti8wxf"]
+
+[ext_resource type="Script" uid="uid://b252g5n7tbk6r" path="res://Obstacles/BadGuysScripts/big_beetle.gd" id="1_55xmg"]
+[ext_resource type="Texture2D" uid="uid://c2sfvcn7jloj6" path="res://Assets/Pictures/Bad Guys/Big_beetle.png" id="1_urv2w"]
+[ext_resource type="Resource" uid="uid://8a1j8cgetr0i" path="res://Obstacles/BadGuysResources/BigBeetle.tres" id="2_eabju"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_r61g3"]
+[ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyTimer.tscn" id="5_ms2wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r61g3"]
+size = Vector2(27, 6)
+
+[node name="BigBeetle" type="CharacterBody2D" unique_id=352226263]
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 163
+safe_margin = 8.0
+script = ExtResource("1_55xmg")
+enemy_data = ExtResource("2_eabju")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1891288092]
+texture = ExtResource("1_urv2w")
+
+[node name="WallCollision" type="CollisionShape2D" parent="." unique_id=1857080239]
+position = Vector2(2.5, -3)
+shape = SubResource("RectangleShape2D_r61g3")
+
+[node name="DeathCollision" parent="." unique_id=341762157 instance=ExtResource("2_r61g3")]
+
+[node name="DeathCollisionPoly" type="CollisionPolygon2D" parent="DeathCollision" unique_id=1615582084]
+polygon = PackedVector2Array(-23, -13, -21, -11, -21, -2, -10, -10, -5, -10, 0, -13, 10, -13, 22, -3, 20, 3, 27, 11, 24, 12, 14, 5, 14, 12, 11, 12, 6, 5, 0, 5, -7, 13, -10, 13, -14, 11, -10, 3, -13, 3, -19, 7, -23, 6, -22, 3, -24, 0)
+
+[node name="Timers" type="Node" parent="." unique_id=1277240311]
+
+[node name="Despawn_timer" parent="Timers" unique_id=570641630 instance=ExtResource("5_ms2wo")]
+wait_time = 10.0
+autostart = true
+
+[node name="SpeedTimer" parent="Timers" unique_id=642466292 instance=ExtResource("5_ms2wo")]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="DeathCollision" to="DeathCollision" method="_on_body_entered"]
+[connection signal="timeout" from="Timers/Despawn_timer" to="." method="_on_despawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SpeedTimer" to="." method="_on_speed_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://8a1j8cgetr0i"]
+
+[ext_resource type="Script" uid="uid://bcmycs6es7mw0" path="res://Managers/EnemyManagers/EnemyData.gd" id="1_jshrp"]
+
+[resource]
+script = ExtResource("1_jshrp")
+enemy_type = "BigBeetle"
+speed = 100
+speed_offset = 30
+metadata/_custom_type_script = "uid://bcmycs6es7mw0"
