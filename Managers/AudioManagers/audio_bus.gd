@@ -4,19 +4,28 @@ extends Node
 @onready var sound_effects: AudioStreamPlayer = $AudioSFX
 @onready var background_music: AudioStreamPlayer = $AudioBG
 
+var power_up_sfx: String = "uid://docsygon52lhx"
+var coin_sfx: String = "uid://b3nkmv055570x"
+var explsion_sfx: String = "uid://c23jfde7038me"
+var death_sfx: String = "uid://voyltcdcqq43"
+var tap_sfx: String = "uid://b5xrx1v1yiqca"
+var jump_sfx: String = "uid://d1lq2ramm8kte"
+
+var background_music_uid: String = "uid://wd50ruggl1am"
+
 
 var audio_book: Dictionary[String, Array ] = {
-	"Key" : ["res://Assets/Audio/SoundEffects/coin.wav", .80],
-	"OneUps" : ["res://Assets/Audio/SoundEffects/power_up.wav", .75],
-	"Locks" : ["res://Assets/Audio/SoundEffects/explosion.wav", .85],
-	"Death" : ["res://Assets/Audio/SoundEffects/freesound_community-death-103830.mp3", 1.0],
-	"Buttons" : ["res://Assets/Audio/SoundEffects/tap.wav", 1.0],
-	"Appear" : ["res://Assets/Audio/SoundEffects/jump.wav", 1.0],
-	"Coin" : ["res://Assets/Audio/SoundEffects/power_up.wav", 0.5],
-	"Mushroom" : ["res://Assets/Audio/SoundEffects/power_up.wav", .85],
-	"Cherries" : ["res://Assets/Audio/SoundEffects/power_up.wav", 1.2],
-	"GreenApple" : ["res://Assets/Audio/SoundEffects/power_up.wav", .65],
-	"Pear" : ["res://Assets/Audio/SoundEffects/power_up.wav", 1.5]
+	"Key" : [coin_sfx, .80],
+	"OneUps" : [power_up_sfx, .75],
+	"Locks" : [explsion_sfx, .85],
+	"Death" : [death_sfx, 1.0],
+	"Buttons" : [tap_sfx, 1.0],
+	"Appear" : [jump_sfx, 1.0],
+	"Coin" : [power_up_sfx, 0.5],
+	"Mushroom" : [power_up_sfx, .85],
+	"Cherries" : [power_up_sfx, 1.2],
+	"GreenApple" : [power_up_sfx, .65],
+	"Pear" : [power_up_sfx, 1.5]
 }
 
 func _ready() -> void:
@@ -38,7 +47,7 @@ func play_sound(sound_name: String) -> void:
 
 func play_background() -> void:
 	background_music.bus = "BackGround"
-	background_music.stream = load("res://Assets/Audio/BackgroundMusic/tatamusic-game-gaming-minecraft-background-music-377647.mp3")
+	background_music.stream = load(background_music_uid)
 	background_music.volume_db = -20.0
 	background_music.pitch_scale = 0.85
 	background_music.play()

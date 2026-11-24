@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_collision: Area2D = $DeathCollision
-@onready var wall_collision: CollisionShape2D = $WallCollision
+@onready var wall_collision: CollisionPolygon2D = $WallCollision
 
 var current_direction: String = ""
 
@@ -28,16 +28,16 @@ func handle_collision(collider: KinematicCollision2D) -> void:
 	if velocity.dot(wall_normal) >= 0.0:
 		return
 
-	# Save the old collision shape orientation.
+	# Save the old collision polygon position.
 	var old_position := wall_collision.position
 
 	# Bounce away from the wall.
 	velocity = velocity.bounce(wall_normal)
 
-	# Update animation and collision geometry.
+	# Update animation and collision polygons.
 	handle_direction()
 
-	# Calculate how far the new shape has moved into the wall.
+	# Calculate how far the reoriented polygon has moved into the wall.
 	# Convert the collider's local offset change to world space. Enemies such as
 	# the scorpion are scaled in their scene, so a local-space correction alone
 	# would leave the enlarged collider embedded in the wall.
@@ -70,7 +70,7 @@ func handle_direction() -> void:
 	# Play the corresponding directional animation
 	animation.play(current_direction)
 
-	# Update collision geometry to match the animation
+	# Update the collision polygons to match the animation
 	handle_collision_box()
 
 func handle_collision_box() -> void:

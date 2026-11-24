@@ -11,13 +11,14 @@ var level_selected: int
 var hot_level:bool = false
 var selected_kame: String
 var difficulty_selected: String
-var title_screen: StringName = "res://UI_Screens/Screens/TitleScreen.tscn"
-var level_select: StringName = "res://UI_Screens/Screens/LevelSelect.tscn"
-var difficulty_screen: StringName = "res://UI_Screens/Screens/DifficultySetting.tscn"
-var character_select: StringName = "res://UI_Screens/Screens/KameSelect.tscn"
-var main_scene: StringName = "res://MainGame.tscn"
-var option_screen: StringName = "res://UI_Screens/Screens/OptionsScreen.tscn"
-var control_screen: StringName = "res://UI_Screens/Screens/ControlScreen.tscn"
+var title_screen: String = "uid://fmn5jj0te8hq"
+var level_select: String = "uid://v4fln0cu66pt"
+var difficulty_screen: String = "uid://ds1uae5q7vrdm"
+var character_select: String = "uid://d08ovpxqdl210"
+var main_scene: String = "uid://hplj1vo1ekeb"
+var option_screen: String = "uid://cvtf7vmffcrls"
+var control_screen: String = "uid://dogo776r3ausw"
+var game_over_screen: String = "uid://cmo6w3y7nvd4h"
 
 var level_names: Dictionary[int, String] = {
     1 : "Apple Road",

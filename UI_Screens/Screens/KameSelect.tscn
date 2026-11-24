@@ -32,11 +32,13 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="KameSelectContainer" type="PanelContainer" parent="." unique_id=1314130651]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 offset_right = 641.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bt6t")
 script = ExtResource("1_5owhb")
+metadata/_edit_use_anchors_ = true
 
 [node name="TitleContainer" type="PanelContainer" parent="KameSelectContainer" unique_id=1092132221]
 layout_mode = 2

@@ -13,7 +13,7 @@ func _on_spawn_fly_area_body_entered(body: Node2D) -> void:
 		%SpawnFlyArea.set_deferred("monitoring", false)
 
 func spawn_fly() -> void:
-	var fly_scene: PackedScene = load("res://HelpfulStuff/Scenes/Npc/CactusFly.tscn")
+	var fly_scene: PackedScene = load("uid://dtjt42ct42yxd")
 	var fly_instance: Node = fly_scene.instantiate()
 	set_up_fly(fly_instance)
 	fly_node.call_deferred("add_child",fly_instance)

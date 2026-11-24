@@ -8,5 +8,5 @@ extends Timer
 func _on_timeout() -> void:
 	EnemySpawner.new_spawn("BigBeetle", level_node.level_data, bad_guy_node)
 	EnemySpawner.new_spawn("BigBeetle", level_node.level_data, bad_guy_node)
-	wait_time = randi_range(5, 7)
+	wait_time = randi_range(3, 5)
 	start()

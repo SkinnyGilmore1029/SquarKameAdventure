@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_x45r8")
 polygon = PackedVector2Array(-99, -27, -85, -56, 95, -56, 112, -29, 112, 40, 72, 42, 61, 55, 48, 56, 34, 44, -51, 44, -63, 56, -77, 56, -90, 45, -103, 45, -104, 13, -98, 8, -97, -9)
 
 [node name="SpeedCheck" parent="." unique_id=943464810 instance=ExtResource("3_x45r8")]
-target_position = Vector2(-224, 0)
+position = Vector2(-100, 0)
+target_position = Vector2(-50, 0)
 
 [connection signal="body_entered" from="DeathCollsion" to="DeathCollsion" method="_on_body_entered"]

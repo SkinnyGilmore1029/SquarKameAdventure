@@ -27,9 +27,12 @@ offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xgajt")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1070870917]
-layout_mode = 0
-offset_right = 639.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.15300001
+offset_right = -1.0
+offset_bottom = -70.16001
 theme = ExtResource("2_mub2d")
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjjjm")
 
@@ -96,11 +99,15 @@ min_value = -40.0
 max_value = 4.0
 
 [node name="TheButtons" type="VBoxContainer" parent="." unique_id=594842297]
-layout_mode = 0
-offset_left = 178.0
-offset_top = 225.0
-offset_right = 481.0
-offset_bottom = 359.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27800003
+anchor_top = 0.625
+anchor_right = 0.75200003
+anchor_bottom = 0.99700004
+offset_left = 0.07998657
+offset_right = -0.2800293
+offset_bottom = 0.07998657
 theme = ExtResource("4_ya5wh")
 
 [node name="ResetHighScoreButton" type="Button" parent="TheButtons" unique_id=575910410]

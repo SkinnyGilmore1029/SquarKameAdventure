@@ -104,14 +104,12 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_xjrfn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jht05"]
-size = Vector2(10, 2321)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hvp47"]
+distance = 7.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q183e"]
-size = Vector2(4, 2325)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_idotu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjrfn"]
-size = Vector2(2026, 2)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ctgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c7if"]
 size = Vector2(1832, 19)
@@ -119,41 +117,55 @@ size = Vector2(1832, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yawx"]
 size = Vector2(86.625, 619)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6c7if"]
+a = Vector2(-7, -76.75)
+b = Vector2(-8, 48.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndl7k"]
 size = Vector2(172, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw2dr"]
-size = Vector2(10, 207)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6adne"]
+a = Vector2(1, -105.5)
+b = Vector2(1, 107.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueqeh"]
-size = Vector2(10, 147.5)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gw2dr"]
+a = Vector2(2, 51)
+b = Vector2(-4, -12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cev41"]
-size = Vector2(10, 255)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ueqeh"]
+a = Vector2(-9, -20.5)
+b = Vector2(-16, 30.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yev1"]
-size = Vector2(8, 256)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5tm5x"]
+a = Vector2(-6, 56)
+b = Vector2(-7, 130)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaw3v"]
-size = Vector2(87, 8)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w4h0j"]
+a = Vector2(-44, 7)
+b = Vector2(44, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_00mwj"]
-size = Vector2(9, 67)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ycgp6"]
+a = Vector2(-37, -36)
+b = Vector2(-33, 39)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tirk8"]
-size = Vector2(12, 1419)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6dmry"]
+a = Vector2(-5, -727.5)
+b = Vector2(-1, 713.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuy6j"]
-size = Vector2(10, 1421)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vy5mp"]
+a = Vector2(3, -740.5)
+b = Vector2(2, 713.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqg6n"]
-size = Vector2(2021, 11)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wcih1"]
+distance = 4.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc5gq"]
-size = Vector2(9, 365)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wcih1"]
+a = Vector2(-4.5, -189.5)
+b = Vector2(-4.5, 182.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6adne"]
-size = Vector2(20, 178)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o2u8v"]
+a = Vector2(16, -89)
+b = Vector2(-14, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwu3u"]
 size = Vector2(24, 14)
@@ -206,37 +218,28 @@ tile_set = ExtResource("6_jht05")
 
 [node name="PlayerBorders" type="Node2D" parent="." unique_id=781658450]
 
-[node name="BorderLeft" type="StaticBody2D" parent="PlayerBorders" unique_id=342902846]
+[node name="MainPlayerBorder" type="StaticBody2D" parent="PlayerBorders" unique_id=342902846]
 collision_layer = 64
 collision_mask = 257
 
-[node name="BorderLeftCollision" type="CollisionShape2D" parent="PlayerBorders/BorderLeft" unique_id=1960979302]
+[node name="LeftWorldBorder" type="CollisionShape2D" parent="PlayerBorders/MainPlayerBorder" unique_id=1960979302]
 position = Vector2(-4, 440.5)
-shape = SubResource("RectangleShape2D_jht05")
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hvp47")
+debug_color = Color(7.9897045e-06, 0.6905823, 0.80664384, 1)
 
-[node name="BorderRight" type="StaticBody2D" parent="PlayerBorders" unique_id=782704654]
-position = Vector2(2021, -712)
-collision_layer = 64
-collision_mask = 257
+[node name="BorderRightCollision" type="CollisionShape2D" parent="PlayerBorders/MainPlayerBorder" unique_id=1005075451]
+position = Vector2(2015, 440.5)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_idotu")
+debug_color = Color(0, 0.6901961, 0.80784315, 1)
 
-[node name="BorderRightCollision" type="CollisionShape2D" parent="PlayerBorders/BorderRight" unique_id=1005075451]
-position = Vector2(-6, 1152.5)
-shape = SubResource("RectangleShape2D_q183e")
+[node name="BorderBottomCollision" type="CollisionShape2D" parent="PlayerBorders/MainPlayerBorder" unique_id=479316184]
+position = Vector2(1004, 1600)
+shape = SubResource("WorldBoundaryShape2D_3ctgv")
+debug_color = Color(0, 0.6901961, 0.80784315, 1)
 
-[node name="BorderBottom" type="StaticBody2D" parent="PlayerBorders" unique_id=1226705500]
-position = Vector2(2, 1609)
-collision_layer = 64
-collision_mask = 257
-
-[node name="BorderBottomCollision" type="CollisionShape2D" parent="PlayerBorders/BorderBottom" unique_id=479316184]
-position = Vector2(1002, -9)
-shape = SubResource("RectangleShape2D_xjrfn")
-
-[node name="StreetBarrier" type="StaticBody2D" parent="PlayerBorders" unique_id=708024823]
-collision_layer = 64
-collision_mask = 257
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBorders/StreetBarrier" unique_id=728237729]
+[node name="InvisibleWall1" type="CollisionShape2D" parent="PlayerBorders/MainPlayerBorder" unique_id=728237729]
 position = Vector2(916, -346.5)
 shape = SubResource("RectangleShape2D_6c7if")
 
@@ -257,133 +260,73 @@ shape = SubResource("RectangleShape2D_7yawx")
 
 [node name="StaticBorders" type="Node2D" parent="EnemyBorders" unique_id=314517340]
 
-[node name="BettleBorder1" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1682753441]
+[node name="MainEnemyBorders" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1682753441]
 position = Vector2(1851, -424)
 collision_layer = 128
 collision_mask = 16
 
-[node name="BeetleBorder1Collision" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/BettleBorder1" unique_id=604226345]
+[node name="SpawnWall" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=299872656]
+position = Vector2(-1508, -138.25)
+shape = SubResource("SegmentShape2D_6c7if")
+debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
+
+[node name="Lock1SafeZone" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=604226345]
 position = Vector2(76, 0)
 shape = SubResource("RectangleShape2D_ndl7k")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1527001661]
-position = Vector2(2007, -450)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D" unique_id=663262175]
-position = Vector2(6, -87.5)
-shape = SubResource("RectangleShape2D_gw2dr")
+[node name="BeetleWall1" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=663262175]
+position = Vector2(162, -113.5)
+shape = SubResource("SegmentShape2D_6adne")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1813371381]
-position = Vector2(463, -413)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D2" unique_id=299872656]
-position = Vector2(-120, -149.25)
-shape = SubResource("RectangleShape2D_ueqeh")
+[node name="BeetleWall2" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1877952235]
+position = Vector2(-1160, -17)
+shape = SubResource("SegmentShape2D_gw2dr")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1257716706]
-position = Vector2(726, -413)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D3" unique_id=1877952235]
-position = Vector2(6, -107.5)
-shape = SubResource("RectangleShape2D_cev41")
+[node name="BeetleWall3" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1170287979]
+position = Vector2(-889, -93.5)
+shape = SubResource("SegmentShape2D_ueqeh")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1309014427]
-position = Vector2(956, -416)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D4" unique_id=1170287979]
-position = Vector2(6, -101.5)
-shape = SubResource("RectangleShape2D_cev41")
+[node name="BeetleWall4" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=580836603]
+position = Vector2(-274, -95)
+shape = SubResource("SegmentShape2D_5tm5x")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=856316062]
-position = Vector2(1571, -418)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D5" unique_id=580836603]
-position = Vector2(6, -101)
-shape = SubResource("RectangleShape2D_1yev1")
+[node name="BeetleWall5" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1837148322]
+position = Vector2(-603, -171)
+shape = SubResource("SegmentShape2D_w4h0j")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1065071826]
-position = Vector2(1241, -592)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D6" unique_id=1837148322]
-position = Vector2(7, -3)
-shape = SubResource("RectangleShape2D_uaw3v")
+[node name="BeetleWall6" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1368341186]
+position = Vector2(-1595, 325)
+shape = SubResource("SegmentShape2D_ycgp6")
 debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1594167120]
-position = Vector2(146, -86)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D7" unique_id=1368341186]
-position = Vector2(110, -13)
-shape = SubResource("RectangleShape2D_00mwj")
-debug_color = Color(0, 0.2, 0.8117647, 0.41960785)
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1077820454]
-position = Vector2(2027, 195)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D8" unique_id=1715962300]
-position = Vector2(-8, 697.5)
-shape = SubResource("RectangleShape2D_tirk8")
+[node name="LakeBorderRight" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1715962300]
+position = Vector2(168, 1316.5)
+shape = SubResource("SegmentShape2D_6dmry")
 debug_color = Color(0.80139714, 0.41259933, 0.21764243, 0.41960785)
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1611900350]
-position = Vector2(-7, 190)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D9" unique_id=110325819]
-position = Vector2(5, 700.5)
-shape = SubResource("RectangleShape2D_iuy6j")
+[node name="LakeBorderLeft" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=110325819]
+position = Vector2(-1853, 1314.5)
+shape = SubResource("SegmentShape2D_vy5mp")
 debug_color = Color(0.80139714, 0.41259933, 0.21764243, 0.41960785)
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1528223847]
-position = Vector2(11, 1612)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D10" unique_id=1693115807]
-position = Vector2(994.5, -4.5)
-shape = SubResource("RectangleShape2D_cqg6n")
+[node name="LakeBorderBottom" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1693115807]
+position = Vector2(-1036, 2029)
+shape = SubResource("WorldBoundaryShape2D_wcih1")
 debug_color = Color(0.80139714, 0.41259933, 0.21764243, 0.41960785)
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=1040644797]
-position = Vector2(1351, 1243)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D11" unique_id=1413536506]
-position = Vector2(0.5, 172.5)
-shape = SubResource("RectangleShape2D_jc5gq")
+[node name="LakeBeetleBorder" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=1413536506]
+position = Vector2(-499.5, 1839.5)
+shape = SubResource("SegmentShape2D_wcih1")
 debug_color = Color(0.80139714, 0.41259933, 0.21764243, 0.41960785)
 
-[node name="StaticBody2D12" type="StaticBody2D" parent="EnemyBorders/StaticBorders" unique_id=149719348]
-position = Vector2(705, 1178)
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/StaticBody2D12" unique_id=743504135]
-position = Vector2(0, 79)
-shape = SubResource("RectangleShape2D_6adne")
+[node name="GatorWall" type="CollisionShape2D" parent="EnemyBorders/StaticBorders/MainEnemyBorders" unique_id=743504135]
+position = Vector2(-1146, 1681)
+shape = SubResource("SegmentShape2D_o2u8v")
 debug_color = Color(0.80139714, 0.41259933, 0.21764243, 0.41960785)
 
 [node name="SpawnTimers" type="Node2D" parent="." unique_id=538130103]
@@ -733,10 +676,10 @@ rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="PushLog9" parent="Pushables/PushLogs" unique_id=840296548 instance=ExtResource("19_1yev1")]
-position = Vector2(1223, -595)
+position = Vector2(1226, -582)
 
 [node name="PushLog10" parent="Pushables/PushLogs" unique_id=1354524011 instance=ExtResource("19_1yev1")]
-position = Vector2(1272, -595)
+position = Vector2(1270, -565)
 
 [node name="PushLog8" parent="Pushables/PushLogs" unique_id=196049109 instance=ExtResource("19_1yev1")]
 position = Vector2(1632, 205)

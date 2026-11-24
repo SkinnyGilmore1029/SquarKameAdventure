@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_r61g3"]
 [ext_resource type="PackedScene" uid="uid://bihf115fu5vem" path="res://Components/ComponentScenes/EnemyTimer.tscn" id="5_ms2wo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r61g3"]
-size = Vector2(27, 6)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrits"]
+radius = 5.0
+height = 32.0
 
 [node name="BigBeetle" type="CharacterBody2D" unique_id=352226263]
 scale = Vector2(2, 2)
@@ -21,8 +22,9 @@ enemy_data = ExtResource("2_eabju")
 texture = ExtResource("1_urv2w")
 
 [node name="WallCollision" type="CollisionShape2D" parent="." unique_id=1857080239]
-position = Vector2(2.5, -3)
-shape = SubResource("RectangleShape2D_r61g3")
+position = Vector2(2.5, -3.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qrits")
 
 [node name="DeathCollision" parent="." unique_id=341762157 instance=ExtResource("2_r61g3")]
 
@@ -32,7 +34,7 @@ polygon = PackedVector2Array(-23, -13, -21, -11, -21, -2, -10, -10, -5, -10, 0, 
 [node name="Timers" type="Node" parent="." unique_id=1277240311]
 
 [node name="Despawn_timer" parent="Timers" unique_id=570641630 instance=ExtResource("5_ms2wo")]
-wait_time = 10.0
+wait_time = 20.0
 autostart = true
 
 [node name="SpeedTimer" parent="Timers" unique_id=642466292 instance=ExtResource("5_ms2wo")]

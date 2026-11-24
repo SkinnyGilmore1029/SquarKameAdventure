@@ -23,7 +23,7 @@ func check_if_from_pause_menu() -> void:
 		%ResetHighScoreButton.visible = true
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI_Screens/Screens/TitleScreen.tscn")
+	get_tree().change_scene_to_file(GameState.title_screen)
 
 func _on_back_pause_button_pressed() -> void:
 	SignalHub.hide_paused_options.emit()

@@ -121,44 +121,42 @@ terrain_set_0/terrain_0/name = "BaseGrass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_gjj1p")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqc1f"]
-size = Vector2(731.5, 7)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qrits"]
+a = Vector2(-362.25, 0.5)
+b = Vector2(557.75, 1.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngqh"]
-size = Vector2(7, 609.25)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tbwxg"]
+distance = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3tbk"]
 size = Vector2(187, 161.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jraoy"]
-size = Vector2(7, 161.25)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5757k"]
+a = Vector2(-0.5, -93.375)
+b = Vector2(-0.5, 86.625)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hil01"]
-size = Vector2(89, 172)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n7q0x"]
+a = Vector2(-57.5, -87)
+b = Vector2(53.5, 85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a18ry"]
-size = Vector2(13.5, 644)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rwrdl"]
+distance = 4.75
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw2ew"]
-size = Vector2(498, 10)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_esc3a"]
+a = Vector2(-369, 7)
+b = Vector2(2062, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bp4m"]
-size = Vector2(287, 10)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bw50t"]
+a = Vector2(157.5, 13)
+b = Vector2(-0.5, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p81be"]
 size = Vector2(82.01695, 200.43872)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_agaps"]
-size = Vector2(2415, 1.5)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hvp47"]
+distance = -2.7499998
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_830d4"]
-size = Vector2(1.5, 816)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uny8q"]
-size = Vector2(1.5, 816.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ouho"]
-size = Vector2(2416.5, 1.5)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etenj"]
 
 [node name="Level2" type="Node2D" unique_id=270366254]
 script = ExtResource("1_2ouho")
@@ -184,130 +182,75 @@ tile_set = ExtResource("2_lw2ew")
 
 [node name="GatorWalls" type="Node2D" parent="." unique_id=2130683032]
 
-[node name="Begining" type="StaticBody2D" parent="GatorWalls" unique_id=267432459]
+[node name="EnemyBorderBody" type="StaticBody2D" parent="GatorWalls" unique_id=267432459]
 position = Vector2(721, 631)
 collision_layer = 128
 collision_mask = 16
 
-[node name="SpawnEdge" type="CollisionShape2D" parent="GatorWalls/Begining" unique_id=1437656306]
+[node name="BottomLakeBorder" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=1437656306]
 position = Vector2(361.25, -6.5)
-shape = SubResource("RectangleShape2D_tqc1f")
+shape = SubResource("SegmentShape2D_qrits")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="LeftScreenEdge" type="StaticBody2D" parent="GatorWalls" unique_id=1059898620]
-position = Vector2(-28, 225)
-collision_layer = 128
-collision_mask = 16
-
-[node name="LeftEdge" type="CollisionShape2D" parent="GatorWalls/LeftScreenEdge" unique_id=654208600]
-position = Vector2(24.5, 93.625)
-shape = SubResource("RectangleShape2D_2ngqh")
+[node name="LeftWorldBorder" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=654208600]
+position = Vector2(-736, -321)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_tbwxg")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="LeftScreenEdge2" type="StaticBody2D" parent="GatorWalls" unique_id=10630383]
-position = Vector2(590, 61)
-collision_layer = 128
-collision_mask = 16
-
-[node name="LeftEdge" type="CollisionShape2D" parent="GatorWalls/LeftScreenEdge2" unique_id=1511184510]
-position = Vector2(115.5, 29.375)
+[node name="Lock2SafeZone" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=1511184510]
+position = Vector2(-15.5, -540.625)
 shape = SubResource("RectangleShape2D_q3tbk")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="LeftScreenEdge3" type="StaticBody2D" parent="GatorWalls" unique_id=1506691156]
-position = Vector2(155, 687)
-collision_layer = 128
-collision_mask = 16
-
-[node name="LeftEdge" type="CollisionShape2D" parent="GatorWalls/LeftScreenEdge3" unique_id=976392973]
-position = Vector2(25.5, 29.375)
-shape = SubResource("RectangleShape2D_jraoy")
+[node name="SpawnBorder" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=976392973]
+position = Vector2(-540.5, 85.375)
+shape = SubResource("SegmentShape2D_5757k")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="LeftScreenEdge4" type="StaticBody2D" parent="GatorWalls" unique_id=1013285538]
-position = Vector2(1503, 696)
-collision_layer = 128
-collision_mask = 16
-
-[node name="LeftEdge" type="CollisionShape2D" parent="GatorWalls/LeftScreenEdge4" unique_id=2022899179]
-position = Vector2(83.5, 18)
-shape = SubResource("RectangleShape2D_hil01")
+[node name="SectionBorder1" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=2022899179]
+position = Vector2(865.5, 83)
+shape = SubResource("SegmentShape2D_n7q0x")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="RightScreenEdge" type="StaticBody2D" parent="GatorWalls" unique_id=1780373768]
-position = Vector2(2402, 302)
-collision_layer = 128
-collision_mask = 16
-
-[node name="RightEdge" type="CollisionShape2D" parent="GatorWalls/RightScreenEdge" unique_id=973627109]
-position = Vector2(21.75, 188)
-shape = SubResource("RectangleShape2D_a18ry")
+[node name="RightWorldBorder" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=973627109]
+position = Vector2(1702.75, -141)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_rwrdl")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="TopSpawn" type="StaticBody2D" parent="GatorWalls" unique_id=440236515]
-position = Vector2(2, -20)
-collision_layer = 128
-collision_mask = 16
-
-[node name="TopSpawnEdge" type="CollisionShape2D" parent="GatorWalls/TopSpawn" unique_id=1301671223]
-position = Vector2(361, 188)
-shape = SubResource("RectangleShape2D_lw2ew")
+[node name="TopLakeBorder" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=1301671223]
+position = Vector2(-358, -463)
+shape = SubResource("SegmentShape2D_esc3a")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="TopSpawn3" type="StaticBody2D" parent="GatorWalls" unique_id=411115589]
-position = Vector2(-5, -99)
-collision_layer = 128
-collision_mask = 16
-
-[node name="TopSpawnEdge" type="CollisionShape2D" parent="GatorWalls/TopSpawn3" unique_id=244504385]
-position = Vector2(143.5, 188)
-shape = SubResource("RectangleShape2D_5bp4m")
+[node name="SectionBorder2" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=244504385]
+position = Vector2(-582.5, -542)
+shape = SubResource("SegmentShape2D_bw50t")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
-[node name="TopSpawn2" type="StaticBody2D" parent="GatorWalls" unique_id=1933835487]
-position = Vector2(1796, -20)
-collision_layer = 128
-collision_mask = 16
-
-[node name="TopSpawnEdge" type="CollisionShape2D" parent="GatorWalls/TopSpawn2" unique_id=1393540118]
-position = Vector2(301.86206, 157.97966)
+[node name="Lock1SafeZone" type="CollisionShape2D" parent="GatorWalls/EnemyBorderBody" unique_id=1393540118]
+position = Vector2(1376.862, -493.02032)
 rotation = 1.5598751
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_p81be")
 debug_color = Color(0.76862746, 0.52156866, 0.96862745, 0.5921569)
 
 [node name="Borders" type="Node2D" parent="." unique_id=1029913746]
 
-[node name="Top" parent="Borders" unique_id=1006647801 instance=ExtResource("1_agaps")]
+[node name="MainPlayerBoredBody" parent="Borders" unique_id=1006647801 instance=ExtResource("1_agaps")]
 position = Vector2(1201, 0)
 
-[node name="TopCollisionShape" type="CollisionShape2D" parent="Borders/Top" unique_id=1384767793]
-position = Vector2(6.5, 0)
-shape = SubResource("RectangleShape2D_agaps")
+[node name="LeftCollisionShape" type="CollisionShape2D" parent="Borders/MainPlayerBoredBody" unique_id=1812574590]
+position = Vector2(-1200, 408)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hvp47")
 debug_color = Color(0.9181473, 0.27219272, 0.22757924, 0.41960785)
 
-[node name="Left" parent="Borders" unique_id=1290235923 instance=ExtResource("1_agaps")]
-position = Vector2(0, 244)
-
-[node name="LeftCollisionShape" type="CollisionShape2D" parent="Borders/Left" unique_id=1812574590]
-position = Vector2(-0.25, 164)
-shape = SubResource("RectangleShape2D_830d4")
-debug_color = Color(0.9181473, 0.27219272, 0.22757924, 0.41960785)
-
-[node name="Right" parent="Borders" unique_id=965779709 instance=ExtResource("1_agaps")]
-position = Vector2(2416, 407)
-
-[node name="RightCollisionShape" type="CollisionShape2D" parent="Borders/Right" unique_id=1380022968]
-position = Vector2(0, 0.75)
-shape = SubResource("RectangleShape2D_uny8q")
-debug_color = Color(0.9181473, 0.27219272, 0.22757924, 0.41960785)
-
-[node name="Bottom" parent="Borders" unique_id=1723905142 instance=ExtResource("1_agaps")]
-position = Vector2(1208, 826)
-
-[node name="BottomCollisionShape" type="CollisionShape2D" parent="Borders/Bottom" unique_id=316562505]
-position = Vector2(-0.25, -10)
-shape = SubResource("RectangleShape2D_2ouho")
+[node name="RightCollisionShape" type="CollisionShape2D" parent="Borders/MainPlayerBoredBody" unique_id=1380022968]
+position = Vector2(1215, 407.75)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_etenj")
 debug_color = Color(0.9181473, 0.27219272, 0.22757924, 0.41960785)
 
 [node name="AllButtons" type="Node2D" parent="." unique_id=2116046674]

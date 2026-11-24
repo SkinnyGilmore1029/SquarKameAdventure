@@ -15,9 +15,9 @@ var spawn_position: Vector2
 var key_count: int = 0
 
 var kame_selection: Dictionary[String, String] = {
-	"Orange" : "res://SquarKames/KamesScenes/OrangeKame.tscn",
-	"Green" : "res://SquarKames/KamesScenes/SquarKame.tscn",
-	"Purple" : "res://SquarKames/KamesScenes/PurpleKame.tscn"
+	"Orange" : "uid://c4plgj0bg1e6q",
+	"Green" : "uid://c0oq4upgy56xp",
+	"Purple" : "uid://cf1tnatxhjaia"
 }
 
 var tail_positions: Dictionary[String, Vector2] = {

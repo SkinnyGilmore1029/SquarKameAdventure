@@ -46,10 +46,10 @@ func handle_direction() -> void:
 	match last_direction:
 		"horizontal":
 			rotation = 0.0
-			scale.x = 1 if velocity.x < 0 else -1
+			scale.x = 2 if velocity.x < 0 else -2
 
 		"vertical":
-			scale.x = 1
+			scale.x = 2
 			rotation = PI / 2 if velocity.y > 0 else -PI / 2
 
 

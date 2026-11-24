@@ -10,14 +10,14 @@ const SPAWN_MIN_X_GAP: float = 300.0
 
 #Loads with ready function
 var enemy_scenes: Dictionary[String, String] = {
-	"Car" : "res://Obstacles/BadGuys/Car.tscn",
-	"Car2" : "res://Obstacles/BadGuys/Car2.tscn",
-	"Truck" : "res://Obstacles/BadGuys/Truck.tscn",
-	"Bus" : "res://Obstacles/BadGuys/Bus.tscn",
-	"Tornado" : "res://Obstacles/BadGuys/Tornado.tscn",
-	"Bolder" : "res://Obstacles/BadGuys/Bolder.tscn",
-	"DoubleBus" : "res://Obstacles/BadGuys/DoubleBus.tscn",
-	"BigBeetle" : "res://Obstacles/BadGuys/BigBeetle.tscn"
+	"Car" : "uid://c3e4vtiri4ka1",
+	"Car2" : "uid://bh150bbx4mrgs",
+	"Truck" : "uid://mefm3f4b8a3m",
+	"Bus" : "uid://yk7fsnrq7djj",
+	"Tornado" : "uid://dkwvudaxek24t",
+	"Bolder" : "uid://spow3me7jpnt",
+	"DoubleBus" : "uid://dc45n5l7umm7s",
+	"BigBeetle" : "uid://b4qt3nwti8wxf"
 
 }
 

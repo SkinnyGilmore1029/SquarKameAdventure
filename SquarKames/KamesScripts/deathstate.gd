@@ -30,7 +30,7 @@ func _on_next_transitions() -> void:
 		if kame.player_data.players_lives <= 0:
 			get_tree().paused = false
 			get_tree().change_scene_to_file(
-                "res://UI_Screens/Screens/GameOver.tscn"
+                GameState.game_over_screen
             )
 			return
 

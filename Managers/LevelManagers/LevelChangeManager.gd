@@ -3,12 +3,12 @@ extends Node
 
 
 var level_scenes: Dictionary[int,Array] = {
-	1 : ["res://TheLevels/LevelScenes/Level1.tscn", Vector2(560, 768), false],
-	2 : [ "res://TheLevels/LevelScenes/Level2.tscn", Vector2(92, 715), false],
-	3 : ["res://TheLevels/LevelScenes/Level3.tscn", Vector2(126,-589), false],
-	4 : ["res://TheLevels/LevelScenes/Level4.tscn", Vector2(704,63), true],
-	5 : ["res://TheLevels/LevelScenes/Level5.tscn", Vector2(146,2056), true],
-	6 : ["res://TheLevels/LevelScenes/Level6.tscn", Vector2(561, -290), false ]
+	1 : ["uid://cwfs2ns82em0t", Vector2(560, 768), false],
+	2 : [ "uid://cv3d6174wv0hf", Vector2(92, 715), false],
+	3 : ["uid://c77ifyeeukjyu", Vector2(126,-589), false],
+	4 : ["uid://vfwiikimqml7", Vector2(704,63), true],
+	5 : ["uid://bwkcegbs3yfqd", Vector2(146,2056), true],
+	6 : ["uid://b3pv0p5ojwuoo", Vector2(561, -290), false ]
 }
 
 

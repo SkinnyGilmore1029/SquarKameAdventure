@@ -55,47 +55,49 @@ script = ExtResource("12_p6cyd")
 offset_vector = Vector2(-50, 100)
 metadata/_custom_type_script = "uid://d0y5tdfutjtuu"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uu2l"]
-size = Vector2(115.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6hr"]
-size = Vector2(127.54651, 233.04712)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6adne"]
+a = Vector2(55.75, 7)
+b = Vector2(-57.25, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ktlw"]
 size = Vector2(87.332825, 81)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6hr"]
+size = Vector2(127.54651, 233.04712)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rha50"]
 size = Vector2(170, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06h8b"]
-size = Vector2(71, 17)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6c7if"]
+a = Vector2(39, -8.5)
+b = Vector2(-36, 3.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_76fra"]
-size = Vector2(131, 124)
+[sub_resource type="CircleShape2D" id="CircleShape2D_asogt"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s71b8"]
-size = Vector2(126, 107)
+[sub_resource type="CircleShape2D" id="CircleShape2D_06h8b"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv66m"]
-size = Vector2(106, 88)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rha50"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6cyd"]
-size = Vector2(98, 91)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ke6hr"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqikb"]
-size = Vector2(98, 85)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ktlw"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwb3d"]
-size = Vector2(92, 89)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qsie"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tcn2"]
-size = Vector2(106, 108)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gogpj"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpeb7"]
-size = Vector2(81, 83)
+[sub_resource type="CircleShape2D" id="CircleShape2D_msmad"]
+radius = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8trpi"]
-size = Vector2(113, 92)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqfca"]
+radius = 60.0
 
 [node name="Level4" type="Node2D" unique_id=47411587]
 script = ExtResource("1_vpwee")
@@ -402,106 +404,67 @@ unique_name_in_owner = true
 
 [node name="SafeZones" type="Node2D" parent="." unique_id=961251578]
 
-[node name="SafeZone14" parent="SafeZones" unique_id=1520125555 instance=ExtResource("9_76fra")]
+[node name="MainSafeZoneBody" parent="SafeZones" unique_id=1520125555 instance=ExtResource("9_76fra")]
 position = Vector2(-1486, 167)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone14" unique_id=1189995128]
+[node name="TeleporterBorder" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1189995128]
 position = Vector2(45.25, -13)
-shape = SubResource("RectangleShape2D_2uu2l")
+shape = SubResource("SegmentShape2D_6adne")
 
-[node name="SafeZone12" parent="SafeZones" unique_id=651648076 instance=ExtResource("9_76fra")]
-position = Vector2(-1604, 1173)
+[node name="Lock1SafeZone" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1734771436]
+position = Vector2(1462.6664, 877.5)
+shape = SubResource("RectangleShape2D_7ktlw")
+debug_color = Color(0.2748136, 0.6278597, 0.22260243, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone12" unique_id=87201709]
-position = Vector2(-12.44043, -88.91272)
+[node name="Lock2SafeZone" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=87201709]
+position = Vector2(-130.44043, 917.0873)
 rotation = 0.5934119
 shape = SubResource("RectangleShape2D_ke6hr")
 debug_color = Color(0.2748136, 0.6278597, 0.22260243, 0.41960785)
 
-[node name="SafeZone13" parent="SafeZones" unique_id=1961836702 instance=ExtResource("9_76fra")]
-position = Vector2(-31, 1144)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone13" unique_id=1734771436]
-position = Vector2(7.6664124, -99.5)
-shape = SubResource("RectangleShape2D_7ktlw")
-debug_color = Color(0.2748136, 0.6278597, 0.22260243, 0.41960785)
-
-[node name="SafeZone11" parent="SafeZones" unique_id=171645421 instance=ExtResource("9_76fra")]
-position = Vector2(693, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone11" unique_id=1956140670]
-position = Vector2(31, 38)
+[node name="SpawnZone" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1956140670]
+position = Vector2(2210, -125)
 shape = SubResource("RectangleShape2D_rha50")
 
-[node name="SafeZone10" parent="SafeZones" unique_id=414476303 instance=ExtResource("9_76fra")]
-position = Vector2(11, 11)
+[node name="LizardArea1Border" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=629279433]
+position = Vector2(1769, -65.5)
+shape = SubResource("SegmentShape2D_6c7if")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone10" unique_id=629279433]
-position = Vector2(272, 90.5)
-shape = SubResource("RectangleShape2D_06h8b")
+[node name="SafePuddle1" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=2048931790]
+position = Vector2(1565.5, 266)
+shape = SubResource("CircleShape2D_asogt")
 
-[node name="SafeZone" parent="SafeZones" unique_id=1067202619 instance=ExtResource("9_76fra")]
-position = Vector2(57, 412)
+[node name="SafePuddle2" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=127828178]
+position = Vector2(1895, 832)
+shape = SubResource("CircleShape2D_06h8b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone" unique_id=2048931790]
-position = Vector2(22.5, 21)
-shape = SubResource("RectangleShape2D_76fra")
+[node name="SafePuddle3" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=34953562]
+position = Vector2(894, 758)
+shape = SubResource("CircleShape2D_rha50")
 
-[node name="SafeZone2" parent="SafeZones" unique_id=928224864 instance=ExtResource("9_76fra")]
-position = Vector2(372, 961)
+[node name="SafePuddle4" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=74352506]
+position = Vector2(1354, 1760.5)
+shape = SubResource("CircleShape2D_ke6hr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone2" unique_id=127828178]
-position = Vector2(37, 29.5)
-shape = SubResource("RectangleShape2D_s71b8")
+[node name="SafePuddle5" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=316209964]
+position = Vector2(583, 1245.5)
+shape = SubResource("CircleShape2D_7ktlw")
 
-[node name="SafeZone3" parent="SafeZones" unique_id=1129642205 instance=ExtResource("9_76fra")]
-position = Vector2(-628, 893)
+[node name="SafePuddle6" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1473604053]
+position = Vector2(-158, 1778.5)
+shape = SubResource("CircleShape2D_0qsie")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone3" unique_id=34953562]
-position = Vector2(32, 30)
-shape = SubResource("RectangleShape2D_wv66m")
+[node name="SafePuddle7" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=30262233]
+position = Vector2(-654, -83)
+shape = SubResource("CircleShape2D_gogpj")
 
-[node name="SafeZone4" parent="SafeZones" unique_id=1620560348 instance=ExtResource("9_76fra")]
-position = Vector2(-157, 1906)
+[node name="SafePuddle8" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1288945884]
+position = Vector2(-375.5, 385.5)
+shape = SubResource("CircleShape2D_msmad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone4" unique_id=74352506]
-position = Vector2(25, 21.5)
-shape = SubResource("RectangleShape2D_p6cyd")
-
-[node name="SafeZone5" parent="SafeZones" unique_id=1401574350 instance=ExtResource("9_76fra")]
-position = Vector2(-936, 1391)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone5" unique_id=316209964]
-position = Vector2(33, 21.5)
-shape = SubResource("RectangleShape2D_lqikb")
-
-[node name="SafeZone6" parent="SafeZones" unique_id=492719653 instance=ExtResource("9_76fra")]
-position = Vector2(-1686, 1922)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone6" unique_id=1473604053]
-position = Vector2(42, 23.5)
-shape = SubResource("RectangleShape2D_fwb3d")
-
-[node name="SafeZone7" parent="SafeZones" unique_id=1870788626 instance=ExtResource("9_76fra")]
-position = Vector2(-2183, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone7" unique_id=30262233]
-position = Vector2(43, 44)
-shape = SubResource("RectangleShape2D_5tcn2")
-
-[node name="SafeZone8" parent="SafeZones" unique_id=845349228 instance=ExtResource("9_76fra")]
-position = Vector2(-1912, 523)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone8" unique_id=1288945884]
-position = Vector2(50.5, 29.5)
-shape = SubResource("RectangleShape2D_qpeb7")
-
-[node name="SafeZone9" parent="SafeZones" unique_id=1713229796 instance=ExtResource("9_76fra")]
-position = Vector2(-2268, 1283)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZones/SafeZone9" unique_id=1035795275]
-position = Vector2(59, 28)
-shape = SubResource("RectangleShape2D_8trpi")
+[node name="Safeuddle9" type="CollisionShape2D" parent="SafeZones/MainSafeZoneBody" unique_id=1035795275]
+position = Vector2(-723, 1144)
+shape = SubResource("CircleShape2D_wqfca")
 
 [node name="TorandoMarkers" type="Node2D" parent="." unique_id=648608528]
 
