@@ -1,13 +1,15 @@
 shader_type canvas_item;
 
+uniform vec4 my_color: source_color;
+
+
 void vertex() {
-	float top_influence = 1.0 - UV.x;
-	VERTEX.x += cos(TIME * 2.0)  * top_influence;
+	float sway = sin(TIME *4.0);
+	VERTEX.x += sway * 2.0 * (0.35 - UV.y);
 }
 
 void fragment() {
-	vec4 my_blue = vec4(0.373,0.804,0.894, 1.0);
-	COLOR = texture(TEXTURE, UV) * my_blue;
+	COLOR = texture(TEXTURE, UV) * my_color;
 }
 
 //void light() {

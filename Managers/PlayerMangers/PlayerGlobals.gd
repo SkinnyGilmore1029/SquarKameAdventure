@@ -11,6 +11,7 @@ var tail_direction: Vector2
 var default_speed: float = 230.0
 var speed: float = 230.0
 var spawn_position: Vector2
+var death_position: Vector2
 
 var key_count: int = 0
 

@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 
 @export var fly_data: FlyResource
+var cactus_fly_uid: String = "uid://dtjt42ct42yxd"
 
 func _on_spawn_fly_area_body_entered(body: Node2D) -> void:
 	if body is MainKame:
@@ -13,7 +14,7 @@ func _on_spawn_fly_area_body_entered(body: Node2D) -> void:
 		%SpawnFlyArea.set_deferred("monitoring", false)
 
 func spawn_fly() -> void:
-	var fly_scene: PackedScene = load("uid://dtjt42ct42yxd")
+	var fly_scene: PackedScene = load(cactus_fly_uid)
 	var fly_instance: Node = fly_scene.instantiate()
 	set_up_fly(fly_instance)
 	fly_node.call_deferred("add_child",fly_instance)

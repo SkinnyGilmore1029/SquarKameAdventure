@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://okq8tcboyctu"]
+
+[ext_resource type="Shader" uid="uid://co2c62wwq5yx" path="res://Resources/Shaders/ShaderPractice.gdshader" id="1_jwsak"]
+[ext_resource type="Texture2D" uid="uid://djinfohglcqfp" path="res://Assets/Pictures/Backgrounds/Slowcone.png" id="1_kreo4"]
+[ext_resource type="Shader" uid="uid://61ke1ga73jps" path="res://Resources/Shaders/ShaderPractice2.gdshader" id="3_ceju3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kreo4"]
+shader = ExtResource("1_jwsak")
+shader_parameter/size = 0.5
+shader_parameter/color = Color(0.18768138, 0.56920075, 0.95189756, 0.75686276)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwsak"]
+shader = ExtResource("3_ceju3")
+shader_parameter/idk_test = 0.0
+
+[node name="Node2D" type="Node2D" unique_id=1195456652]
+
+[node name="ShaderPractice" type="Sprite2D" parent="." unique_id=625022388]
+material = SubResource("ShaderMaterial_kreo4")
+texture = ExtResource("1_kreo4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979133781]
+material = SubResource("ShaderMaterial_jwsak")
+texture = ExtResource("1_kreo4")

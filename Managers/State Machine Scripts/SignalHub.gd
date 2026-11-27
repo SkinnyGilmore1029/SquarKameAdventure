@@ -37,6 +37,7 @@ signal remove_pinned_body(pinned_body: RigidBody2D)
 signal load_array(to_array: Array[RigidBody2D])
 signal look_array
 signal can_not_move(pinned_body)
+signal drop_pinned_eggs(egg_positions: Dictionary)
 
 #-----------------MenuSignals-------------------------
 signal changed_levels(new_level: int)

@@ -18,6 +18,7 @@ radius = 22.203604
 collision_layer = 256
 collision_mask = 327
 gravity_scale = 0.0
+linear_damp = 100.0
 script = ExtResource("1_s8g0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=369494357]

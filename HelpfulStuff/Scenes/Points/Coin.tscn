@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dcieupg7cp3k4" path="res://Assets/Pictures/Points/coin.png" id="1_aomji"]
 [ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_f2i54"]
 [ext_resource type="Resource" uid="uid://goojo5b2axuh" path="res://HelpfulStuff/HelpfulResources/Coin.tres" id="2_168f5"]
+[ext_resource type="Shader" uid="uid://b5a67mbydgiwh" path="res://Resources/Shaders/Floating.gdshader" id="3_sf16b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cn3u"]
+shader = ExtResource("3_sf16b")
+shader_parameter/float_strength = 0.1
+shader_parameter/float_speed = 2.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5o4w"]
 atlas = ExtResource("1_aomji")
@@ -104,6 +110,7 @@ script = ExtResource("1_f2i54")
 treasure_data = ExtResource("2_168f5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1135697856]
+material = SubResource("ShaderMaterial_2cn3u")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_v8skb")
 autoplay = "default"

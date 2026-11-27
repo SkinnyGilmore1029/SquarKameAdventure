@@ -6,8 +6,6 @@ extends Node2D
 @onready var big_beetle_spawns: Array[Vector2] = [
 	%BigBeetleSpawn1.position,
 	%BigBeetleSpawn2.position,
-	%BigBeetleSpawn3.position,
-	%BigBeetleSpawn4.position,
 	%BigBeetleSpawn5.position,
 	%BigBeetleSpawn6.position,
 	%BigBeetleSpawn7.position,
@@ -28,4 +26,3 @@ func set_level_data() -> void:
 	level_data.speed_choices = {
 		"BigBeetle"  : [120, 140, 160]
 	}
-

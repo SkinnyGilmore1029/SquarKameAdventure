@@ -42,7 +42,14 @@ func _on_next_transitions() -> void:
 func _on_enter() -> void:
 
 	#To do: find a way not to fire this every time the player dies, check if the player is pinned to something first.?
-	SignalHub.unpin_joint.emit()
+	if !GameState.attached_pins.is_empty():
+		var egg_positions: Dictionary = {}
+
+		for egg in GameState.attached_pins:
+			egg_positions[egg] = egg.global_position
+
+		SignalHub.unpin_joint.emit()
+		SignalHub.drop_pinned_eggs.emit(egg_positions)
 
 	get_tree().paused = true
 

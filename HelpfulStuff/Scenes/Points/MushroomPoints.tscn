@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://5jogwgnlb777" path="res://Assets/Pictures/Backgrounds/basic_grass_biom_things.png" id="2_iuosf"]
 [ext_resource type="Shader" uid="uid://bqx55rphy7cdx" path="res://Resources/Shaders/MushroomPoints.gdshader" id="3_iu7pr"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lkjp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nc4pd"]
 shader = ExtResource("3_iu7pr")
+shader_parameter/my_color = Color(0.103735514, 0.6362476, 0.7227446, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjmtu"]
 atlas = ExtResource("2_iuosf")
@@ -21,11 +22,12 @@ script = ExtResource("1_f8k1a")
 treasure_data = ExtResource("2_2lkjp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352903917]
-material = SubResource("ShaderMaterial_2lkjp")
+material = SubResource("ShaderMaterial_nc4pd")
 scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_qjmtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000389117]
+visible = false
 position = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_l6ta7")
 

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://boy3x8sufr5mn"]
 
 [ext_resource type="Script" uid="uid://i7o3f4j1xhvt" path="res://Components/ComponentScripts/TreasureCollectable.gd" id="1_61nuc"]
-[ext_resource type="Shader" uid="uid://dq60g8gdb5ccl" path="res://Resources/Shaders/FruitPoints.gdshader" id="1_ksbin"]
 [ext_resource type="Texture2D" uid="uid://ifpbww522cv8" path="res://Assets/Pictures/Points/fruit.png" id="2_61nuc"]
 [ext_resource type="Resource" uid="uid://dm7g0br5xmvei" path="res://HelpfulStuff/HelpfulResources/GreenApple.tres" id="2_cjugw"]
+[ext_resource type="Shader" uid="uid://b5a67mbydgiwh" path="res://Resources/Shaders/Floating.gdshader" id="3_m036v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm5wj"]
-shader = ExtResource("1_ksbin")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wand6"]
+shader = ExtResource("3_m036v")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h07j2"]
 atlas = ExtResource("2_61nuc")
@@ -20,7 +20,7 @@ script = ExtResource("1_61nuc")
 treasure_data = ExtResource("2_cjugw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586523598]
-material = SubResource("ShaderMaterial_pm5wj")
+material = SubResource("ShaderMaterial_wand6")
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_h07j2")
 

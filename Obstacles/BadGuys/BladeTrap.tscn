@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cr43b4guitotq"]
+
+[ext_resource type="Script" uid="uid://ijhye8bwgd8s" path="res://Obstacles/BadGuysScripts/blade_trap.gd" id="1_fluj2"]
+[ext_resource type="Texture2D" uid="uid://dmbvnchd8rry4" path="res://Assets/Pictures/Bad Guys/SpinTrap.png" id="1_pq6xe"]
+[ext_resource type="Script" uid="uid://bs4qdult5aw08" path="res://Components/ComponentScripts/spinning_enemies.gd" id="1_vwvkd"]
+[ext_resource type="PackedScene" uid="uid://bo0jek6xsl8en" path="res://Components/ComponentScenes/DeathCollsion.tscn" id="2_461g6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_461g6"]
+radius = 12.165525
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq6xe"]
+radius = 17.0
+
+[node name="BladeTrap" type="Node2D" unique_id=672869379]
+script = ExtResource("1_fluj2")
+
+[node name="CenterPoint" type="Node2D" parent="." unique_id=833893484]
+unique_name_in_owner = true
+script = ExtResource("1_vwvkd")
+
+[node name="Blade" type="CharacterBody2D" parent="CenterPoint" unique_id=2031933041]
+position = Vector2(0, 67)
+collision_layer = 16
+collision_mask = 163
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterPoint/Blade" unique_id=526220808]
+texture = ExtResource("1_pq6xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterPoint/Blade" unique_id=1674178484]
+shape = SubResource("CircleShape2D_461g6")
+
+[node name="DeathCollsion" parent="CenterPoint/Blade" unique_id=341762157 instance=ExtResource("2_461g6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterPoint/Blade/DeathCollsion" unique_id=1349493059]
+shape = SubResource("CircleShape2D_pq6xe")
+debug_color = Color(0.8627451, 0.21176471, 0.27058825, 0.69803923)
+
+[node name="Timer" type="Timer" parent="CenterPoint" unique_id=2112780747]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="CenterPoint/Blade/DeathCollsion" to="CenterPoint/Blade/DeathCollsion" method="_on_body_entered"]
+[connection signal="timeout" from="CenterPoint/Timer" to="." method="_on_timer_timeout"]

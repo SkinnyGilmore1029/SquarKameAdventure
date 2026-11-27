@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://fmn5jj0te8hq"]
 
+[ext_resource type="Texture2D" uid="uid://dtp7u1amsy7ue" path="res://Assets/Pictures/UI/Title_UI.png" id="1_3w5il"]
 [ext_resource type="Theme" uid="uid://cs17au4osel30" path="res://Resources/ThemeStyles/Title_labels.tres" id="1_vmts1"]
 [ext_resource type="Theme" uid="uid://c70xm5e8m327i" path="res://Resources/ThemeStyles/TitleButtons.tres" id="1_xlpda"]
 [ext_resource type="Script" uid="uid://cwwkkjlagsmte" path="res://UI_Screens/ScreenScripts/high_score_container.gd" id="2_gjjjm"]
 [ext_resource type="Script" uid="uid://baaejwjfn4108" path="res://UI_Screens/ScreenScripts/TitleScreenControl.gd" id="2_pcufe"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev8nc"]
-bg_color = Color(0.14901961, 0.61960787, 0.84705883, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlpda"]
-bg_color = Color(0.48235294, 0.56078434, 0.6392157, 1)
 
 [node name="TitleScreen" type="Control" unique_id=929340160]
 layout_mode = 3
@@ -19,22 +14,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBackground" type="PanelContainer" parent="." unique_id=867765856]
+[node name="MenuBackground" type="TextureRect" parent="." unique_id=1660285220]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.994
 offset_bottom = 0.16000366
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ev8nc")
+texture = ExtResource("1_3w5il")
 
 [node name="GameTitleVBox" type="VBoxContainer" parent="." unique_id=2022837477]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.998
-anchor_bottom = 0.172
-offset_right = 0.27996826
-offset_bottom = 22.079998
+anchor_left = 0.040000003
+anchor_top = 0.057000004
+anchor_right = 0.9620001
+anchor_bottom = 0.13800001
+offset_left = -26.600002
+offset_top = -28.52
+offset_right = 23.319946
+offset_bottom = 16.319996
 grow_horizontal = 2
 
 [node name="GameTitleMargins" type="MarginContainer" parent="GameTitleVBox" unique_id=1468205687]
@@ -50,7 +49,6 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 46
-theme_override_styles/normal = SubResource("StyleBoxFlat_xlpda")
 text = "SquareKame Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -63,9 +61,10 @@ anchor_left = 0.32000002
 anchor_top = 0.18300001
 anchor_right = 0.74700004
 anchor_bottom = 0.3
-offset_left = 0.19998169
-offset_top = 0.11999512
-offset_right = -0.08001709
+offset_left = -35.80002
+offset_top = -24.880005
+offset_right = -36.080017
+offset_bottom = -25.0
 grow_horizontal = 2
 theme = ExtResource("1_vmts1")
 theme_override_constants/separation = 50
@@ -95,6 +94,7 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xlpda")
+theme_type_variation = &"TitleScreen"
 script = ExtResource("2_pcufe")
 
 [node name="ButtonsVbox" type="VBoxContainer" parent="TheButtons" unique_id=317295453]
@@ -104,10 +104,10 @@ anchor_left = 0.36100003
 anchor_top = -0.48400003
 anchor_right = 0.64100003
 anchor_bottom = 3.2970002
-offset_left = -0.040023804
-offset_top = -0.02399826
-offset_right = -0.24002075
-offset_bottom = -0.008010864
+offset_left = -12.040024
+offset_top = -36.024
+offset_right = -12.240021
+offset_bottom = -36.00801
 theme_override_constants/separation = 6
 
 [node name="NewGameButton" type="Button" parent="TheButtons/ButtonsVbox" unique_id=9691766]

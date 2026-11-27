@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5fnw4xtbtys7"]
+
+[ext_resource type="Script" uid="uid://bs4qdult5aw08" path="res://Components/ComponentScripts/spinning_enemies.gd" id="1_cdovn"]
+[ext_resource type="Texture2D" uid="uid://b1i8dvemtju5f" path="res://Assets/Pictures/Bad Guys/Rat.png" id="1_ypv5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypv5c"]
+
+[node name="SpinningEnemies" type="Node2D" unique_id=850882106]
+
+[node name="Piviot" type="Node2D" parent="." unique_id=28044817]
+position = Vector2(322, 150)
+script = ExtResource("1_cdovn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Piviot" unique_id=871222171]
+position = Vector2(45, 52)
+
+[node name="Sprite2D" type="Sprite2D" parent="Piviot/CharacterBody2D" unique_id=841105155]
+texture = ExtResource("1_ypv5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piviot/CharacterBody2D" unique_id=1056685473]
+shape = SubResource("RectangleShape2D_ypv5c")
