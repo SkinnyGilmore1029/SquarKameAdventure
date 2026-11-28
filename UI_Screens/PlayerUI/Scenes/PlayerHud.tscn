@@ -1,50 +1,59 @@
 [gd_scene format=3 uid="uid://bo2ya40ywl6ox"]
 
+[ext_resource type="Theme" uid="uid://dkx8ysvvivonm" path="res://Resources/ThemeStyles/PlayerUITheme.tres" id="1_8qfcg"]
 [ext_resource type="Script" uid="uid://bt6v2khj73baf" path="res://UI_Screens/PlayerUI/Scripts/player_hud.gd" id="1_i15sm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i15sm"]
-bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_830d4"]
-bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb4qt"]
-bg_color = Color(0.2665752, 0.26657522, 0.26657507, 1)
+[ext_resource type="Theme" uid="uid://d0xtwq324mfpt" path="res://Resources/ThemeStyles/TextLabels.tres" id="2_nkc01"]
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=542105142]
 
 [node name="Control" type="Control" parent="." unique_id=1918267591]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 639.0
-offset_bottom = 40.0
+anchor_right = 0.998
+anchor_bottom = 0.11100001
+offset_right = 0.27996826
+offset_bottom = 9.039997
 script = ExtResource("1_i15sm")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=299285145]
-layout_mode = 0
-offset_top = 23.0
-offset_right = 71.0
-offset_bottom = 51.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_i15sm")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.30600002
+anchor_right = 0.11100001
+anchor_bottom = 0.592
+offset_top = 0.0059986115
+offset_right = 0.070991516
+offset_bottom = -0.00799942
+theme = ExtResource("1_8qfcg")
+theme_type_variation = &"PlayerUITheme"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=1010521539]
 layout_mode = 2
 
 [node name="PointsLabel" type="Label" parent="Control/PanelContainer/HBoxContainer" unique_id=1042625031]
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "Points: "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PointsNumberLabel" type="Label" parent="Control/PanelContainer/HBoxContainer" unique_id=483847996]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "0"
 vertical_alignment = 1
 
 [node name="LifeContainer" type="PanelContainer" parent="Control" unique_id=1847948021]
-layout_mode = 0
-offset_right = 71.0
-offset_bottom = 23.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_830d4")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.30600002
+offset_right = 0.070991516
+offset_bottom = 0.0059986115
+theme = ExtResource("1_8qfcg")
+theme_type_variation = &"PlayerUITheme"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/LifeContainer" unique_id=1393683519]
 layout_mode = 2
@@ -54,23 +63,30 @@ layout_mode = 2
 
 [node name="LivesLabel" type="Label" parent="Control/LifeContainer/VBoxContainer/LivesHBoxContainer" unique_id=1736070467]
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "Lives: "
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LifeCount" type="Label" parent="Control/LifeContainer/VBoxContainer/LivesHBoxContainer" unique_id=366859308]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "10"
 
 [node name="LevelContainer" type="PanelContainer" parent="Control" unique_id=1835393744]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.86700004
 anchor_right = 1.0
-offset_left = -63.0
-offset_bottom = 40.0
+anchor_bottom = 0.592
+offset_left = -0.013000488
+offset_bottom = -0.00799942
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wb4qt")
+theme = ExtResource("1_8qfcg")
+theme_type_variation = &"PlayerUITheme"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/LevelContainer" unique_id=257342332]
 layout_mode = 2
@@ -81,11 +97,15 @@ alignment = 2
 
 [node name="LevelLabel" type="Label" parent="Control/LevelContainer/VBoxContainer/HBoxContainer" unique_id=294815580]
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "Level: "
 
 [node name="LevelNumberLabel" type="Label" parent="Control/LevelContainer/VBoxContainer/HBoxContainer" unique_id=1208431976]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "1"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/LevelContainer/VBoxContainer" unique_id=1361583413]
@@ -93,9 +113,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/LevelContainer/VBoxContainer/HBoxContainer2" unique_id=1504599432]
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "Level Keys: "
 
 [node name="KeyCountLabel" type="Label" parent="Control/LevelContainer/VBoxContainer/HBoxContainer2" unique_id=756766485]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_nkc01")
+theme_type_variation = &"TextBoxLabels"
 text = "0"

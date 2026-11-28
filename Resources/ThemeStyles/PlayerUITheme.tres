@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://dkx8ysvvivonm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6o7r"]
+bg_color = Color(1, 0.8784314, 0.7176471, 1)
+
+[resource]
+PlayerUITheme/base_type = &"PanelContainer"
+PlayerUITheme/styles/panel = SubResource("StyleBoxFlat_v6o7r")
