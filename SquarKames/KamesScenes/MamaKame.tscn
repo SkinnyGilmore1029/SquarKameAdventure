@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://x2u4uvieqn7t"]
+
+[ext_resource type="Script" uid="uid://bmmckmk0ywqk" path="res://SquarKames/KamesScripts/mama_kame.gd" id="1_5enpd"]
+[ext_resource type="Texture2D" uid="uid://galknw8reicn" path="res://Assets/Pictures/Npc/MamaKame.png" id="1_hssqs"]
+[ext_resource type="Theme" uid="uid://bhdxpajqn25ap" path="res://Resources/ThemeStyles/TextBoxTheme.tres" id="3_1ojbs"]
+[ext_resource type="Theme" uid="uid://d0xtwq324mfpt" path="res://Resources/ThemeStyles/TextLabels.tres" id="4_i2tcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hssqs"]
+size = Vector2(25.333334, 15.916667)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eeroe"]
+radius = 11.333333
+height = 22.666666
+
+[node name="MamaKame" type="StaticBody2D" unique_id=2087209177]
+scale = Vector2(1.5, 1.5)
+collision_layer = 4
+script = ExtResource("1_5enpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712868864]
+rotation = -1.5707964
+texture = ExtResource("1_hssqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=154250843]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_hssqs")
+
+[node name="TextArea" type="Area2D" parent="." unique_id=1141494494]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextArea" unique_id=174023069]
+position = Vector2(-22.666666, 0)
+shape = SubResource("CapsuleShape2D_eeroe")
+
+[node name="MamaText" type="PanelContainer" parent="." unique_id=923690472]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+offset_left = -38.666668
+offset_top = -82.00001
+offset_right = 77.33333
+offset_bottom = -11.000008
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_1ojbs")
+theme_type_variation = &"TextBox"
+
+[node name="MamaLabel" type="Label" parent="MamaText" unique_id=955413691]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_i2tcg")
+theme_type_variation = &"TextBoxLabels"
+text = "help me my egg
+have been blown
+away! Please
+Help Me Find Them"
+
+[connection signal="body_entered" from="TextArea" to="." method="open_text_box"]
+[connection signal="body_exited" from="TextArea" to="." method="close_text_box"]

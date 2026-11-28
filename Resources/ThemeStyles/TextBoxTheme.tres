@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://bhdxpajqn25ap"]
+
+[ext_resource type="Texture2D" uid="uid://g2x5s3ucdcin" path="res://Assets/Pictures/Npc/hint_buble.png" id="1_awbhw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1gh8"]
+texture = ExtResource("1_awbhw")
+texture_margin_left = 3.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(4, 5, 24, 21)
+
+[resource]
+TextBox/base_type = &"PanelContainer"
+TextBox/styles/panel = SubResource("StyleBoxTexture_s1gh8")

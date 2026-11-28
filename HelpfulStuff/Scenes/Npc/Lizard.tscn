@@ -2,22 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://ckm3p7c65l6f1" path="res://Assets/Pictures/Npc/Lizard.png" id="1_j4dbs"]
 [ext_resource type="Script" uid="uid://y0q048qp1isw" path="res://HelpfulStuff/Scripts/lizard.gd" id="1_m7roo"]
+[ext_resource type="Theme" uid="uid://bhdxpajqn25ap" path="res://Resources/ThemeStyles/TextBoxTheme.tres" id="3_1dlhi"]
+[ext_resource type="Theme" uid="uid://d0xtwq324mfpt" path="res://Resources/ThemeStyles/TextLabels.tres" id="4_ykmlk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpeb7"]
 radius = 22.0
 height = 80.02215
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7roo"]
-bg_color = Color(0.31764707, 0.49019608, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.5666675, 0.8878493, 0.64536166, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="Lizard" type="CharacterBody2D" unique_id=1990089305]
 z_index = 1
@@ -46,11 +36,14 @@ offset_left = -24.0
 offset_top = -44.0
 offset_right = 16.0
 offset_bottom = -21.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_m7roo")
+theme = ExtResource("3_1dlhi")
+theme_type_variation = &"TextBox"
 
 [node name="FlyCountLabel" type="Label" parent="FlyCountContainer" unique_id=1942220583]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("4_ykmlk")
+theme_type_variation = &"TextBoxLabels"
 text = "Flies 0/5"
 horizontal_alignment = 1
 vertical_alignment = 1

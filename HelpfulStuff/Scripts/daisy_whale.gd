@@ -1,3 +1,4 @@
+class_name DaisyWhale
 extends StaticBody2D
 
 #this is attached to a staticBody2d not my main kame.
@@ -7,11 +8,12 @@ extends StaticBody2D
 func _ready() -> void:
 	SignalHub.has_fruit.connect(got_apple)
 
+#body_enetered signal
 func open_text_box(body: Node2D) -> void:
 	if body is MainKame:
 		%TextBox.visible = true
 
-
+#body exited signal
 func close_text_box(body: Node2D) -> void:
 	if body is MainKame:
 		%TextBox.visible = false

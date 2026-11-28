@@ -3,8 +3,9 @@ extends Node2D
 @export var level_data: LevelDataManager
 
 @onready var bad_guys_node = $Level6_BadGuys/Respawning
+@onready var hint_frog_text: = $Helpful/Hints/HintFrog/HintPanel/Label
+
 @onready var big_beetle_spawns: Array[Vector2] = [
-	%BigBeetleSpawn1.position,
 	%BigBeetleSpawn2.position,
 	%BigBeetleSpawn5.position,
 	%BigBeetleSpawn6.position,
@@ -19,6 +20,7 @@ func _ready() -> void:
 	EnemySpawner.spawn_enemy(level_data.spawn_positions, level_data.speed_choices, bad_guys_node)
 
 func set_level_data() -> void:
+	hint_frog_text.text = "Still building\nthis Level6!"
 	level_data.enemy_types = ["BigBeetle"]
 	level_data.spawn_positions = {
 		"BigBeetle" : big_beetle_spawns,

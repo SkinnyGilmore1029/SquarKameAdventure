@@ -6,11 +6,11 @@ extends Area2D
 @onready var my_shape: CollisionShape2D = pinned_body.get_node("CollisionShape2D")
 var player: MainKame
 
-var space_eggs: int
+var space_pin_body: int
 
 
 func _ready() -> void:
-	space_eggs = int(my_shape.shape.radius * 2.0 * my_shape.global_scale.x)
+	space_pin_body = int(my_shape.shape.radius * 2.2 * my_shape.global_scale.x)
 	connect_signals()
 
 
@@ -29,26 +29,26 @@ func pin_to_player(body: Node2D) -> void:
 func connect_signals() -> void:
 	SignalHub.unpin_joint.connect(_unpin_from_player)
 	SignalHub.can_not_move.connect(_offered_up)
-	SignalHub.drop_pinned_eggs.connect(_set_new_position)
+	SignalHub.drop_pinned_body.connect(_set_new_position)
 
 func _unpin_from_player() -> void:
 	node_pin.node_a = ""
 	node_pin.node_b = ""
 	SignalHub.remove_pinned_body.emit(pinned_body)
 
-func _set_new_position(egg_pos: Dictionary) -> void:
-	if not egg_pos.has(pinned_body):
+func _set_new_position(pin_pos: Dictionary) -> void:
+	if not pin_pos.has(pinned_body):
 		return
 
 	pinned_body.linear_velocity = Vector2.ZERO
 	pinned_body.angular_velocity = 0.0
-	pinned_body.global_position = egg_pos[pinned_body]
+	pinned_body.global_position = pin_pos[pinned_body]
 
 func _keep_behind() -> void:
 	var tail: Marker2D = player.get_node("TailMarker")
 	var tail_pos: Vector2 = tail.global_position
 	var tail_index: int = _get_my_index()
-	var distance: float = (space_eggs + 8) * (tail_index + 1)
+	var distance: float = (space_pin_body + 6) * (tail_index + 1)
 
 	if tail_index == -1:
 		push_warning("%s <-- this RigidBody2D does not exist" % pinned_body)

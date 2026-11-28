@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://d0xtwq324mfpt"]
+
+[ext_resource type="FontFile" uid="uid://60ixsc1yxbmk" path="res://Assets/Fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_mk07h"]
+
+[resource]
+TextBoxLabels/base_type = &"Label"
+TextBoxLabels/colors/font_color = Color(0.2901961, 0.16862746, 0.101960786, 1)
+TextBoxLabels/font_sizes/font_size = 13
+TextBoxLabels/fonts/font = ExtResource("1_mk07h")
